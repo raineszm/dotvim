@@ -1,0 +1,1 @@
+Remove autoclose. More trouble than it's worth.
