@@ -14,6 +14,7 @@ Bundle 'pydoc.vim'
 Bundle 'taglist.vim'
 Bundle 'indenthaskell.vim'
 Bundle 'VimClojure'
+Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 
 "Don't worry about not having ruby for LustyJuggler
 let g:LustyJugglerSuppressRubyWarning = 1
@@ -56,4 +57,9 @@ let g:clang_snippets=1
 
 "VimClojure settings
 let vimclojure#ParenRainbow = 1
-let vimclojure#WantNailgun = 1
+let vimclojure#WantNailgun = 0
+
+"Vim-Latex
+set grepprg=grep\ -nH\ $*
+let g:Tex_ViewRule_pdf='Preview'
+let g:tex_flavor='latex'
