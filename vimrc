@@ -15,6 +15,7 @@ Bundle 'taglist.vim'
 Bundle 'indenthaskell.vim'
 Bundle 'VimClojure'
 Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+Bundle "~/Documents/Programming/pcgen/pcgenvim.git"
 
 "Don't worry about not having ruby for LustyJuggler
 let g:LustyJugglerSuppressRubyWarning = 1
@@ -43,7 +44,7 @@ set wildmode=longest:full
 set wildmenu
 
 "Color Setup
-colorscheme desert 
+colorscheme ir_black
 
 inoremap <C-J> <Esc>o
 nnoremap <C-J> o<Esc>
@@ -61,5 +62,9 @@ let vimclojure#WantNailgun = 0
 
 "Vim-Latex
 set grepprg=grep\ -nH\ $*
-let g:Tex_ViewRule_pdf='Preview'
+let g:Tex_ViewRule_pdf='Skim'
 let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+"let g:Tex_CompileRule_pdf = 'latexmk -cd -pdf -f $*'
+let g:Tex_CompileRule_pdf = "latexmk -cd -pdflatex='pdflatex %O -interaction=nonstopmode -synctex=1 %S' -pdf -f $*"
+
