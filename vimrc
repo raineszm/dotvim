@@ -46,8 +46,8 @@ set wildmenu
 "Color Setup
 colorscheme ir_black
 
-inoremap <C-J> <Esc>o
-nnoremap <C-J> o<Esc>
+"inoremap <C-J> <Esc>o
+"nnoremap <C-J> o<Esc>
 
 let g:alternateExtensions_cc="hh"
 let g:alternateExtensions_hh="cc"
@@ -66,5 +66,6 @@ let g:Tex_ViewRule_pdf='Skim'
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 "let g:Tex_CompileRule_pdf = 'latexmk -cd -pdf -f $*'
-let g:Tex_CompileRule_pdf = "latexmk -cd -pdflatex='pdflatex %O -interaction=nonstopmode -synctex=1 %S' -pdf -f $*"
+"let g:Tex_CompileRule_pdf = 'latexmk -cd -pdflatex="pdflatex \%O -interaction=nonstopmode -synctex=1 \%S" -pdf -f $*'
+let g:Tex_CompileRule_pdf = 'latexmk -cd -pdflatex="pdflatex -interaction=nonstopmode -synctex=1" -pdf -f $*'
 
