@@ -13,9 +13,13 @@ Bundle 'LustyExplorer'
 Bundle 'pydoc.vim'
 Bundle 'taglist.vim'
 Bundle 'indenthaskell.vim'
-Bundle 'VimClojure'
+"Bundle 'VimClojure'
+Bundle 'https://github.com/guns/vim-clojure-static'
+Bundle 'rainbow_parentheses.vim'
+Bundle 'https://github.com/tpope/vim-fireplace'
+Bundle 'https://github.com/tpope/vim-classpath'
 Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-Bundle "~/Documents/Programming/pcgen/pcgenvim.git"
+
 
 "Don't worry about not having ruby for LustyJuggler
 let g:LustyJugglerSuppressRubyWarning = 1
@@ -46,9 +50,6 @@ set wildmenu
 "Color Setup
 colorscheme ir_black
 
-"inoremap <C-J> <Esc>o
-"nnoremap <C-J> o<Esc>
-
 let g:alternateExtensions_cc="hh"
 let g:alternateExtensions_hh="cc"
 
@@ -56,9 +57,14 @@ let g:clang_use_library=1
 let g:clang_library_path="/usr/local/lib"
 let g:clang_snippets=1
 
-"VimClojure settings
-let vimclojure#ParenRainbow = 1
-let vimclojure#WantNailgun = 0
+"rainbow-parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+let g:rbpt_max = 16
+
+"vim-clojure-static
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', 'fact'] 
 
 "Vim-Latex
 set grepprg=grep\ -nH\ $*
