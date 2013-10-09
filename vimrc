@@ -19,6 +19,7 @@ Bundle 'rainbow_parentheses.vim'
 Bundle 'https://github.com/tpope/vim-fireplace'
 Bundle 'https://github.com/tpope/vim-classpath'
 Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+Bundle 'JuliaLang/julia-vim'
 
 
 "Don't worry about not having ruby for LustyJuggler
