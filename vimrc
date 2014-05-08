@@ -1,4 +1,4 @@
-"Load the vim scripts in the bundle directory
+" Load the vim scripts in the bundle directory
 
 filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
@@ -12,6 +12,7 @@ Plugin 'rainbow_parentheses.vim'
 Plugin 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tComment'
 
 call vundle#end()
 
@@ -53,7 +54,14 @@ let g:rbpt_max = 16
 
 "Vim-Latex
 set grepprg=grep\ -nH\ $*
-let g:Tex_ViewRule_pdf='Skim'
+if has('macunix')
+    let g:Tex_ViewRule_pdf='Skim'
+else
+    let g:Tex_ViewRule_pdf='evince'
+endif
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = 'latexmk -cd -pdflatex="pdflatex -interaction=nonstopmode -synctex=1" -pdf -f $*'
+
+"tComment Settings
+map <C-/> TComment
