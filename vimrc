@@ -16,6 +16,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tComment'
 Plugin 'scrooloose/nerdTree'
 Plugin 'tshirtman/vim-cython'
+Plugin 'Haskell-Conceal'
+Plugin 'travitch/hasksyn'
 
 call vundle#end()
 
