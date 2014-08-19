@@ -4,18 +4,34 @@ filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+"Keep vundle up to date
 Plugin 'gmarik/Vundle.vim'
+
+"Search and movement plugins
 Plugin 'ack.vim'
-Plugin 'SirVer/ultisnips'
 Plugin 'kien/ctrlp.vim'
-Plugin 'rainbow_parentheses.vim'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'JuliaLang/julia-vim'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tComment'
 Plugin 'scrooloose/nerdTree'
+
+"Completion Tools
+Plugin 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets' "Default snippets for ultisnips
+Plugin 'Valloric/YouCompleteMe'
+
+"Source formatting
+Plugin 'tComment'
+Plugin 'rainbow_parentheses.vim'
+
+"Language Specific
+"-----------------------
+
+"Latex
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+
+"Python
 Plugin 'tshirtman/vim-cython'
+
+"Haskell
 Plugin 'Haskell-Conceal'
 Plugin 'travitch/hasksyn'
 
@@ -36,6 +52,7 @@ set expandtab
 set incsearch
 set ruler
 set showcmd
+set mouse=a
 
 "Set buffers to be hidden instead of closed when switched
 set hidden
@@ -57,16 +74,19 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 let g:rbpt_max = 16
 
+"Completion Shenanigans
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
+
 "Vim-Latex
 set grepprg=grep\ -nH\ $*
-" if has('macunix')
-"     let g:Tex_ViewRule_pdf='Skim'
-" else
-"     let g:Tex_ViewRule_pdf='evince'
-" endif
-" let g:tex_flavor='latex'
-" let g:Tex_DefaultTargetFormat = 'pdf'
-" let g:Tex_CompileRule_pdf = 'latexmk -cd -pdflatex="pdflatex -interaction=nonstopmode -synctex=1" -pdf -f $*'
-"
+
 "tComment Settings
 map <C-/> TComment
