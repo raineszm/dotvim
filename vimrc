@@ -6,13 +6,16 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'ack.vim'
-Plugin 'gmarik/snipmate.vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rainbow_parentheses.vim'
-Plugin 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'JuliaLang/julia-vim'
+Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tComment'
+Plugin 'scrooloose/nerdTree'
+Plugin 'tshirtman/vim-cython'
 
 call vundle#end()
 
@@ -54,14 +57,14 @@ let g:rbpt_max = 16
 
 "Vim-Latex
 set grepprg=grep\ -nH\ $*
-if has('macunix')
-    let g:Tex_ViewRule_pdf='Skim'
-else
-    let g:Tex_ViewRule_pdf='evince'
-endif
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_pdf = 'latexmk -cd -pdflatex="pdflatex -interaction=nonstopmode -synctex=1" -pdf -f $*'
-
+" if has('macunix')
+"     let g:Tex_ViewRule_pdf='Skim'
+" else
+"     let g:Tex_ViewRule_pdf='evince'
+" endif
+" let g:tex_flavor='latex'
+" let g:Tex_DefaultTargetFormat = 'pdf'
+" let g:Tex_CompileRule_pdf = 'latexmk -cd -pdflatex="pdflatex -interaction=nonstopmode -synctex=1" -pdf -f $*'
+"
 "tComment Settings
 map <C-/> TComment
