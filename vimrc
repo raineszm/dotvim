@@ -57,16 +57,13 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 let g:rbpt_max = 16
 
-"Vim-Latex
+"LatexBox
 set grepprg=grep\ -nH\ $*
-" if has('macunix')
-"     let g:Tex_ViewRule_pdf='Skim'
-" else
-"     let g:Tex_ViewRule_pdf='evince'
-" endif
-" let g:tex_flavor='latex'
-" let g:Tex_DefaultTargetFormat = 'pdf'
-" let g:Tex_CompileRule_pdf = 'latexmk -cd -pdflatex="pdflatex -interaction=nonstopmode -synctex=1" -pdf -f $*'
-"
+if has('macunix')
+    let g:LatexBox_viewer='Skim'
+else
+    let g:LatexBox_viewer='xdg-open'
+endif
+
 "tComment Settings
 map <C-/> TComment
