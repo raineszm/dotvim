@@ -85,8 +85,13 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
 
-"Vim-Latex
+"LatexBox
 set grepprg=grep\ -nH\ $*
+if has('macunix')
+    let g:LatexBox_viewer='Skim'
+else
+    let g:LatexBox_viewer='xdg-open'
+endif
 
 "tComment Settings
 map <C-/> TComment
