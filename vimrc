@@ -99,5 +99,11 @@ else
     let g:LatexBox_viewer='zathura -s -x "vim --servername VIM --remote-silent +\%{line} \%{input}"'
 endif
 
+"Forward Search for latex
+function! LatexForwardSearch()
+    call system('zathura -s --synctex-forward='.line('.').':'.col('.').':'.expand('%:p').' '.expand('%:p:r').'.pdf >/dev/null&')
+endfunction
+nnoremap <leader>ls :call LatexForwardSearch()<cr>
+
 "tComment Settings
 nnoremap <leader>cc :TComment<cr>
