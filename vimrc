@@ -87,6 +87,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
 
 "LatexBox
 set grepprg=grep\ -nH\ $*
+let g:LatexBox_latexmk_options = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
 if has('macunix')
     let g:LatexBox_viewer='Skim'
 else
@@ -94,4 +95,4 @@ else
 endif
 
 "tComment Settings
-map <C-/> TComment
+nnoremap <leader>cc :TComment<cr>
