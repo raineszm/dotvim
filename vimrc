@@ -17,6 +17,7 @@ Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets' "Default snippets for ultisnips
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'eagletmt/neco-ghc'
 
 "Source formatting
 Plugin 'tComment'
@@ -84,6 +85,10 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
+
+"Youcompleteme for Haskell
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+autocmd FileType haskell set omnifunc=necoghc#omnifunc
 
 "LatexBox
 set grepprg=grep\ -nH\ $*
