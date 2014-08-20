@@ -96,7 +96,7 @@ let g:LatexBox_latexmk_options = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
 if has('macunix')
     let g:LatexBox_viewer='Skim'
 else
-    let g:LatexBox_viewer='xdg-open'
+    let g:LatexBox_viewer='zathura -s -x "vim --servername VIM --remote-silent +\%{line} \%{input}"'
 endif
 
 "tComment Settings
