@@ -26,6 +26,10 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tComment'
 Plugin 'rainbow_parentheses.vim'
 
+"Git stuff
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+
 "Status Line
 Plugin 'bling/vim-airline'
 
@@ -112,6 +116,8 @@ function! LatexForwardSearch()
     call system('zathura -s --synctex-forward='.line('.').':'.col('.').':'.expand('%:p').' '.expand('%:p:r').'.pdf >/dev/null&')
 endfunction
 nnoremap <leader>ls :call LatexForwardSearch()<cr>
+nmap <c-l><c-e> <Plug>LatexChangeEnv
+vmap <c-l><c-e> <Plug>LatexWrapEnvSelection
 
 "tComment Settings
 nnoremap <leader>cc :TComment<cr>
@@ -121,9 +127,11 @@ set laststatus=2
 let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
 
-
 "Latex Conceal Options
 let g:tex_conceal= 'abdgm'
 hi Conceal guibg=Black guifg=White
 hi Conceal ctermbg=Black ctermfg=White
 autocmd FileType tex setlocal cole=2
+
+"Trim trailing whitespace on save because it sucks
+"autocmd BufWrite * %s/\v\s*$//
