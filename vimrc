@@ -19,9 +19,16 @@ Plugin 'honza/vim-snippets' "Default snippets for ultisnips
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'eagletmt/neco-ghc'
 
+"Error Checking
+Plugin 'scrooloose/syntastic'
+
 "Source formatting
 Plugin 'tComment'
 Plugin 'rainbow_parentheses.vim'
+
+"Status Line
+Plugin 'bling/vim-airline'
+
 
 "Language Specific
 "-----------------------
@@ -43,6 +50,7 @@ let fortran_free_source=1
 let fortran_have_tabs=1
 syntax on
 filetype plugin indent on
+set t_Co=256
 
 "Set the default indent
 set shiftwidth=4
@@ -107,3 +115,8 @@ nnoremap <leader>ls :call LatexForwardSearch()<cr>
 
 "tComment Settings
 nnoremap <leader>cc :TComment<cr>
+
+"Airline
+set laststatus=2
+let g:airline_theme='wombat'
+let g:airline#extensions#tabline#enabled = 1
