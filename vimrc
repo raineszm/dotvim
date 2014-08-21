@@ -96,7 +96,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
 
 "Youcompleteme for Haskell
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
-autocmd FileType haskell set omnifunc=necoghc#omnifunc
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 "LatexBox
 set grepprg=grep\ -nH\ $*
@@ -120,3 +120,10 @@ nnoremap <leader>cc :TComment<cr>
 set laststatus=2
 let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
+
+
+"Latex Conceal Options
+let g:tex_conceal= 'abdgm'
+hi Conceal guibg=Black guifg=White
+hi Conceal ctermbg=Black ctermfg=White
+autocmd FileType tex setlocal cole=2
