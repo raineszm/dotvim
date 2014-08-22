@@ -147,7 +147,7 @@ augroup latexauto
 augroup END
 
 "Trim trailing whitespace on save because it sucks
-"autocmd BufWrite * %s/\v\s*$//
+autocmd BufWritePre * keepjumps %s/\v\s+$//e
 
 "Set fonts
 "Make things bit more readable in macvim
