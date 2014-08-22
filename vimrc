@@ -11,7 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/vimproc'
 
 "Search and movement plugins
-Plugin 'ack.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdTree'
 Plugin 'majutsushi/tagbar'
@@ -27,8 +27,8 @@ Plugin 'eagletmt/neco-ghc'
 Plugin 'scrooloose/syntastic'
 
 "Source formatting
-Plugin 'tComment'
-Plugin 'rainbow_parentheses.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'oblitum/rainbow'
 
 "Git stuff
 Plugin 'airblade/vim-gitgutter'
@@ -48,10 +48,13 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'tshirtman/vim-cython'
 
 "Haskell
-Plugin 'Haskell-Conceal'
+Plugin 'Twinside/Haskell-Conceal'
 " Plugin 'enomsg/vim-haskellConcealPlus'
 Plugin 'travitch/hasksyn'
 Plugin 'eagletmt/ghcmod-vim'
+
+"Mathematica
+Plugin 'rsmenon/vim-mathematica'
 
 call vundle#end()
 
@@ -132,8 +135,8 @@ nnoremap <leader>ls :call LatexForwardSearch()<cr>
 nmap <c-l><c-e> <Plug>LatexChangeEnv
 vmap <c-l><c-e> <Plug>LatexWrapEnvSelection
 
-"tComment Settings
-nnoremap <leader>cc :TComment<cr>
+"NERDTree settings
+nnoremap <leader>nt :NERDTreeToggle<cr>
 
 "Airline
 set laststatus=2
