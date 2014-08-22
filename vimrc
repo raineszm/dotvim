@@ -158,6 +158,10 @@ if has('macunix')
     set guifont=Menlo:h13
 endif
 
+"Vim editing
+nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
+nnoremap <leader>sv :source ~/.vim/vimrc<cr>
+
 "HASKELL STUFF
 "Build a tag file for tagbar
 let g:tagbar_type_haskell = {
