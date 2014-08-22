@@ -7,10 +7,14 @@ call vundle#begin()
 "Keep vundle up to date
 Plugin 'gmarik/Vundle.vim'
 
+"General depdndencies
+Plugin 'Shougo/vimproc'
+
 "Search and movement plugins
 Plugin 'ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdTree'
+Plugin 'majutsushi/tagbar'
 
 "Completion Tools
 Plugin 'ervandew/supertab'
@@ -100,7 +104,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
 
 "Youcompleteme for Haskell
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+augroup haskellauto
+    autocmd!
+    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+augroup END
 
 "LatexBox
 set grepprg=grep\ -nH\ $*
@@ -113,7 +120,11 @@ endif
 
 "Forward Search for latex
 function! LatexForwardSearch()
-    call system('zathura -s --synctex-forward='.line('.').':'.col('.').':'.expand('%:p').' '.expand('%:p:r').'.pdf >/dev/null&')
+    if has('macunix')
+        silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<CR>
+    else
+        call system('zathura -s --synctex-forward='.line('.').':'.col('.').':'.expand('%:p').' '.expand('%:p:r').'.pdf >/dev/null&')
+    endif
 endfunction
 nnoremap <leader>ls :call LatexForwardSearch()<cr>
 nmap <c-l><c-e> <Plug>LatexChangeEnv
