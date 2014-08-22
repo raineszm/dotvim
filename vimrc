@@ -90,12 +90,6 @@ let g:clang_use_library=1
 let g:clang_library_path="/usr/local/lib"
 let g:clang_snippets=1
 
-"rainbow-parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-let g:rbpt_max = 16
-
 "Completion Shenanigans
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -164,6 +158,18 @@ endif
 "Vim editing
 nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
 nnoremap <leader>sv :source ~/.vim/vimrc<cr>
+
+"MATHEMATICA STUFF
+let g:mma_candy=2
+let g:filetype_m = 'mma'
+augroup mathematicaauto
+    autocmd!
+    autocmd! FileType mma setlocal commentstring=(*%s*)
+augroup END
+
+"RAINBOW STUFF
+autocmd FileType * call rainbow#load()
+autocmd FileType mma call rainbow#load([['(\(\*\)\@!', '\(\*\)\@<!)'], ['\(\\\)\@<!\[','\]'], ['{', '}']], '')
 
 "HASKELL STUFF
 "Build a tag file for tagbar
