@@ -37,6 +37,8 @@ Plugin 'tpope/vim-fugitive'
 "Status Line
 Plugin 'bling/vim-airline'
 
+"Colors
+Plugin 'chriskempson/base16-vim'
 
 "Language Specific
 "-----------------------
@@ -48,7 +50,7 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'tshirtman/vim-cython'
 
 "Haskell
-Plugin 'Twinside/Haskell-Conceal'
+Plugin 'Twinside/vim-haskellConceal'
 " Plugin 'enomsg/vim-haskellConcealPlus'
 Plugin 'travitch/hasksyn'
 Plugin 'eagletmt/ghcmod-vim'
@@ -83,8 +85,8 @@ set hidden
 set wildmode=longest:full
 set wildmenu
 
-"Color Setup
-colorscheme ir_black
+" "Color Setup
+" colorscheme ir_black
 
 let g:clang_use_library=1
 let g:clang_library_path="/usr/local/lib"
@@ -166,6 +168,11 @@ augroup mathematicaauto
     autocmd!
     autocmd! FileType mma setlocal commentstring=(*%s*)
 augroup END
+
+"Color schemes
+let base16colorspace=256  " Access colors present in 256 colorspace
+set background=dark
+colorscheme base16-ashes
 
 "RAINBOW STUFF
 autocmd FileType * call rainbow#load()
