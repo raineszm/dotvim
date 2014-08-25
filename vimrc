@@ -40,6 +40,10 @@ Plugin 'bling/vim-airline'
 "Colors
 Plugin 'chriskempson/base16-vim'
 
+"Wiki
+Plugin 'vimwiki/vimwiki'
+
+
 "Language Specific
 "-----------------------
 
