@@ -118,17 +118,23 @@ augroup END
 set grepprg=grep\ -nH\ $*
 let g:LatexBox_latexmk_options = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
 if has('macunix')
-    let g:LatexBox_viewer='Skim'
+    let g:LatexBox_viewer='open -a Skim.app'
 else
     let g:LatexBox_viewer='zathura -s -x "vim --servername VIM --remote-silent +\%{line} \%{input}"'
 endif
 
 "Forward Search for latex
 function! LatexForwardSearch()
+    let lineno = line('.')
+    let colno = col('.')
+    let texfile = expand('%:p')
+    let pdffile = expand('%:p:r').'.pdf'
     if has('macunix')
-        silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<CR>
+        call system('/Applications/Skim.app/Contents/SharedSupport/displayline -g '
+                    \ .lineno.' "'.pdffile.'" "'.texfile.'"')
     else
-        call system('zathura -s --synctex-forward='.line('.').':'.col('.').':'.expand('%:p').' '.expand('%:p:r').'.pdf >/dev/null&')
+        call system('zathura -s --synctex-forward='
+                    \ .lineno.':'.colno.':'.texfile.' '.pdffile.' >/dev/null&')
     endif
 endfunction
 nnoremap <leader>ls :call LatexForwardSearch()<cr>
