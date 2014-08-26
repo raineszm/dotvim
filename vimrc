@@ -30,6 +30,7 @@ Plugin 'scrooloose/syntastic'
 
 "Source formatting
 Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-surround'
 Plugin 'oblitum/rainbow'
 
 "Git stuff
@@ -200,6 +201,7 @@ colorscheme base16-ashes
 
 "RAINBOW STUFF
 autocmd FileType * call rainbow#load()
+autocmd FileType haskell call rainbow#load([['(', ')'], ['\[', '\]']], '')
 autocmd FileType mma call rainbow#load([['(\(\*\)\@!', '\(\*\)\@<!)'], ['\(\\\)\@<!\[','\]'], ['{', '}']], '')
 
 "HASKELL STUFF
@@ -235,3 +237,5 @@ let g:tagbar_type_haskell = {
         \ 'type'   : 't'
     \ }
     \ }
+
+" let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
