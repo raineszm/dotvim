@@ -1,9 +1,11 @@
+" vim: foldmethod=marker
 " Load the vim scripts in the bundle directory
 
 filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Plugin imports {{{
 "Keep vundle up to date
 Plugin 'gmarik/Vundle.vim'
 
@@ -61,6 +63,7 @@ Plugin 'eagletmt/ghcmod-vim'
 
 "Mathematica
 Plugin 'rsmenon/vim-mathematica'
+" }}}
 
 call vundle#end()
 
@@ -71,6 +74,7 @@ syntax on
 filetype plugin indent on
 set t_Co=256
 
+" Basic Settings {{{
 "Set the default indent
 set shiftwidth=4
 set softtabstop=4
@@ -84,6 +88,7 @@ set mouse=a
 
 "Set buffers to be hidden instead of closed when switched
 set hidden
+" }}}
 
 "Setup the wildmenu
 set wildmode=longest:full
@@ -96,7 +101,8 @@ let g:clang_use_library=1
 let g:clang_library_path="/usr/local/lib"
 let g:clang_snippets=1
 
-"Completion Shenanigans
+" Completion {{{
+" Completion Shenanigans
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -113,6 +119,7 @@ augroup haskellauto
     autocmd!
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 augroup END
+" }}}
 
 "LatexBox
 set grepprg=grep\ -nH\ $*
