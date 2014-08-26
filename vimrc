@@ -1,6 +1,7 @@
 " vim: foldmethod=marker
 " Load the vim scripts in the bundle directory
 
+" Vundle Config {{{
 filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -67,15 +68,14 @@ Plugin 'rsmenon/vim-mathematica'
 " }}}
 
 call vundle#end()
+" }}}
 
+" Basic Settings {{{
 "Get some nice syntax highlighting and language features
-let fortran_free_source=1
-let fortran_have_tabs=1
 syntax on
 filetype plugin indent on
 set t_Co=256
 
-" Basic Settings {{{
 "Set the default indent
 set shiftwidth=4
 set softtabstop=4
@@ -89,18 +89,36 @@ set mouse=a
 
 "Set buffers to be hidden instead of closed when switched
 set hidden
-" }}}
 
-"Setup the wildmenu
+" Setup the wildmenu {{{
 set wildmode=longest:full
 set wildmenu
+" }}}
+" }}}
 
-" "Color Setup
-" colorscheme ir_black
+" Visual Settings {{{
 
-let g:clang_use_library=1
-let g:clang_library_path="/usr/local/lib"
-let g:clang_snippets=1
+"Airline
+set laststatus=2
+let g:airline_theme='wombat'
+let g:airline#extensions#tabline#enabled = 1
+
+"Color schemes
+let base16colorspace=256  " Access colors present in 256 colorspace
+set background=dark
+colorscheme base16-ashes
+
+"RAINBOW STUFF
+autocmd FileType * call rainbow#load()
+autocmd FileType haskell call rainbow#load([['(', ')'], ['\[', '\]']], '')
+autocmd FileType mma call rainbow#load([['(\(\*\)\@!', '\(\*\)\@<!)'], ['\(\\\)\@<!\[','\]'], ['{', '}']], '')
+
+" }}}
+
+" Fortran {{{
+let fortran_free_source=1
+let fortran_have_tabs=1
+" }}}
 
 " Completion {{{
 " Completion Shenanigans
@@ -122,7 +140,9 @@ augroup haskellauto
 augroup END
 " }}}
 
-"LatexBox
+" Language Specific Settings {{{
+" LATEX {{{
+" LatexBox {{{
 set grepprg=grep\ -nH\ $*
 let g:LatexBox_latexmk_options = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
 if has('macunix')
@@ -149,15 +169,9 @@ nnoremap <leader>ls :call LatexForwardSearch()<cr>
 nmap <c-l><c-e> <Plug>LatexChangeEnv
 vmap <c-l><c-e> <Plug>LatexWrapEnvSelection
 
-"NERDTree settings
-nnoremap <leader>nt :NERDTreeToggle<cr>
+" }}}
 
-"Airline
-set laststatus=2
-let g:airline_theme='wombat'
-let g:airline#extensions#tabline#enabled = 1
-
-"Latex Conceal Options
+" Latex Conceal Options {{{
 let g:tex_conceal= 'abdgm'
 hi Conceal guibg=Black guifg=White
 hi Conceal ctermbg=Black ctermfg=White
@@ -165,47 +179,20 @@ augroup latexauto
     autocmd!
     autocmd FileType tex setlocal cole=2
 augroup END
+}}}
+" }}}
 
-"Trim trailing whitespace on save because it sucks
-autocmd BufWritePre * keepjumps %s/\v\s+$//e
-
-"Set fonts
-"Make things bit more readable in macvim
-if has('macunix')
-    set guifont=Menlo:h13
-endif
-
-"Turn off scrollbars
-set guioptions-=L
-set guioptions-=l
-set guioptions-=r
-set guioptions-=T
-
-
-"Vim editing
-nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
-nnoremap <leader>sv :source ~/.vim/vimrc<cr>
-
-"MATHEMATICA STUFF
+" MATHEMATICA STUFF {{{
 let g:mma_candy=2
 let g:filetype_m = 'mma'
 augroup mathematicaauto
     autocmd!
     autocmd! FileType mma setlocal commentstring=(*%s*)
 augroup END
+" }}}
 
-"Color schemes
-let base16colorspace=256  " Access colors present in 256 colorspace
-set background=dark
-colorscheme base16-ashes
-
-"RAINBOW STUFF
-autocmd FileType * call rainbow#load()
-autocmd FileType haskell call rainbow#load([['(', ')'], ['\[', '\]']], '')
-autocmd FileType mma call rainbow#load([['(\(\*\)\@!', '\(\*\)\@<!)'], ['\(\\\)\@<!\[','\]'], ['{', '}']], '')
-
-"HASKELL STUFF
-"Build a tag file for tagbar
+" HASKELL STUFF {{{
+" Build a tag file for tagbar {{{
 let g:tagbar_type_haskell = {
     \ 'ctagsbin'  : 'hasktags',
     \ 'ctagsargs' : '-x -c -o-',
@@ -237,5 +224,38 @@ let g:tagbar_type_haskell = {
         \ 'type'   : 't'
     \ }
     \ }
+" }}}
 
 " let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
+" }}}
+
+" }}}
+
+" Settings for GUI {{{
+"Set fonts
+"Make things bit more readable in macvim
+if has('macunix')
+    set guifont=Menlo:h13
+endif
+
+" Turn off scrollbars
+set guioptions-=L
+set guioptions-=l
+set guioptions-=r
+set guioptions-=T
+" }}}
+
+" General Keymaps {{{
+" Vim editing
+nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
+nnoremap <leader>sv :source ~/.vim/vimrc<cr>
+
+"NERDTree settings
+nnoremap <leader>nt :NERDTreeToggle<cr>
+
+" }}}
+
+" Trim trailing whitespace on save because it sucks
+autocmd BufWritePre * keepjumps %s/\v\s+$//e
+
+
