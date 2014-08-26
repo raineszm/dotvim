@@ -171,6 +171,7 @@ endif
 set guioptions-=L
 set guioptions-=l
 set guioptions-=r
+set guioptions-=T
 
 
 "Vim editing
