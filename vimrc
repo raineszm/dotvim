@@ -167,6 +167,12 @@ if has('macunix')
     set guifont=Menlo:h13
 endif
 
+"Turn off scrollbars
+set guioptions-=L
+set guioptions-=l
+set guioptions-=r
+
+
 "Vim editing
 nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
 nnoremap <leader>sv :source ~/.vim/vimrc<cr>
