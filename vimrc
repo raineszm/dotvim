@@ -1,74 +1,87 @@
 " vim: foldmethod=marker
 " Load the vim scripts in the bundle directory
 
-" Vundle Config {{{
-filetype off
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" NeoBundle Config {{{
+if has('vim_starting')
+    set nocompatible               " Be iMproved
+
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Plugin imports {{{
-"Keep vundle up to date
-Plugin 'gmarik/Vundle.vim'
 
-"General depdndencies
-Plugin 'Shougo/vimproc'
+"General dependencies
+NeoBundle 'Shougo/vimproc'
 
 "Search and movement plugins
-Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdTree'
-Plugin 'majutsushi/tagbar'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'scrooloose/nerdTree'
+NeoBundle 'majutsushi/tagbar'
 
 "Completion Tools
-Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets' "Default snippets for ultisnips
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'eagletmt/neco-ghc'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets' "Default snippets for ultisnips
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'eagletmt/neco-ghc'
 
 "Error Checking
-Plugin 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic'
 
 "Source formatting
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-surround'
-Plugin 'oblitum/rainbow'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'oblitum/rainbow'
 
 "Git stuff
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-fugitive'
 
 "Status Line
-Plugin 'bling/vim-airline'
+NeoBundle 'bling/vim-airline'
 
 "Colors
-Plugin 'chriskempson/base16-vim'
+NeoBundle 'chriskempson/base16-vim'
 
 "Wiki
-Plugin 'vimwiki/vimwiki'
+NeoBundle 'vimwiki/vimwiki'
+
+"External/Shell
+NeoBundle 'Shougo/vimshell.vim'
 
 "Language Specific {{{
 "-----------------------
 
 "Latex
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 
 "Python
-Plugin 'tshirtman/vim-cython'
+NeoBundle 'tshirtman/vim-cython'
 
 "Haskell
-Plugin 'Twinside/vim-haskellConceal'
-" Plugin 'enomsg/vim-haskellConcealPlus'
-Plugin 'travitch/hasksyn'
-Plugin 'eagletmt/ghcmod-vim'
+NeoBundle 'Twinside/vim-haskellConceal'
+" NeoBundle 'enomsg/vim-haskellConcealPlus'
+NeoBundle 'travitch/hasksyn'
+NeoBundle 'eagletmt/ghcmod-vim'
 
 "Mathematica
-Plugin 'rsmenon/vim-mathematica'
+NeoBundle 'rsmenon/vim-mathematica'
 " }}}
 
 " }}}
 
-call vundle#end()
+call neobundle#end()
+
+NeoBundleCheck
 " }}}
 
 " Basic Settings {{{
