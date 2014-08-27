@@ -1,4 +1,4 @@
-" vim:foldmethod=marker
+" vim: foldmethod=marker
 " Load the vim scripts in the bundle directory
 
 " Vundle Config {{{
@@ -90,6 +90,9 @@ set mouse=a
 
 "Set buffers to be hidden instead of closed when switched
 set hidden
+
+"Turn on modeline
+set modeline
 
 "Set grep command
 set grepprg=grep\ -nH\ $*
