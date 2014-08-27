@@ -182,7 +182,7 @@ augroup latexauto
     autocmd!
     autocmd FileType tex setlocal cole=2
 augroup END
-}}}
+" }}}
 " }}}
 
 " MATHEMATICA STUFF {{{
