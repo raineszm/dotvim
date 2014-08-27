@@ -47,8 +47,7 @@ Plugin 'chriskempson/base16-vim'
 "Wiki
 Plugin 'vimwiki/vimwiki'
 
-
-"Language Specific
+"Language Specific {{{
 "-----------------------
 
 "Latex
@@ -65,6 +64,8 @@ Plugin 'eagletmt/ghcmod-vim'
 
 "Mathematica
 Plugin 'rsmenon/vim-mathematica'
+" }}}
+
 " }}}
 
 call vundle#end()
@@ -89,6 +90,9 @@ set mouse=a
 
 "Set buffers to be hidden instead of closed when switched
 set hidden
+
+"Set grep command
+set grepprg=grep\ -nH\ $*
 
 " Setup the wildmenu {{{
 set wildmode=longest:full
@@ -143,7 +147,6 @@ augroup END
 " Language Specific Settings {{{
 " LATEX {{{
 " LatexBox {{{
-set grepprg=grep\ -nH\ $*
 let g:LatexBox_latexmk_options = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
 if has('macunix')
     let g:LatexBox_viewer='open -a Skim.app'
@@ -165,10 +168,10 @@ function! LatexForwardSearch()
                     \ .lineno.':'.colno.':'.texfile.' '.pdffile.' >/dev/null&')
     endif
 endfunction
+
 nnoremap <leader>ls :call LatexForwardSearch()<cr>
 nmap <c-l><c-e> <Plug>LatexChangeEnv
 vmap <c-l><c-e> <Plug>LatexWrapEnvSelection
-
 " }}}
 
 " Latex Conceal Options {{{
@@ -232,8 +235,8 @@ let g:tagbar_type_haskell = {
 " }}}
 
 " Settings for GUI {{{
-"Set fonts
-"Make things bit more readable in macvim
+" Set fonts
+" Make things bit more readable in macvim
 if has('macunix')
     set guifont=Menlo:h13
 endif
