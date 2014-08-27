@@ -1,4 +1,4 @@
-" vim: foldmethod=marker
+" vim:foldmethod=marker
 " Load the vim scripts in the bundle directory
 
 " Vundle Config {{{
@@ -190,8 +190,16 @@ let g:mma_candy=2
 let g:filetype_m = 'mma'
 augroup mathematicaauto
     autocmd!
+    autocmd BufNewFile,BufRead *.mma set filetype=mma
     autocmd! FileType mma setlocal commentstring=(*%s*)
 augroup END
+
+let g:tagbar_type_mma = {
+    \ 'ctagstype' : 'Mathematica',
+    \ 'kinds' : [
+    \ 'f:functions',
+    \ 'v:variables'
+    \]}
 " }}}
 
 " HASKELL STUFF {{{
