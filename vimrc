@@ -275,8 +275,8 @@ let g:tagbar_type_haskell = {
 nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
 nnoremap <leader>sv :source ~/.vim/vimrc<cr>
 
-"NERDTree settings
-nnoremap <leader>nt :NERDTreeToggle<cr>
+"Tagbar settings
+nnoremap <leader>tb :Tagbar<cr>
 
 " }}}
 
