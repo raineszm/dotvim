@@ -149,6 +149,9 @@ let g:neocomplete#enable_at_startup = 1
 " Fuzzy completion
 let g:neocomplete#enable_fuzzy_completion = 1
 
+" Take over completefunc
+let g:neocomplete#force_overwrite_completefunc = 1
+
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -215,7 +218,7 @@ let g:mma_candy=2
 let g:filetype_m = 'mma'
 augroup mathematicaauto
     autocmd!
-    autocmd BufNewFile,BufRead *.mma set filetype=mma
+    autocmd! BufNewFile,BufRead *.mma set filetype=mma
     autocmd! FileType mma setlocal commentstring=(*%s*)
 augroup END
 
@@ -272,8 +275,8 @@ let g:tagbar_type_haskell = {
 nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
 nnoremap <leader>sv :source ~/.vim/vimrc<cr>
 
-"NERDTree settings
-nnoremap <leader>nt :NERDTreeToggle<cr>
+"Tagbar settings
+nnoremap <leader>tb :Tagbar<cr>
 
 " }}}
 
