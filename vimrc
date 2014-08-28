@@ -159,6 +159,7 @@ inoremap <expr><Tab>
             \ neocomplete#complete_common_string() != '' ?
             \   neocomplete#complete_common_string() :
             \ pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr><C-y>  neocomplete#close_popup()
 
 "Youcompleteme for Haskell
 " let g:ycm_semantic_triggers = {'haskell' : ['.']}
