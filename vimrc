@@ -23,15 +23,16 @@ NeoBundle 'Shougo/vimproc'
 
 "Search and movement plugins
 NeoBundle 'mileszs/ack.vim'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'scrooloose/nerdTree'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'majutsushi/tagbar'
 
 "Completion Tools
-NeoBundle 'ervandew/supertab'
+" NeoBundle 'ervandew/supertab'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets' "Default snippets for ultisnips
-NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Shougo/neocomplete.vim'
+" NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'eagletmt/neco-ghc'
 
 "Error Checking
@@ -143,9 +144,12 @@ let fortran_have_tabs=1
 " Completion {{{
 " Completion Shenanigans
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" Turn on necomplete
+let g:necomplete#enable_at_startup = 1
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
@@ -153,7 +157,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
 
 "Youcompleteme for Haskell
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
+" let g:ycm_semantic_triggers = {'haskell' : ['.']}
 augroup haskellauto
     autocmd!
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
@@ -266,6 +270,11 @@ nnoremap <leader>sv :source ~/.vim/vimrc<cr>
 "NERDTree settings
 nnoremap <leader>nt :NERDTreeToggle<cr>
 
+" }}}
+
+" Unite {{{
+nnoremap <C-p> :Unite -start-insert file_rec/async<cr>
+nnoremap <leader>lb :Unite buffer<cr>
 " }}}
 
 " Trim trailing whitespace on save because it sucks
