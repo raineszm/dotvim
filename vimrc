@@ -142,19 +142,23 @@ let fortran_have_tabs=1
 " }}}
 
 " Completion {{{
-" Completion Shenanigans
-" make YCM compatible with UltiSnips (using supertab)
-" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " Turn on necomplete
-let g:necomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 1
+
+" Fuzzy completion
+let g:neocomplete#enable_fuzzy_completion = 1
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
+
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><Tab>
+            \ neocomplete#complete_common_string() != '' ?
+            \   neocomplete#complete_common_string() :
+            \ pumvisible() ? "\<C-n>" : "\<Tab>"
 
 "Youcompleteme for Haskell
 " let g:ycm_semantic_triggers = {'haskell' : ['.']}
@@ -275,6 +279,7 @@ nnoremap <leader>nt :NERDTreeToggle<cr>
 " Unite {{{
 nnoremap <C-p> :Unite -start-insert file_rec/async<cr>
 nnoremap <leader>lb :Unite buffer<cr>
+" <TAB>: completion.
 " }}}
 
 " Trim trailing whitespace on save because it sucks
