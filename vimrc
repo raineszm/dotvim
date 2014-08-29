@@ -33,6 +33,7 @@ NeoBundle 'mileszs/ack.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'matchit.zip'
 
 "Completion Tools
 " NeoBundle 'ervandew/supertab'
@@ -227,6 +228,7 @@ augroup mathematicaauto
     autocmd!
     autocmd! BufNewFile,BufRead *.mma set filetype=mma
     autocmd! FileType mma setlocal commentstring=(*%s*)
+    autocmd! FileType mma let b:match_words = '\[:\]'
 augroup END
 
 let g:tagbar_type_mma = {
@@ -295,5 +297,4 @@ nnoremap <leader>lb :Unite buffer<cr>
 
 " Trim trailing whitespace on save because it sucks
 autocmd BufWritePre * keepjumps %s/\v\s+$//e
-
 
