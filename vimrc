@@ -150,19 +150,13 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_fuzzy_completion = 1
 
 " Take over completefunc
+let g:acp_enableAtStartup = 0
 let g:neocomplete#force_overwrite_completefunc = 1
+let g:neocomplete#enable_auto_select = 1
 
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
-
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-inoremap <expr><Tab>
-            \ neocomplete#complete_common_string() != '' ?
-            \   neocomplete#complete_common_string() :
-            \ pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-l> neocomplete#complete_common_string()
+inoremap <expr><C-y> neocomplete#close_popup()
 
 "Youcompleteme for Haskell
 " let g:ycm_semantic_triggers = {'haskell' : ['.']}
