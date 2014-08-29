@@ -39,7 +39,6 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets' "Default snippets for ultisnips
 NeoBundle 'Shougo/neocomplete.vim'
-" NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'eagletmt/neco-ghc'
 
 "Error Checking
@@ -152,21 +151,24 @@ let fortran_have_tabs=1
 
 " Turn on necomplete
 let g:neocomplete#enable_at_startup = 1
-
-" Fuzzy completion
-let g:neocomplete#enable_fuzzy_completion = 1
+let g:acp_enableAtStartup = 0
 
 " Take over completefunc
-let g:acp_enableAtStartup = 0
 let g:neocomplete#force_overwrite_completefunc = 1
-let g:neocomplete#enable_auto_select = 1
 
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+
 inoremap <expr><C-l> neocomplete#complete_common_string()
 inoremap <expr><C-y> neocomplete#close_popup()
 
-"Youcompleteme for Haskell
-" let g:ycm_semantic_triggers = {'haskell' : ['.']}
+function! s:check_back_space() "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+
 augroup haskellauto
     autocmd!
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
@@ -174,7 +176,7 @@ augroup END
 " }}}
 
 " Language Specific Settings {{{
-" LATEX {{{
+" LaTeX {{{
 " LatexBox {{{
 let g:LatexBox_latexmk_options = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
 if has('macunix')
@@ -212,6 +214,10 @@ augroup latexauto
     autocmd FileType tex setlocal cole=2
 augroup END
 " }}}
+
+" LaTeX completion {{{
+let neocomplete#force_omni_input_patterns.tex = '\\\h\w*{'
+"}}}
 " }}}
 
 " MATHEMATICA STUFF {{{
