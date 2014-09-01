@@ -79,6 +79,7 @@ NeoBundle 'tshirtman/vim-cython'
 "Haskell
 NeoBundle 'Twinside/vim-haskellConceal'
 " NeoBundle 'enomsg/vim-haskellConcealPlus'
+NeoBundle 'Twinside/vim-hoogle'
 NeoBundle 'travitch/hasksyn'
 NeoBundle 'eagletmt/ghcmod-vim'
 
