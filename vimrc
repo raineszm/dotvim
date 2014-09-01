@@ -46,7 +46,7 @@ NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'scrooloose/syntastic'
 
 "Source formatting
-NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'oblitum/rainbow'
 
