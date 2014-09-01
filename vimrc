@@ -59,6 +59,7 @@ NeoBundle 'bling/vim-airline'
 
 "Colors
 NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'junegunn/limelight.vim'
 
 "Wiki
 NeoBundle 'vimwiki/vimwiki'
