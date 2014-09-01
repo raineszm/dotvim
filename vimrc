@@ -296,6 +296,10 @@ nnoremap <leader>lb :Unite buffer<cr>
 " <TAB>: completion.
 " }}}
 
+" Runtime Plugins"{{{
+runtime! ftplugin/man.vim
+"}}}
+
 " Trim trailing whitespace on save because it sucks
 autocmd BufWritePre * keepjumps %s/\v\s+$//e
 
