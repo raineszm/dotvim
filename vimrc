@@ -36,10 +36,17 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'matchit.zip'
 
 "Completion Tools
-" NeoBundle 'ervandew/supertab'
+NeoBundle 'ervandew/supertab'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets' "Default snippets for ultisnips
-NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Valloric/YouCompleteMe', {
+      \ 'build' : {
+      \     'windows' : './install.sh',
+      \     'cygwin' : './install.sh',
+      \     'mac' : './install.sh',
+      \     'unix' : './install.sh',
+      \    },
+      \ }
 NeoBundle 'eagletmt/neco-ghc'
 
 "Error Checking
@@ -152,25 +159,16 @@ let fortran_have_tabs=1
 
 " Completion {{{
 
-" Turn on necomplete
-let g:neocomplete#enable_at_startup = 1
-let g:acp_enableAtStartup = 0
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
-" Take over completefunc
-let g:neocomplete#force_overwrite_completefunc = 1
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
-endif
-
-inoremap <expr><C-l> neocomplete#complete_common_string()
-inoremap <expr><C-y> neocomplete#close_popup()
-
-function! s:check_back_space() "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
 
 augroup haskellauto
     autocmd!
@@ -218,10 +216,6 @@ augroup latexauto
 augroup END
 " }}}
 
-" LaTeX completion {{{
-let neocomplete#force_omni_input_patterns.tex = '\\\h\w*{'
-"}}}
-" }}}
 
 " MATHEMATICA STUFF {{{
 let g:mma_candy=2
