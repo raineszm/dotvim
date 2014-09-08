@@ -64,9 +64,6 @@ NeoBundle 'junegunn/limelight.vim'
 "Wiki
 NeoBundle 'vimwiki/vimwiki'
 
-"External/Shell
-NeoBundle 'Shougo/vimshell.vim'
-
 "Language Specific {{{
 "-----------------------
 
@@ -292,6 +289,10 @@ nnoremap <leader>tb :Tagbar<cr>
 " }}}
 
 " Unite {{{
+" Set up fuzzy matching
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+
 nnoremap <C-p> :Unite -start-insert file_rec/async<cr>
 nnoremap <leader>lb :Unite buffer<cr>
 " <TAB>: completion.
