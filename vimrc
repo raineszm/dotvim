@@ -212,6 +212,7 @@ augroup latexauto
     autocmd FileType tex setlocal cole=2
 augroup END
 " }}}
+" }}}
 
 
 " MATHEMATICA STUFF {{{
@@ -220,8 +221,6 @@ let g:filetype_m = 'mma'
 augroup mathematicaauto
     autocmd!
     autocmd! BufNewFile,BufRead *.mma set filetype=mma
-    autocmd! FileType mma setlocal commentstring=(*%s*)
-    autocmd! FileType mma let b:match_words = '\[:\]'
 augroup END
 
 let g:tagbar_type_mma = {
@@ -267,7 +266,7 @@ let g:tagbar_type_haskell = {
     \ }
 " }}}
 
-" let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
+let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
 " }}}
 
 " }}}
