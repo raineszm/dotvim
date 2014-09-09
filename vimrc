@@ -269,6 +269,10 @@ let g:tagbar_type_haskell = {
 let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
 " }}}
 
+" Cython {{{
+let g:filetype_pyx = 'cython'
+" }}}
+
 " }}}
 
 " General Keymaps {{{
@@ -281,14 +285,26 @@ nnoremap <leader>tb :Tagbar<cr>
 
 " }}}
 
+" External tools {{{
+if executable('ag')
+    set grepprg=ag\ --nocolor\ --nogroup
+endif
+" }}}
+
 " Unite {{{
 " Set up fuzzy matching
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 
+" Set unite to use ag
+if executable('ag')
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_grep_default_opts = '-i --noheading --nocolor --nogroup'
+endif
+
 nnoremap <C-p> :Unite -start-insert file_rec/async<cr>
 nnoremap <leader>lb :Unite buffer<cr>
-" <TAB>: completion.
+nnoremap <leader>gr :Unite grep:. -auto-preview<cr>
 " }}}
 
 " Runtime Plugins"{{{
