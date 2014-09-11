@@ -33,6 +33,7 @@ NeoBundle 'mileszs/ack.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'matchit.zip'
 
 "Completion Tools
