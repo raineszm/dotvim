@@ -90,6 +90,10 @@ NeoBundle 'eagletmt/ghcmod-vim'
 
 "Mathematica
 NeoBundle 'rsmenon/vim-mathematica'
+
+"Julia
+NeoBundle 'JuliaLang/julia-vim'
+
 " }}}
 
 " }}}
