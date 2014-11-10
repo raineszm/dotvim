@@ -72,6 +72,8 @@ NeoBundle 'junegunn/limelight.vim'
 "Wiki
 NeoBundle 'vimwiki/vimwiki'
 
+NeoBundle 'mtth/scratch.vim'
+
 "Language Specific {{{
 "-----------------------
 
@@ -219,6 +221,16 @@ augroup END
 " }}}
 " }}}
 
+" Julia {{{
+" Disable Julia autocompletion that doesn't play nice
+" with youcompleteme
+let g:latex_to_unicode_tab = 0
+let g:tagbar_type_julia = {
+    \ 'ctagstype' : 'julia',
+    \ 'kinds' : [
+    \ 'f:functions',
+    \]}
+" }}}
 
 " MATHEMATICA STUFF {{{
 let g:mma_candy=2
