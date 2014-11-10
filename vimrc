@@ -74,6 +74,10 @@ NeoBundle 'vimwiki/vimwiki'
 
 NeoBundle 'mtth/scratch.vim'
 
+"Markdown
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'plasticboy/vim-markdown'
+
 "Language Specific {{{
 "-----------------------
 
@@ -288,6 +292,16 @@ let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
 
 " Cython {{{
 let g:filetype_pyx = 'cython'
+" }}}
+
+" Markdown {{{
+augroup markdownauto
+    autocmd!
+    autocmd! BufNewFile,BufRead *.md set filetype=markdown
+    autocmd! FileType markdown set makeprg=pandoc\ -s\ --mathjax\ %\ -o\ %:r.html
+augroup END
+
+let g:vim_markdown_math=1
 " }}}
 
 " }}}
