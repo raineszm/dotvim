@@ -189,7 +189,7 @@ augroup END
 " Language Specific Settings {{{
 " LaTeX {{{
 " LatexBox {{{
-let g:LatexBox_latexmk_aync = 1
+let g:LatexBox_latexmk_async = 1
 if has('macunix')
     let g:LatexBox_viewer='open -a Skim.app'
 else
