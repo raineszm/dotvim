@@ -1,114 +1,91 @@
 " vim: foldmethod=marker
 " Load the vim scripts in the bundle directory
 
-" NeoBundle Config {{{
+" Plug Config {{{
 if has('vim_starting')
     set nocompatible               " Be iMproved
-
-    " Required:
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Plugin imports {{{
 
 "General dependencies
-NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
+Plug 'Shougo/vimproc.vim', { 'do': 'make'}
 
 "Search and movement plugins
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'tpope/vim-vinegar'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'tsukkee/unite-tag'
-NeoBundle 'matchit.zip'
+Plug 'mileszs/ack.vim'
+Plug 'Shougo/unite.vim'
+Plug 'tpope/vim-vinegar'
+Plug 'majutsushi/tagbar'
+Plug 'tsukkee/unite-tag'
+Plug 'matchit.zip'
 
 "Completion Tools
-NeoBundle 'ervandew/supertab'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets' "Default snippets for ultisnips
-NeoBundle 'Valloric/YouCompleteMe', {
-      \ 'build' : {
-      \     'windows' : './install.sh',
-      \     'cygwin' : './install.sh',
-      \     'mac' : './install.sh',
-      \     'unix' : './install.sh',
-      \    },
-      \ }
-NeoBundle 'eagletmt/neco-ghc'
+Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets' "Default snippets for ultisnips
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'eagletmt/neco-ghc'
 
 "Error Checking
-NeoBundle 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 "Source formatting
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'oblitum/rainbow'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'oblitum/rainbow'
 
 "Git stuff
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 "Status Line
-NeoBundle 'bling/vim-airline'
+Plug 'bling/vim-airline'
 
 "Colors
-NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'junegunn/limelight.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'junegunn/limelight.vim'
 
 "Wiki
-NeoBundle 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 
-NeoBundle 'mtth/scratch.vim'
+Plug 'mtth/scratch.vim'
 
 "Markdown
-" NeoBundle 'godlygeek/tabular'
-" NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'vim-pandoc/vim-pandoc'
-NeoBundle 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 "Language Specific {{{
 "-----------------------
 
 "Latex
-NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
 
 "Python
-NeoBundle 'tshirtman/vim-cython'
+Plug 'tshirtman/vim-cython'
 
 "Haskell
-NeoBundle 'Twinside/vim-haskellConceal'
-" NeoBundle 'enomsg/vim-haskellConcealPlus'
-NeoBundle 'Twinside/vim-hoogle'
-NeoBundle 'travitch/hasksyn'
-NeoBundle 'eagletmt/ghcmod-vim'
+Plug 'Twinside/vim-haskellConceal'
+" Plug 'enomsg/vim-haskellConcealPlus'
+Plug 'Twinside/vim-hoogle'
+Plug 'travitch/hasksyn'
+Plug 'eagletmt/ghcmod-vim'
 
 "Mathematica
-NeoBundle 'rsmenon/vim-mathematica'
+Plug 'rsmenon/vim-mathematica'
 
 "Julia
-NeoBundle 'JuliaLang/julia-vim'
+Plug 'JuliaLang/julia-vim'
 
 " }}}
 
 " }}}
 
-call neobundle#end()
-
-NeoBundleCheck
+call plug#end()
 " }}}
 
 " Basic Settings {{{
