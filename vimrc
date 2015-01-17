@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 
 "General dependencies
 Plug 'Shougo/vimproc.vim', { 'do': 'make'}
+Plug 'tpope/vim-sensible'
 
 "Search and movement plugins
 Plug 'mileszs/ack.vim'
@@ -50,6 +51,7 @@ Plug 'junegunn/limelight.vim'
 
 "Wiki
 Plug 'vimwiki/vimwiki'
+Plug 'davidoc/taskpaper.vim'
 
 Plug 'mtth/scratch.vim'
 
@@ -272,6 +274,14 @@ let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
 " Cython {{{
 let g:filetype_pyx = 'cython'
 " }}}
+
+" TaskPaper {{{
+let g:task_paper_styles = {
+            \ 'FAIL': 'guibg=Red guifg=White',
+            \ 'figures': 'guibg=Magenta ctermbg=Magenta',
+            \ 'rewrite': 'guibg=Red ctermbg=Red'
+            \ }
+}}}
 
 " }}}
 
