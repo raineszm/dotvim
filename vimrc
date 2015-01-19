@@ -129,9 +129,9 @@ let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
 
 "Color schemes
-let base16colorspace=256  " Access colors present in 256 colorspace
 set background=dark
-colorscheme base16-ashes
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-chalk
 
 "RAINBOW STUFF
 autocmd FileType * call rainbow#load()
