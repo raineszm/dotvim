@@ -278,8 +278,13 @@ let g:filetype_pyx = 'cython'
 let g:task_paper_styles = {
             \ 'FAIL': 'guibg=Red guifg=White',
             \ 'figures': 'guibg=Magenta ctermfg=Magenta',
-            \ 'rewrite': 'term=reverse ctermfg=15 ctermbg=9'
+            \ 'rewrite': 'term=reverse ctermfg=Black ctermbg=Red guifg=Black guibg=Red'
             \ }
+
+" Hack to get tags to be highlighted. Not really sure why this is needed
+augroup taskpaperauto
+    autocmd! FileType taskpaper call taskpaper#tag_style_dict(g:task_paper_styles)
+augroup END
 " }}}
 
 " }}}
