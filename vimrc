@@ -47,7 +47,6 @@ Plug 'bling/vim-airline'
 
 "Colors
 Plug 'chriskempson/base16-vim'
-Plug 'junegunn/limelight.vim'
 
 "Wiki
 Plug 'vimwiki/vimwiki'
@@ -278,17 +277,17 @@ let g:filetype_pyx = 'cython'
 " TaskPaper {{{
 let g:task_paper_styles = {
             \ 'FAIL': 'guibg=Red guifg=White',
-            \ 'figures': 'guibg=Magenta ctermbg=Magenta',
-            \ 'rewrite': 'guibg=Red ctermbg=Red'
+            \ 'figures': 'guibg=Magenta ctermfg=Magenta',
+            \ 'rewrite': 'term=reverse ctermfg=15 ctermbg=9'
             \ }
-}}}
+" }}}
 
 " }}}
 
 " General Keymaps {{{
 " Vim editing
-nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
-nnoremap <leader>sv :source ~/.vim/vimrc<cr>
+execute 'nnoremap <leader>ev :vsplit'.resolve(expand($MYVIMRC)).'<cr>'
+execute 'nnoremap <leader>sv :source'.resolve(expand($MYVIMRC)).'<cr>'
 
 "Tagbar settings
 nnoremap <leader>tb :Tagbar<cr>
