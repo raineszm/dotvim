@@ -51,6 +51,7 @@ Plug 'chriskempson/base16-vim'
 "Wiki
 Plug 'vimwiki/vimwiki'
 Plug 'davidoc/taskpaper.vim'
+Plug 'neilagabriel/vim-geeknote'
 
 Plug 'mtth/scratch.vim'
 
@@ -81,6 +82,9 @@ Plug 'rsmenon/vim-mathematica'
 
 "Julia
 Plug 'JuliaLang/julia-vim'
+
+"Racket
+Plug 'wlangstroth/vim-racket'
 
 " }}}
 
