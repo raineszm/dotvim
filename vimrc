@@ -42,6 +42,9 @@ Plug 'oblitum/rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
+"Build/Run Tools
+Plug 'tpope/vim-dispatch'
+
 "Status Line
 Plug 'bling/vim-airline'
 
@@ -82,6 +85,12 @@ Plug 'rsmenon/vim-mathematica'
 
 "Julia
 Plug 'JuliaLang/julia-vim'
+
+" Clojure
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-leiningen'
+Plug 'guns/vim-clojure-highlight'
 
 "Racket
 Plug 'wlangstroth/vim-racket'
