@@ -36,7 +36,7 @@ Plug 'scrooloose/syntastic'
 "Source formatting
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'oblitum/rainbow'
+Plug 'amdt/vim-niji'
 
 "Git stuff
 Plug 'airblade/vim-gitgutter'
@@ -91,6 +91,7 @@ Plug 'guns/vim-clojure-static'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-leiningen'
 Plug 'guns/vim-clojure-highlight'
+Plug 'guns/vim-slamhound'
 
 "Racket
 Plug 'wlangstroth/vim-racket'
@@ -145,11 +146,6 @@ let g:airline#extensions#tabline#enabled = 1
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-chalk
-
-"RAINBOW STUFF
-autocmd FileType * call rainbow#load()
-autocmd FileType haskell call rainbow#load([['(', ')'], ['\[', '\]']], '')
-autocmd FileType mma call rainbow#load([['(\(\*\)\@!', '\(\*\)\@<!)'], ['\(\\\)\@<!\[','\]'], ['{', '}']], '')
 
 " }}}
 
