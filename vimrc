@@ -16,7 +16,6 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make'}
 Plug 'tpope/vim-sensible'
 
 "Search and movement plugins
-Plug 'mileszs/ack.vim'
 Plug 'Shougo/unite.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'majutsushi/tagbar'
@@ -28,7 +27,6 @@ Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets' "Default snippets for ultisnips
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
-Plug 'eagletmt/neco-ghc'
 
 "Error Checking
 Plug 'scrooloose/syntastic'
@@ -52,15 +50,12 @@ Plug 'bling/vim-airline'
 Plug 'chriskempson/base16-vim'
 
 "Wiki
-Plug 'vimwiki/vimwiki'
 Plug 'davidoc/taskpaper.vim'
 Plug 'neilagabriel/vim-geeknote'
 
 Plug 'mtth/scratch.vim'
 
 "Markdown
-" Plug 'godlygeek/tabular'
-" Plug 'plasticboy/vim-markdown'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
@@ -75,10 +70,10 @@ Plug 'tshirtman/vim-cython'
 
 "Haskell
 Plug 'Twinside/vim-haskellConceal'
-" Plug 'enomsg/vim-haskellConcealPlus'
 Plug 'Twinside/vim-hoogle'
 Plug 'travitch/hasksyn'
 Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
 
 "Mathematica
 Plug 'rsmenon/vim-mathematica'
@@ -105,8 +100,9 @@ call plug#end()
 
 " Basic Settings {{{
 "Get some nice syntax highlighting and language features
-syntax on
-filetype plugin indent on
+" syntax on
+" filetype plugin indent on
+" Commented stuff already set by sensible
 set t_Co=256
 
 "Set the default indent
@@ -115,9 +111,9 @@ set softtabstop=4
 set expandtab
 
 "Basic setting changes
-set incsearch
-set ruler
-set showcmd
+" set incsearch
+" set ruler
+" set showcmd
 set mouse=a
 
 "Set buffers to be hidden instead of closed when switched
@@ -131,14 +127,13 @@ set grepprg=grep\ -nH\ $*
 
 " Setup the wildmenu {{{
 set wildmode=longest:full
-set wildmenu
+" set wildmenu
 " }}}
 " }}}
 
 " Visual Settings {{{
 
 "Airline
-set laststatus=2
 let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
 
@@ -147,11 +142,6 @@ set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-chalk
 
-" }}}
-
-" Fortran {{{
-let fortran_free_source=1
-let fortran_have_tabs=1
 " }}}
 
 " Completion {{{
@@ -165,15 +155,15 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-
-augroup haskellauto
-    autocmd!
-    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-augroup END
 " }}}
 
 " Language Specific Settings {{{
+
+" Fortran {{{
+let fortran_free_source=1
+let fortran_have_tabs=1
+" }}}
+
 " LaTeX {{{
 " LatexBox {{{
 let g:LatexBox_latexmk_async = 1
@@ -205,11 +195,10 @@ vmap <c-l><c-e> <Plug>LatexWrapEnvSelection
 
 " Latex Conceal Options {{{
 let g:tex_conceal= 'abdgm'
-hi Conceal guibg=Black guifg=White
-hi Conceal ctermbg=Black ctermfg=White
+hi Conceal guibg=Black guifg=White ctermbg=Black ctermfg=White
 augroup latexauto
     autocmd!
-    autocmd FileType tex setlocal cole=2
+    autocmd FileType tex setlocal conceallevel=2
 augroup END
 " }}}
 " }}}
@@ -242,6 +231,12 @@ let g:tagbar_type_mma = {
 " }}}
 
 " HASKELL STUFF {{{
+
+augroup haskellauto
+    autocmd!
+    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+augroup END
+
 " Build a tag file for tagbar {{{
 let g:tagbar_type_haskell = {
     \ 'ctagsbin'  : 'hasktags',
@@ -295,11 +290,6 @@ let g:task_paper_styles = {
             \ 'due': 'ctermbg=Yellow guibg=Yellow ctermfg=Brown guifg=Brown',
             \ 'today': 'ctermbg=Blue guibg=Blue ctermfg=Brown guifg=Brown'
             \ }
-
-" Hack to get tags to be highlighted. Not really sure why this is needed
-augroup taskpaperauto
-    autocmd! FileType taskpaper call taskpaper#tag_style_dict(g:task_paper_styles)
-augroup END
 " }}}
 
 " }}}
