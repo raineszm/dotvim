@@ -22,6 +22,9 @@ Plug 'majutsushi/tagbar'
 Plug 'tsukkee/unite-tag'
 Plug 'matchit.zip'
 
+" Undo
+Plug 'mbbill/undotree'
+
 "Completion Tools
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
@@ -55,12 +58,11 @@ Plug 'neilagabriel/vim-geeknote'
 
 Plug 'mtth/scratch.vim'
 
+"Language Specific {{{
+"-----------------------
 "Markdown
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-
-"Language Specific {{{
-"-----------------------
 
 "Latex
 Plug 'LaTeX-Box-Team/LaTeX-Box'
