@@ -55,6 +55,8 @@ Plug 'chriskempson/base16-vim'
 "Wiki
 Plug 'davidoc/taskpaper.vim'
 Plug 'neilagabriel/vim-geeknote'
+Plug 'tpope/vim-speeddating'
+Plug 'vim-scripts/utl.vim'
 
 Plug 'mtth/scratch.vim'
 
@@ -172,7 +174,12 @@ let g:LatexBox_latexmk_async = 1
 if has('macunix')
     let g:LatexBox_viewer='open -a Skim.app'
 else
-    let g:LatexBox_viewer='zathura -s -x "vim --servername VIM --remote-silent +\%{line} \%{input}"'
+    if has('nvim')
+        let vimname = 'nvim'
+    else
+        let vimname = 'vim'
+    end
+    let g:LatexBox_viewer='zathura -s -x "' . vimname . ' --servername VIM --remote-silent +\%{line} \%{input}"'
 endif
 
 "Forward Search for latex
@@ -303,6 +310,12 @@ execute 'nnoremap <leader>sv :source'.resolve(expand($MYVIMRC)).'<cr>'
 
 "Tagbar settings
 nnoremap <leader>tb :Tagbar<cr>
+
+"Insert date
+function! Today()
+    execute "normal! \"=strftime('%Y-%m-%d')\<cr>p"
+endfunction
+command! Today call Today()
 
 " }}}
 
