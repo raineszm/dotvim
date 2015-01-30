@@ -60,6 +60,9 @@ Plug 'vim-scripts/utl.vim'
 
 Plug 'mtth/scratch.vim'
 
+"Plugin Devel
+Plug 'tpope/vim-scriptease'
+
 "Language Specific {{{
 "-----------------------
 "Markdown
