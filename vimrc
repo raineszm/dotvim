@@ -197,6 +197,18 @@ function! LatexForwardSearch()
     endif
 endfunction
 
+function! DeleteLeftRight()
+    let l:cur = getpos('.')
+    if searchpair('\\left', '', '\\right', 'b')
+        let l:a = getpos("'a")
+        normal ma%dft`adft
+        call setpos("'a", l:a)
+        call setpos('.', l:cur)
+    endif
+endfunction
+
+autocmd FileType tex command! -buffer DLR call DeleteLeftRight()
+
 nnoremap <leader>ls :call LatexForwardSearch()<cr>
 nmap <c-l><c-e> <Plug>LatexChangeEnv
 vmap <c-l><c-e> <Plug>LatexWrapEnvSelection
