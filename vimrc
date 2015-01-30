@@ -235,6 +235,8 @@ let g:tagbar_type_julia = {
     \ 'ctagstype' : 'julia',
     \ 'kinds' : [
     \ 'f:functions',
+    \ 't:types',
+    \ 'c:constants'
     \]}
 " }}}
 
