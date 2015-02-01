@@ -60,8 +60,12 @@ Plug 'vim-scripts/utl.vim'
 
 Plug 'mtth/scratch.vim'
 
+"Tmux
+Plug 'christoomey/vim-tmux-navigator'
+
 "Plugin Devel
 Plug 'tpope/vim-scriptease'
+Plug '~/Documents/Programming/Vim/todotxttoo'
 
 "Language Specific {{{
 "-----------------------
