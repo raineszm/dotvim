@@ -66,6 +66,7 @@ Plug 'christoomey/vim-tmux-navigator'
 "Plugin Devel
 Plug 'tpope/vim-scriptease'
 Plug '~/Documents/Programming/Vim/todotxttoo'
+Plug '~/Documents/Programming/Vim/vim-julia-doc'
 
 "Language Specific {{{
 "-----------------------
