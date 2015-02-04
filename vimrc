@@ -25,6 +25,9 @@ Plug 'matchit.zip'
 " Undo
 Plug 'mbbill/undotree'
 
+"Doc
+Plug 'jez/vim-superman'
+
 "Completion Tools
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
@@ -38,6 +41,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'amdt/vim-niji'
+Plug 'calebsmith/vim-lambdify'
 
 "Git stuff
 Plug 'airblade/vim-gitgutter'
@@ -60,11 +64,12 @@ Plug 'vim-scripts/utl.vim'
 
 Plug 'mtth/scratch.vim'
 
-"Tmux
-Plug 'christoomey/vim-tmux-navigator'
-
 "Plugin Devel
 Plug 'tpope/vim-scriptease'
+Plug 'janko-m/vim-test'
+Plug 'kana/vim-vspec'
+Plug 'junegunn/vader.vim'
+
 Plug '~/Documents/Programming/Vim/todotxttoo'
 Plug '~/Documents/Programming/Vim/vim-julia-doc'
 
