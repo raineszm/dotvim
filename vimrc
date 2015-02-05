@@ -66,8 +66,6 @@ Plug 'mtth/scratch.vim'
 
 "Plugin Devel
 Plug 'tpope/vim-scriptease'
-Plug 'janko-m/vim-test'
-Plug 'kana/vim-vspec'
 Plug 'junegunn/vader.vim'
 
 Plug '~/Documents/Programming/Vim/todotxttoo'
