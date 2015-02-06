@@ -326,6 +326,14 @@ let g:task_paper_styles = {
             \ }
 " }}}
 
+" Ruby {{{
+augroup rubyauto
+    autocmd!
+    autocmd! FileType ruby setlocal softtabstop=2 shiftwidth=2 expandtab
+
+augroup END
+" }}}
+
 " }}}
 
 " General Keymaps {{{
