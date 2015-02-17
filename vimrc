@@ -181,16 +181,16 @@ let fortran_have_tabs=1
 
 " LaTeX {{{
 " LatexBox {{{
-let g:LatexBox_latexmk_async = 1
 if has('macunix')
     let g:LatexBox_viewer='open -a Skim.app'
-else
-    if has('nvim')
-        let vimname = 'nvim'
-    else
-        let vimname = 'vim'
+    if has('gui')
+        let g:LatexBox_latexmk_async = 1
     end
-    let g:LatexBox_viewer='zathura -s -x "' . vimname . ' --servername VIM --remote-silent +\%{line} \%{input}"'
+else
+    if !has('nvim')
+        let g:LatexBox_latexmk_async = 1
+        let g:LatexBox_viewer='zathura -s -x "' . vimname . ' --servername VIM --remote-silent +\%{line} \%{input}"'
+    end
 endif
 
 "Forward Search for latex
