@@ -356,6 +356,8 @@ command! Today call Today()
 if executable('ag')
     set grepprg=ag\ --nocolor\ --nogroup
 endif
+
+let g:GeeknoteFormat='markdown'
 " }}}
 
 " Unite {{{
