@@ -189,7 +189,7 @@ if has('macunix')
 else
     if !has('nvim')
         let g:LatexBox_latexmk_async = 1
-        let g:LatexBox_viewer='zathura -s -x "' . vimname . ' --servername VIM --remote-silent +\%{line} \%{input}"'
+        let g:LatexBox_viewer='zathura -s -x "vim --servername VIM --remote-silent +\%{line} \%{input}"'
     end
 endif
 
