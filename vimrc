@@ -29,10 +29,9 @@ Plug 'mbbill/undotree'
 Plug 'jez/vim-superman'
 
 "Completion Tools
-Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets' "Default snippets for ultisnips
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 
 "Error Checking
 Plug 'scrooloose/syntastic'
@@ -160,16 +159,8 @@ colorscheme base16-chalk
 " }}}
 
 " Completion {{{
-
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+"Enable neo complete
+let g:neocomplete#enable_at_startup = 1
 " }}}
 
 " Language Specific Settings {{{
