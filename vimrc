@@ -105,6 +105,9 @@ Plug 'guns/vim-slamhound'
 "Racket
 Plug 'wlangstroth/vim-racket'
 
+"Ruby
+Plug 'ngmy/vim-rubocop'
+
 " }}}
 
 " }}}
