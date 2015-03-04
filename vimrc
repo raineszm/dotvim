@@ -159,8 +159,16 @@ colorscheme base16-chalk
 " }}}
 
 " Completion {{{
-"Enable neo complete
+" Neocomplete
 let g:neocomplete#enable_at_startup = 1
+
+" Neosnippets
+"
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+
 " }}}
 
 " Language Specific Settings {{{
