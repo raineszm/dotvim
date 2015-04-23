@@ -39,7 +39,6 @@ Plug 'scrooloose/syntastic'
 "Source formatting
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'amdt/vim-niji'
 Plug 'calebsmith/vim-lambdify'
 
 "Git stuff
@@ -167,9 +166,9 @@ let g:neocomplete#enable_at_startup = 1
 
 " Neosnippets
 "
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-y>     <Plug>(neosnippet_expand_or_jump)
+smap <C-y>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-y>     <Plug>(neosnippet_expand_target)
 
 
 " }}}
@@ -381,6 +380,17 @@ nnoremap <leader>gr :Unite grep:. -auto-preview<cr>
 " Runtime Plugins"{{{
 runtime! ftplugin/man.vim
 "}}}
+
+" Remote editing {{{
+function! RemoteConfiguration()
+    inoremap jk <esc>
+    vnoremap jk <esc>
+    colorscheme default
+    return
+endfunction
+
+command! SSHConfig call RemoteConfiguration()
+" }}}
 
 " Trim trailing whitespace on save because it sucks
 autocmd BufWritePre * keepjumps %s/\v\s+$//e
