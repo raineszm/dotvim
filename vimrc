@@ -47,6 +47,7 @@ Plug 'tpope/vim-fugitive'
 
 "Build/Run Tools
 Plug 'tpope/vim-dispatch'
+Plug 'jalvesaq/vimcmdline'
 
 "Status Line
 Plug 'bling/vim-airline'
@@ -101,11 +102,11 @@ Plug 'tpope/vim-leiningen'
 Plug 'guns/vim-clojure-highlight'
 Plug 'guns/vim-slamhound'
 
-"Racket
-Plug 'wlangstroth/vim-racket'
-
 "Ruby
 Plug 'ngmy/vim-rubocop'
+
+"R
+Plug 'vim-scripts/Vim-R-plugin'
 
 " }}}
 
@@ -237,9 +238,6 @@ augroup END
 " }}}
 
 " Julia {{{
-" Disable Julia autocompletion that doesn't play nice
-" with youcompleteme
-let g:latex_to_unicode_tab = 0
 let g:tagbar_type_julia = {
     \ 'ctagstype' : 'julia',
     \ 'kinds' : [
@@ -251,7 +249,7 @@ let g:tagbar_type_julia = {
 
 " MATHEMATICA STUFF {{{
 let g:mma_candy=2
-let g:filetype_m = 'mma'
+" let g:filetype_m = 'mma'
 augroup mathematicaauto
     autocmd!
     autocmd! BufNewFile,BufRead *.mma set filetype=mma
