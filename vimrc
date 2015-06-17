@@ -74,6 +74,7 @@ Plug '~/Documents/Programming/Vim/vim-julia-doc'
 "Markdown
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'itspriddle/vim-marked'
 
 "Latex
 Plug 'LaTeX-Box-Team/LaTeX-Box'
@@ -169,7 +170,7 @@ let g:neocomplete#enable_at_startup = 1
 imap <C-y>     <Plug>(neosnippet_expand_or_jump)
 smap <C-y>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-y>     <Plug>(neosnippet_expand_target)
-
+let g:neosnippet#snippets_directory = '~/.vim/snippets/'
 
 " }}}
 
