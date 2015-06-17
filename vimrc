@@ -332,6 +332,25 @@ augroup rubyauto
 
 augroup END
 " }}}
+" R {{{
+
+if has('unix')
+    let vimrplugin_pdfviewer = "zathura"
+end
+
+if $DISPLAY != ""
+    let vimrplugin_openpdf = 1
+endif
+
+" let vimrplugin_latexmk = 0
+" let vimrplugin_latexcmd = "latex"
+" let vimrplugin_latexcmd = 'latexmk -pdf -pdflatex="xelatex %O -synctex=1 %S"'
+
+let vimrplugin_openhtml = 1
+let vimrplugin_insert_mode_cmds = 0
+let vimrplugin_assign = 0
+
+" }}}
 
 " }}}
 
