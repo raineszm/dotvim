@@ -47,7 +47,6 @@ Plug 'tpope/vim-fugitive'
 
 "Build/Run Tools
 Plug 'tpope/vim-dispatch'
-Plug 'jalvesaq/vimcmdline'
 
 "Status Line
 Plug 'bling/vim-airline'
@@ -339,12 +338,11 @@ if has('unix')
     let vimrplugin_pdfviewer = "zathura"
 end
 
-if $DISPLAY != ""
-    let vimrplugin_openpdf = 1
-endif
+" if $DISPLAY != ""
+"     let vimrplugin_openpdf = 1
+" endif
 
 " let vimrplugin_latexmk = 0
-" let vimrplugin_latexcmd = "latex"
 " let vimrplugin_latexcmd = 'latexmk -pdf -pdflatex="xelatex %O -synctex=1 %S"'
 
 let vimrplugin_openhtml = 1
