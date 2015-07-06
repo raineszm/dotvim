@@ -184,7 +184,7 @@ let fortran_have_tabs=1
 " LaTeX {{{
 " LatexBox {{{
 if has('macunix')
-    let g:LatexBox_viewer='open -a Skim.app'
+    let g:LatexBox_viewer='open'
     if has('gui')
         let g:LatexBox_latexmk_async = 1
     end
@@ -338,12 +338,13 @@ if !has('macunix')
     let vimrplugin_pdfviewer = "zathura"
 end
 
-" if $DISPLAY != ""
-"     let vimrplugin_openpdf = 1
-" endif
+if $DISPLAY != ""
+    let vimrplugin_openpdf = 1
+endif
 
 " let vimrplugin_latexmk = 0
 " let vimrplugin_latexcmd = 'latexmk -pdf -pdflatex="xelatex %O -synctex=1 %S"'
+let vimrplugin_latexcmd = 'latexmk -pdf'
 
 let vimrplugin_openhtml = 1
 let vimrplugin_insert_mode_cmds = 0
