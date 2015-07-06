@@ -108,6 +108,9 @@ Plug 'ngmy/vim-rubocop'
 "R
 Plug 'vim-scripts/Vim-R-plugin'
 
+"Cpp
+Plug 'Rip-Rip/clang_complete'
+
 " }}}
 
 " }}}
@@ -352,6 +355,10 @@ let vimrplugin_assign = 0
 
 let vimrplugin_applescript = 0
 
+" }}}
+
+" Cpp {{{
+let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
 " }}}
 
 " }}}
