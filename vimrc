@@ -111,6 +111,9 @@ Plug 'vim-scripts/Vim-R-plugin'
 "Cpp
 Plug 'Rip-Rip/clang_complete'
 
+"Rust
+Plug 'rust-lang/rust.vim'
+
 " }}}
 
 " }}}
