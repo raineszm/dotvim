@@ -108,6 +108,9 @@ Plug 'ngmy/vim-rubocop'
 "R
 Plug 'vim-scripts/Vim-R-plugin'
 
+"Cpp
+Plug 'Rip-Rip/clang_complete'
+
 " }}}
 
 " }}}
