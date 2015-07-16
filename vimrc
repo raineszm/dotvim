@@ -77,7 +77,8 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'itspriddle/vim-marked'
 
 "Latex
-Plug 'LaTeX-Box-Team/LaTeX-Box'
+" Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'lervag/vimtex'
 
 "Python
 Plug 'tshirtman/vim-cython'
@@ -188,18 +189,11 @@ let fortran_have_tabs=1
 " }}}
 
 " LaTeX {{{
-" LatexBox {{{
-if has('macunix')
-    let g:LatexBox_viewer='open'
-    if has('gui')
-        let g:LatexBox_latexmk_async = 1
-    end
-else
-    if !has('nvim')
-        let g:LatexBox_latexmk_async = 1
-        let g:LatexBox_viewer='zathura -s -x "vim --servername VIM --remote-silent +\%{line} \%{input}"'
-    end
+" vimlatex {{{
+if !has('macunix')
+    let g:vimtex_view_method = 'zathura'
 endif
+let g:vimtex_latexmk_background = 1
 
 "Forward Search for latex
 function! LatexForwardSearch()
@@ -229,8 +223,22 @@ endfunction
 autocmd FileType tex command! -buffer DLR call DeleteLeftRight()
 
 nnoremap <leader>ls :call LatexForwardSearch()<cr>
-nmap <c-l><c-e> <Plug>LatexChangeEnv
-vmap <c-l><c-e> <Plug>LatexWrapEnvSelection
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.tex =
+    \ '\v\\\a*(ref|cite)\a*([^]]*\])?\{([^}]*,)*[^}]*'
+
+augroup latexSurround
+ autocmd!
+ autocmd FileType tex call s:latexSurround()
+augroup END
+
+function! s:latexSurround()
+ let b:surround_{char2nr("e")}
+   \ = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
+ let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
+endfunction
 " }}}
 
 " Latex Conceal Options {{{
