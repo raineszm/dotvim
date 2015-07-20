@@ -113,6 +113,7 @@ Plug 'Rip-Rip/clang_complete'
 
 "Rust
 Plug 'rust-lang/rust.vim'
+Plug 'phildawes/racer', { 'do': 'cargo build --release' }
 
 " }}}
 
