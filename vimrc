@@ -191,22 +191,6 @@ if !has('macunix')
 endif
 let g:vimtex_latexmk_background = 1
 
-"Forward Search for latex
-function! LatexForwardSearch()
-    let lineno = line('.')
-    let colno = col('.')
-    let texfile = expand('%:p')
-    let pdffile = expand('%:p:r').'.pdf'
-    if has('macunix')
-        call system('/Applications/Skim.app/Contents/SharedSupport/displayline -g '
-                    \ .lineno.' "'.pdffile.'" "'.texfile.'"')
-    else
-        call system('zathura -s --synctex-forward='
-                    \ .lineno.':'.colno.':'.texfile.' '.pdffile.' >/dev/null&')
-    endif
-endfunction
-
-nnoremap <leader>ls :call LatexForwardSearch()<cr>
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
