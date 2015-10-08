@@ -191,7 +191,11 @@ let fortran_have_tabs=1
 
 " LaTeX {{{
 " vimlatex {{{
-if !has('macunix')
+if has('macunix')
+  let g:vimtex_view_general_viewer
+    \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+  let g:vimtex_view_general_options = '@line @pdf @tex'
+else
     let g:vimtex_view_method = 'zathura'
 endif
 let g:vimtex_latexmk_background = 1
