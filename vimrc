@@ -56,7 +56,6 @@ Plug 'chriskempson/base16-vim'
 
 "Wiki
 Plug 'davidoc/taskpaper.vim'
-Plug 'neilagabriel/vim-geeknote'
 Plug 'tpope/vim-speeddating'
 Plug 'vim-scripts/utl.vim'
 
@@ -65,9 +64,6 @@ Plug 'mtth/scratch.vim'
 "Plugin Devel
 Plug 'tpope/vim-scriptease'
 Plug 'junegunn/vader.vim'
-
-Plug '~/Documents/Programming/Vim/todotxttoo'
-Plug '~/Documents/Programming/Vim/vim-julia-doc'
 
 "Language Specific {{{
 "-----------------------
@@ -84,11 +80,11 @@ Plug 'lervag/vimtex'
 Plug 'tshirtman/vim-cython'
 
 "Haskell
-Plug 'Twinside/vim-haskellConceal'
-Plug 'Twinside/vim-hoogle'
-Plug 'travitch/hasksyn'
-Plug 'eagletmt/ghcmod-vim'
-Plug 'eagletmt/neco-ghc'
+Plug 'Twinside/vim-haskellConceal', { 'for': 'haskell'}
+Plug 'Twinside/vim-hoogle', { 'for': 'haskell'}
+Plug 'travitch/hasksyn', { 'for': 'haskell'}
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell'}
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell'}
 
 "Mathematica
 Plug 'rsmenon/vim-mathematica'
@@ -97,14 +93,14 @@ Plug 'rsmenon/vim-mathematica'
 Plug 'JuliaLang/julia-vim'
 
 " Clojure
-Plug 'guns/vim-clojure-static'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-leiningen'
-Plug 'guns/vim-clojure-highlight'
-Plug 'guns/vim-slamhound'
+Plug 'guns/vim-clojure-static', { 'for': 'clojure'}
+Plug 'tpope/vim-fireplace', { 'for': 'clojure'}
+Plug 'tpope/vim-leiningen', { 'for': 'clojure'}
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure'}
+Plug 'guns/vim-slamhound', { 'for': 'clojure'}
 
 "Ruby
-Plug 'ngmy/vim-rubocop'
+Plug 'ngmy/vim-rubocop', { 'for': 'ruby'}
 
 "R
 Plug 'vim-scripts/Vim-R-plugin'
@@ -200,34 +196,6 @@ else
 endif
 let g:vimtex_latexmk_background = 1
 
-"Forward Search for latex
-function! LatexForwardSearch()
-    let lineno = line('.')
-    let colno = col('.')
-    let texfile = expand('%:p')
-    let pdffile = expand('%:p:r').'.pdf'
-    if has('macunix')
-        call system('/Applications/Skim.app/Contents/SharedSupport/displayline -g '
-                    \ .lineno.' "'.pdffile.'" "'.texfile.'"')
-    else
-        call system('zathura -s --synctex-forward='
-                    \ .lineno.':'.colno.':'.texfile.' '.pdffile.' >/dev/null&')
-    endif
-endfunction
-
-function! DeleteLeftRight()
-    let l:cur = getpos('.')
-    if searchpair('\\left', '', '\\right', 'b')
-        let l:a = getpos("'a")
-        normal ma%dft`adft
-        call setpos("'a", l:a)
-        call setpos('.', l:cur)
-    endif
-endfunction
-
-autocmd FileType tex command! -buffer DLR call DeleteLeftRight()
-
-nnoremap <leader>ls :call LatexForwardSearch()<cr>
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
@@ -400,7 +368,6 @@ if executable('ag')
     set grepprg=ag\ --nocolor\ --nogroup
 endif
 
-let g:GeeknoteFormat='markdown'
 " }}}
 
 " Unite {{{
