@@ -103,14 +103,11 @@ Plug 'guns/vim-slamhound', { 'for': 'clojure'}
 Plug 'ngmy/vim-rubocop', { 'for': 'ruby'}
 
 "R
-Plug 'vim-scripts/Vim-R-plugin'
-
-"Cpp
-Plug 'Rip-Rip/clang_complete'
+Plug 'vim-scripts/Vim-R-plugin', { 'for': 'r' }
 
 "Rust
 Plug 'rust-lang/rust.vim'
-Plug 'phildawes/racer', { 'do': 'cargo build --release' }
+Plug 'phildawes/racer', { 'do': 'cargo build --release', 'for': 'rust' }
 
 " }}}
 
@@ -166,7 +163,12 @@ colorscheme base16-chalk
 " }}}
 
 " Completion {{{
-let g:UltiSnipsExpandTrigger = "<C-y>"
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " }}}
 
 " Language Specific Settings {{{
