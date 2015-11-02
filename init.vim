@@ -7,7 +7,7 @@ if has('vim_starting')
 endif
 
 " Required:
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " Plugin imports {{{
 
@@ -29,9 +29,9 @@ Plug 'mbbill/undotree'
 Plug 'jez/vim-superman'
 
 "Completion Tools
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 "Error Checking
 Plug 'scrooloose/syntastic'
@@ -166,16 +166,7 @@ colorscheme base16-chalk
 " }}}
 
 " Completion {{{
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
-
-" Neosnippets
-"
-imap <C-y>     <Plug>(neosnippet_expand_or_jump)
-smap <C-y>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-y>     <Plug>(neosnippet_expand_target)
-let g:neosnippet#snippets_directory = '~/.vim/snippets/'
-
+let g:UltiSnipsExpandTrigger = "<C-y>"
 " }}}
 
 " Language Specific Settings {{{
@@ -195,12 +186,6 @@ else
     let g:vimtex_view_method = 'zathura'
 endif
 let g:vimtex_latexmk_background = 1
-
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.tex =
-    \ '\v\\\a*(ref|cite)\a*([^]]*\])?\{([^}]*,)*[^}]*'
 
 augroup latexSurround
  autocmd!
