@@ -2,9 +2,6 @@
 " Load the vim scripts in the bundle directory
 
 " Plug Config {{{
-if has('vim_starting')
-    set nocompatible               " Be iMproved
-endif
 
 " Required:
 call plug#begin('~/.config/nvim/plugged')
@@ -121,7 +118,6 @@ call plug#end()
 " syntax on
 " filetype plugin indent on
 " Commented stuff already set by sensible
-set t_Co=256
 
 "Set the default indent
 set shiftwidth=4
