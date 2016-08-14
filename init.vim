@@ -11,12 +11,12 @@ call plug#begin('~/.config/nvim/plugged')
 
 "General dependencies
 Plug 'Shougo/vimproc.vim', { 'do': 'make'}
+Plug 'hecal3/vim-leader-guide'
 Plug 'ctjhoa/spacevim'
 Plug 'tpope/vim-sensible'
 
 "Search and movement plugins
 Plug 'tpope/vim-vinegar'
-Plug 'majutsushi/tagbar'
 Plug 'matchit.zip'
 Plug 'pelodelfuego/vim-swoop'
 
@@ -48,16 +48,13 @@ Plug 'dbakker/vim-projectroot'
 Plug 'tpope/vim-dispatch'
 
 "Status Line
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'mtth/scratch.vim'
 
 "Colors
 Plug 'altercation/vim-colors-solarized'
-
-"Leader Stuff
-Plug 'hecal3/vim-leader-guide'
 
 "Language Specific {{{
 "-----------------------
@@ -325,6 +322,19 @@ endfunction
 command! Today call Today()
 
 " }}}
+
+" Unite {{{
+" Set up fuzzy matching
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+
+" Set unite to use ag
+if executable('ag')
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_grep_default_opts = '-i --noheading --nocolor --nogroup'
+endif
+" }}}
+
 
 " External tools {{{
 if executable('ag')
