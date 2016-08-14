@@ -26,7 +26,7 @@ Plug 'mbbill/undotree'
 Plug 'jez/vim-superman'
 
 "Completion Tools
-" Plug 'Shougo/unite.vim'
+Plug 'Shougo/deoplete.nvim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -68,6 +68,7 @@ Plug 'lervag/vimtex'
 
 "Python
 Plug 'tshirtman/vim-cython', { 'for': 'cython' }
+Plug 'zchee/deoplete-jedi'
 
 "Haskell
 Plug 'Twinside/vim-haskellConceal', { 'for': 'haskell'}
@@ -88,6 +89,9 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure'}
 Plug 'tpope/vim-leiningen', { 'for': 'clojure'}
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure'}
 Plug 'guns/vim-slamhound', { 'for': 'clojure'}
+
+"Python
+Plug 'davidhalter/jedi-vim'
 
 "Ruby
 Plug 'ngmy/vim-rubocop', { 'for': 'ruby'}
@@ -151,6 +155,8 @@ let g:airline#extensions#tabline#enabled = 1
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme solarized
+
+set guifont=Source\ Code\ Pro
 
 " }}}
 
@@ -272,6 +278,7 @@ let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
 let g:filetype_pyx = 'cython'
 " }}}
 
+
 " TaskPaper {{{
 let s:urgent_style = 'term=reverse ctermfg=White ctermbg=DarkRed guifg=White guibg=DarkRed'
 let g:task_paper_styles = {
@@ -328,8 +335,14 @@ function! Today()
 endfunction
 command! Today call Today()
 
-" }}}
+cnoremap <C-g> <esc>
 
+" }}}
+"
+" Window Management {{{
+nnoremap <Plug>(delete-window) :q<cr>
+nmap <Leader>wd <Plug>(delete-window)
+" }}}
 
 " External tools {{{
 if executable('ag')
@@ -339,7 +352,8 @@ endif
 " }}}
 
 " {{{ FZF
-nmap <Leader>ss :Lines<CR>
+nnoremap <Plug>(fzf-swoop) :Lines<CR>
+nmap <Leader>ss <Plug>(fzf-swoop)
 " }}}
 
 " Runtime Plugins"{{{
