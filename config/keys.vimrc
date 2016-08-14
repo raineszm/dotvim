@@ -25,7 +25,10 @@ nmap <Leader>wd <Plug>(delete-window)
 " }}}
 
 " {{{ FZF
-nnoremap <Plug>(fzf-swoop) :BLines<CR>
+nnoremap <Plug>(fzf-lines) :BLines<CR>
 nmap <Leader>ss <Plug>(fzf-swoop)
+
+nnoremap <Plug>(fzf-tags) :BTags<CR>
+nmap <Leader>sj <Plug>(fzf-tags)
 " }}}
 
