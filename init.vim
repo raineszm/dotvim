@@ -27,7 +27,9 @@ Plug 'mbbill/undotree'
 Plug 'jez/vim-superman'
 
 "Completion Tools
-Plug 'Shougo/unite.vim'
+" Plug 'Shougo/unite.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 "Error Checking
 Plug 'scrooloose/syntastic'
@@ -321,18 +323,6 @@ function! Today()
 endfunction
 command! Today call Today()
 
-" }}}
-
-" Unite {{{
-" Set up fuzzy matching
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-
-" Set unite to use ag
-if executable('ag')
-    let g:unite_source_grep_command = 'ag'
-    let g:unite_source_grep_default_opts = '-i --noheading --nocolor --nogroup'
-endif
 " }}}
 
 
