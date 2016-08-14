@@ -6,3 +6,4 @@ autoload/
 plugged/
 *.spl
 *.sug
+*.vim-rplugin~
