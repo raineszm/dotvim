@@ -1,6 +1,10 @@
 " vim: foldmethod=marker
 " Load the vim scripts in the bundle directory
 
+"Leader
+let mapleader = " "
+
+
 " Plug Config {{{
 
 " Required:
@@ -10,6 +14,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 "General dependencies
 Plug 'Shougo/vimproc.vim', { 'do': 'make'}
+Plug 'ctjhoa/spacevim'
 Plug 'tpope/vim-sensible'
 
 "Search and movement plugins
@@ -26,9 +31,7 @@ Plug 'mbbill/undotree'
 Plug 'jez/vim-superman'
 
 "Completion Tools
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'Shougo/deoplete.nvim'
 
 "Error Checking
 Plug 'scrooloose/syntastic'
@@ -48,33 +51,19 @@ Plug 'tpope/vim-dispatch'
 "Status Line
 Plug 'bling/vim-airline'
 
-"Colors
-Plug 'chriskempson/base16-vim'
-
-"Wiki
-Plug 'davidoc/taskpaper.vim'
-Plug 'tpope/vim-speeddating'
-Plug 'vim-scripts/utl.vim'
-
 Plug 'mtth/scratch.vim'
 
-"Plugin Devel
-Plug 'tpope/vim-scriptease'
-Plug 'junegunn/vader.vim'
+"Colors
+Plug 'altercation/vim-colors-solarized'
 
 "Language Specific {{{
 "-----------------------
-"Markdown
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'itspriddle/vim-marked'
 
 "Latex
-" Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'lervag/vimtex'
 
 "Python
-Plug 'tshirtman/vim-cython'
+Plug 'tshirtman/vim-cython', { 'for': 'cython' }
 
 "Haskell
 Plug 'Twinside/vim-haskellConceal', { 'for': 'haskell'}
@@ -104,7 +93,7 @@ Plug 'vim-scripts/Vim-R-plugin', { 'for': 'r' }
 
 "Rust
 Plug 'rust-lang/rust.vim'
-Plug 'phildawes/racer', { 'do': 'cargo build --release', 'for': 'rust' }
+"Plug 'phildawes/racer', { 'do': 'cargo build --release', 'for': 'rust' }
 
 " }}}
 
@@ -152,19 +141,14 @@ let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
 
 "Color schemes
-set background=dark
+set background=light
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-chalk
+colorscheme solarized
 
 " }}}
 
 " Completion {{{
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
-
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+let g:deoplete#enable_at_startup = 1
 " }}}
 
 " Language Specific Settings {{{
@@ -386,4 +370,3 @@ command! SSHConfig call RemoteConfiguration()
 
 " Trim trailing whitespace on save because it sucks
 autocmd BufWritePre * keepjumps %s/\v\s+$//e
-
