@@ -1,9 +1,6 @@
 " vim: foldmethod=marker
 " Load the vim scripts in the bundle directory
-
-"Leader
-let mapleader = " "
-
+let mapleader = "\<Space>"
 
 " Plug Config {{{
 
@@ -18,11 +15,10 @@ Plug 'ctjhoa/spacevim'
 Plug 'tpope/vim-sensible'
 
 "Search and movement plugins
-Plug 'Shougo/unite.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'majutsushi/tagbar'
-Plug 'tsukkee/unite-tag'
 Plug 'matchit.zip'
+Plug 'pelodelfuego/vim-swoop'
 
 " Undo
 Plug 'mbbill/undotree'
@@ -31,7 +27,7 @@ Plug 'mbbill/undotree'
 Plug 'jez/vim-superman'
 
 "Completion Tools
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/unite.vim'
 
 "Error Checking
 Plug 'scrooloose/syntastic'
@@ -45,16 +41,23 @@ Plug 'calebsmith/vim-lambdify'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
+"Project stuff
+Plug 'dbakker/vim-projectroot'
+
 "Build/Run Tools
 Plug 'tpope/vim-dispatch'
 
 "Status Line
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'mtth/scratch.vim'
 
 "Colors
 Plug 'altercation/vim-colors-solarized'
+
+"Leader Stuff
+Plug 'hecal3/vim-leader-guide'
 
 "Language Specific {{{
 "-----------------------
@@ -141,7 +144,7 @@ let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
 
 "Color schemes
-set background=light
+set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme solarized
 
@@ -283,9 +286,9 @@ let g:task_paper_styles = {
 augroup rubyauto
     autocmd!
     autocmd! FileType ruby setlocal softtabstop=2 shiftwidth=2 expandtab
-
 augroup END
 " }}}
+
 " R {{{
 
 if !has('macunix')
@@ -315,13 +318,6 @@ let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
 " }}}
 
 " General Keymaps {{{
-" Vim editing
-execute 'nnoremap <leader>ev :vsplit'.resolve(expand($MYVIMRC)).'<cr>'
-execute 'nnoremap <leader>sv :source'.resolve(expand($MYVIMRC)).'<cr>'
-
-"Tagbar settings
-nnoremap <leader>tb :Tagbar<cr>
-
 "Insert date
 function! Today()
     execute "normal! \"=strftime('%Y-%m-%d')\<cr>p"
@@ -337,20 +333,9 @@ endif
 
 " }}}
 
-" Unite {{{
-" Set up fuzzy matching
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-
-" Set unite to use ag
-if executable('ag')
-    let g:unite_source_grep_command = 'ag'
-    let g:unite_source_grep_default_opts = '-i --noheading --nocolor --nogroup'
-endif
-
-nnoremap <C-p> :Unite -start-insert file_rec/async<cr>
-nnoremap <leader>lb :Unite buffer<cr>
-nnoremap <leader>gr :Unite grep:. -auto-preview<cr>
+" {{{ Swoop
+let g:swoopUseDefaultKeyMap = 0
+nmap <Leader>ss :call Swoop()<CR>
 " }}}
 
 " Runtime Plugins"{{{
