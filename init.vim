@@ -18,7 +18,6 @@ Plug 'tpope/vim-sensible'
 "Search and movement plugins
 Plug 'tpope/vim-vinegar'
 Plug 'matchit.zip'
-Plug 'pelodelfuego/vim-swoop'
 
 " Undo
 Plug 'mbbill/undotree'
@@ -58,6 +57,9 @@ Plug 'mtth/scratch.vim'
 "Colors
 Plug 'altercation/vim-colors-solarized'
 
+"Utilities
+Plug 'junegunn/vim-peekaboo'
+
 "Language Specific {{{
 "-----------------------
 
@@ -96,6 +98,9 @@ Plug 'vim-scripts/Vim-R-plugin', { 'for': 'r' }
 "Rust
 Plug 'rust-lang/rust.vim'
 "Plug 'phildawes/racer', { 'do': 'cargo build --release', 'for': 'rust' }
+
+"Fish
+Plug 'dag/vim-fish'
 
 " }}}
 
@@ -333,9 +338,8 @@ endif
 
 " }}}
 
-" {{{ Swoop
-let g:swoopUseDefaultKeyMap = 0
-nmap <Leader>ss :call Swoop()<CR>
+" {{{ FZF
+nmap <Leader>ss :Lines<CR>
 " }}}
 
 " Runtime Plugins"{{{
