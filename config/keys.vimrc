@@ -25,7 +25,7 @@ nmap <Leader>wd <Plug>(delete-window)
 " }}}
 
 " {{{ FZF
-nnoremap <Plug>(fzf-swoop) :Lines<CR>
+nnoremap <Plug>(fzf-swoop) :BLines<CR>
 nmap <Leader>ss <Plug>(fzf-swoop)
 " }}}
 
