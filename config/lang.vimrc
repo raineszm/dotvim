@@ -134,6 +134,15 @@ let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
 let g:filetype_pyx = 'cython'
 " }}}
 
+" Python {{{
+nnoremap <Plug>(yapfify-buffer) :0,$!yapf<CR>
+augroup python_map
+ autocmd!
+ autocmd FileType python nmap <LocalLeader>= <Plug>(yapfify-buffer)
+augroup END
+
+" }}
+
 
 " TaskPaper {{{
 let s:urgent_style = 'term=reverse ctermfg=White ctermbg=DarkRed guifg=White guibg=DarkRed'
