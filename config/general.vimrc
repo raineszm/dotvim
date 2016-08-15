@@ -39,7 +39,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 "Color schemes
 set background=dark
-let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme solarized
 
 set guifont=Source\ Code\ Pro
