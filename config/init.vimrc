@@ -58,7 +58,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mtth/scratch.vim'
 
 "Colors
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 
 "Utilities
 Plug 'junegunn/vim-peekaboo'
