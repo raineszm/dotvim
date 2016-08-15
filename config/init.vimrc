@@ -59,7 +59,8 @@ Plug 'mtth/scratch.vim'
 
 "Colors
 "Plug 'altercation/vim-colors-solarized'
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
+" Plug 'frankier/neovim-colors-solarized-truecolor-only'
+Plug 'lifepillar/vim-solarized8'
 
 "Utilities
 Plug 'junegunn/vim-peekaboo'
