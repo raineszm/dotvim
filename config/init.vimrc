@@ -17,6 +17,7 @@ Plug 'tpope/vim-sensible'
 "Search and movement plugins
 Plug 'tpope/vim-vinegar'
 Plug 'matchit.zip'
+Plug 'osyo-manga/vim-over'
 
 " Undo
 Plug 'mbbill/undotree'
