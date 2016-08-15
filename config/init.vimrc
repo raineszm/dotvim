@@ -25,7 +25,11 @@ Plug 'mbbill/undotree'
 Plug 'jez/vim-superman'
 
 "Completion Tools
-Plug 'Shougo/deoplete.nvim'
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'zchee/deoplete-jedi'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -67,7 +71,6 @@ Plug 'lervag/vimtex'
 
 "Python
 Plug 'tshirtman/vim-cython', { 'for': 'cython' }
-Plug 'zchee/deoplete-jedi'
 
 "Haskell
 Plug 'Twinside/vim-haskellConceal', { 'for': 'haskell'}
@@ -88,9 +91,6 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure'}
 Plug 'tpope/vim-leiningen', { 'for': 'clojure'}
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure'}
 Plug 'guns/vim-slamhound', { 'for': 'clojure'}
-
-"Python
-Plug 'davidhalter/jedi-vim'
 
 "Ruby
 Plug 'ngmy/vim-rubocop', { 'for': 'ruby'}
