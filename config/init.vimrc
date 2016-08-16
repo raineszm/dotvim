@@ -12,6 +12,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'hecal3/vim-leader-guide'
 Plug 'ctjhoa/spacevim'
 Plug 'tpope/vim-sensible'
+Plug 'Shougo/vimproc', { 'do': 'make' }
 
 "Search and movement plugins
 Plug 'tpope/vim-vinegar'
@@ -34,7 +35,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "Error Checking
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 
 "Source formatting
 Plug 'tpope/vim-commentary'
@@ -55,13 +56,13 @@ Plug 'tpope/vim-dispatch'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'mtth/scratch.vim'
-
 "Colors
 Plug 'lifepillar/vim-solarized8'
 
 "Utilities
+Plug 'mtth/scratch.vim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'kassio/neoterm'
 
 "Language Specific {{{
 "-----------------------

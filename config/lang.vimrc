@@ -136,9 +136,10 @@ let g:filetype_pyx = 'cython'
 
 " Python {{{
 nnoremap <Plug>(yapfify-buffer) :0,$!yapf<CR>
-augroup python_map
+augroup pythonauto
  autocmd!
- autocmd FileType python nmap <LocalLeader>= <Plug>(yapfify-buffer)
+ autocmd! FileType python nmap <LocalLeader>= <Plug>(yapfify-buffer)
+ autocmd! BufWritePost,BufEnter *.py Neomake
 augroup END
 
 " }}
