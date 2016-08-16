@@ -9,7 +9,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Plugin imports {{{
 
 "General dependencies
-Plug 'Shougo/vimproc.vim', { 'do': 'make'}
 Plug 'hecal3/vim-leader-guide'
 Plug 'ctjhoa/spacevim'
 Plug 'tpope/vim-sensible'
@@ -59,8 +58,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mtth/scratch.vim'
 
 "Colors
-"Plug 'altercation/vim-colors-solarized'
-" Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'lifepillar/vim-solarized8'
 
 "Utilities
@@ -74,6 +71,7 @@ Plug 'lervag/vimtex'
 
 "Python
 Plug 'tshirtman/vim-cython', { 'for': 'cython' }
+Plug 'hynek/vim-python-pep8-indent'
 
 "Haskell
 Plug 'Twinside/vim-haskellConceal', { 'for': 'haskell'}

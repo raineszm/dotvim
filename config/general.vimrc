@@ -38,8 +38,10 @@ let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
 
 "Color schemes
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
+if has('macunix')
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+end
 colorscheme solarized8_dark
 
 set guifont=Source\ Code\ Pro
