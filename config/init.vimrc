@@ -73,6 +73,7 @@ Plug 'lervag/vimtex'
 "Python
 Plug 'tshirtman/vim-cython', { 'for': 'cython' }
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'davidhalter/jedi-vim'
 
 "Haskell
 Plug 'Twinside/vim-haskellConceal', { 'for': 'haskell'}

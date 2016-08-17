@@ -142,6 +142,16 @@ augroup pythonauto
  autocmd! BufWritePost,BufEnter *.py Neomake
 augroup END
 
+let g:jedi#goto_command = "<localleader>d"
+let g:jedi#goto_assignments_command = "<localleader>g"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<localleader>n"
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = "<localleader>r"
+
+let g:jedi#completions_enabled = 0
+
 " }}
 
 
