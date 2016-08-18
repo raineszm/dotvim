@@ -34,6 +34,10 @@ Plug 'zchee/deoplete-jedi'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'"
+
 "Error Checking
 Plug 'neomake/neomake'
 
@@ -63,6 +67,10 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'mtth/scratch.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'kassio/neoterm'
+if has('macunix')
+    Plug 'rizzatti/dash.vim'
+end
+
 
 "Language Specific {{{
 "-----------------------
