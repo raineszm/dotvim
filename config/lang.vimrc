@@ -8,7 +8,7 @@ let fortran_have_tabs=1
 " }}}
 
 " LaTeX {{{
-" vimlatex {{{
+" vimtex {{{
 if has('macunix')
     let g:vimtex_view_general_viewer
                 \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
@@ -135,7 +135,7 @@ let g:filetype_pyx = 'cython'
 " }}}
 
 " Python {{{
-nnoremap <Plug>(yapfify-buffer) :0,$!yapf<CR>
+nnoremap <buffer> <Plug>(yapfify-buffer) :0,$!yapf<CR>
 augroup pythonauto
  autocmd!
  autocmd! FileType python nmap <LocalLeader>= <Plug>(yapfify-buffer)
