@@ -37,6 +37,7 @@ else
     let g:vimtex_view_method = 'zathura'
 endif
 let g:vimtex_latexmk_background = 1
+let g:vimtex_latexmk_progname = 'nvr'
 
 augroup latexSurround
  autocmd!
