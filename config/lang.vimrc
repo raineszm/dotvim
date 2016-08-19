@@ -9,6 +9,7 @@ let fortran_have_tabs=1
 
 " LaTeX {{{
 " vimtex {{{
+let g:vimtex_latexmk_progname = 'nvr'
 if has('macunix')
     let g:vimtex_view_general_viewer
                 \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
@@ -37,7 +38,6 @@ else
     let g:vimtex_view_method = 'zathura'
 endif
 let g:vimtex_latexmk_background = 1
-let g:vimtex_latexmk_progname = 'nvr'
 
 augroup latexSurround
  autocmd!
@@ -128,7 +128,6 @@ let g:tagbar_type_haskell = {
     \ }
 " }}}
 
-let g:syntastic_haskell_checkers = ['ghc-mod', 'hlint']
 " }}}
 
 " Cython {{{
@@ -136,10 +135,10 @@ let g:filetype_pyx = 'cython'
 " }}}
 
 " Python {{{
-nnoremap <buffer> <Plug>(yapfify-buffer) :0,$!yapf<CR>
+nnoremap <Plug>(yapfify-buffer) :0,$!yapf<CR>
 augroup pythonauto
  autocmd!
- autocmd! FileType python nmap <LocalLeader>= <Plug>(yapfify-buffer)
+ autocmd! FileType python nmap <buffer> <LocalLeader>= <Plug>(yapfify-buffer)
  autocmd! BufWritePost,BufEnter *.py Neomake
 augroup END
 
@@ -197,10 +196,6 @@ let vimrplugin_assign = 0
 
 let vimrplugin_applescript = 0
 
-" }}}
-
-" Cpp {{{
-let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
 " }}}
 
 " }}}
