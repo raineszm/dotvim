@@ -71,6 +71,12 @@ endfunction
 command! SSHConfig call RemoteConfiguration()
 " }}}
 
+" Startify {{{
+let g:startify_custom_header = readfile(expand('<sfile>:p:h').'/banner.txt')
+
+highlight link StartifyHeader IncSearch
+" }}}
+
 " Trim trailing whitespace on save because it sucks
 autocmd BufWritePre * keepjumps %s/\v\s+$//e
 

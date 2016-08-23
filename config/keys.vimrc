@@ -32,6 +32,10 @@ nnoremap <Plug>(fzf-tags) :BTags<CR>
 nmap <Leader>sj <Plug>(fzf-tags)
 " }}}
 
+" Startify {{{
+nnoremap <Leader>bh :Startify<cr>
+" }}}
+
 " vim-leader-guide {{{
 nnoremap <localleader> :<c-u>LeaderGuide  ','<CR>
 vnoremap <localleader> :<c-u>LeaderGuideVisual  ','<CR>

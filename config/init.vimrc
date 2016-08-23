@@ -13,6 +13,7 @@ Plug 'hecal3/vim-leader-guide'
 Plug 'ctjhoa/spacevim'
 Plug 'tpope/vim-sensible'
 Plug 'Shougo/vimproc', { 'do': 'make' }
+Plug 'mhinz/vim-startify'
 
 "Search and movement plugins
 Plug 'tpope/vim-vinegar'
