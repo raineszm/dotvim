@@ -19,6 +19,7 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-vinegar'
 Plug 'matchit.zip'
 Plug 'osyo-manga/vim-over'
+Plug 'haya14busa/incsearch.vim'
 
 " Undo
 Plug 'mbbill/undotree'

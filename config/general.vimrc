@@ -78,6 +78,19 @@ let g:startify_custom_header = readfile(expand('<sfile>:p:h').'/banner.txt')
 highlight link StartifyHeader IncSearch
 " }}}
 
+" Search Settings
+" Over.vim {{{
+    let g:over#command_line#search#enable_move_cursor = 1
+" }}}
+"
+" incsearch {{{
+
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+" }}}
+
+" }}}
+
 " Trim trailing whitespace on save because it sucks
 autocmd BufWritePre * keepjumps %s/\v\s+$//e
 
