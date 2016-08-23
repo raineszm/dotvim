@@ -78,7 +78,7 @@ let g:startify_custom_header = readfile(expand('<sfile>:p:h').'/banner.txt')
 highlight link StartifyHeader IncSearch
 " }}}
 
-" Search Settings
+" Search Settings {{{
 " Over.vim {{{
     let g:over#command_line#search#enable_move_cursor = 1
 " }}}
@@ -87,6 +87,10 @@ highlight link StartifyHeader IncSearch
 
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
+" }}}
+
+" Easymotion {{{
+let g:EasyMotion_do_mapping = 0
 " }}}
 
 " }}}
