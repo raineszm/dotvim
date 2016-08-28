@@ -39,7 +39,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 "Color schemes
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+if exists('&termguicolors')
+    set termguicolors
+else
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 colorscheme solarized8_dark
 
 set guifont=Source\ Code\ Pro
