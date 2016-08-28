@@ -59,3 +59,10 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 " }}}
+
+" Error checking {{{
+nnoremap <SPACE>el :lopen<cr>
+nnoremap <SPACE>en :lnext<cr>
+nnoremap <SPACE>ep :lprevious<cr>
+nnoremap <SPACE>eN :lprevious<cr>
+" }}}
