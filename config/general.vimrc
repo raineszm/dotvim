@@ -39,10 +39,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 "Color schemes
-if exists('&termguicolors')
-    set termguicolors
-else
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+if empty($SSH_TTY) && empty($SSH_SHELL)
+    if exists('&termguicolors')
+        set termguicolors
+    else
+        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    endif
 endif
 colorscheme solarized8_dark
 
