@@ -63,6 +63,10 @@ if executable('ag')
     set grepprg=ag\ --nocolor\ --nogroup
 endif
 
+" Dash/Zeavim {{{
+let g:zv_disable_mapping = 1
+" }}}
+
 " }}}
 "
 " Remote editing {{{

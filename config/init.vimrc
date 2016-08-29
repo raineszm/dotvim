@@ -72,7 +72,12 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'kassio/neoterm'
 if has('macunix')
     Plug 'rizzatti/dash.vim'
+elseif has('unix')
+    Plug 'KabbAmine/zeavim.vim'
 end
+
+"Org
+Plug 'jceb/vim-orgmode'
 
 
 "Language Specific {{{
