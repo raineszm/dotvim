@@ -21,6 +21,7 @@ Plug 'matchit.zip'
 Plug 'osyo-manga/vim-over'
 Plug 'haya14busa/incsearch.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-unimpaired'
 
 " Undo
 Plug 'mbbill/undotree'
@@ -75,6 +76,7 @@ if has('macunix')
 elseif has('unix')
     Plug 'KabbAmine/zeavim.vim'
 end
+Plug 'tpope/vim-repeat'
 
 "Org
 Plug 'jceb/vim-orgmode'
