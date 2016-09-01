@@ -16,12 +16,13 @@ Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'mhinz/vim-startify'
 
 "Search and movement plugins
-Plug 'tpope/vim-vinegar'
+Plug 'justinmk/vim-dirvish'
 Plug 'matchit.zip'
 Plug 'osyo-manga/vim-over'
 Plug 'haya14busa/incsearch.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
+Plug 'kshenoy/vim-signature'
 
 " Undo
 Plug 'mbbill/undotree'
@@ -59,6 +60,7 @@ Plug 'dbakker/vim-projectroot'
 
 "Build/Run Tools
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-eunuch'
 
 "Status Line
 Plug 'vim-airline/vim-airline'
