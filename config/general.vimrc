@@ -22,9 +22,6 @@ set hidden
 "Turn on modeline
 set modeline
 
-"Set grep command
-set grepprg=grep\ -nH\ $*
-
 " Setup the wildmenu {{{
 set wildmode=longest:full
 " set wildmenu

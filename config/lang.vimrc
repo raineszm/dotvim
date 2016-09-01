@@ -62,16 +62,6 @@ augroup END
 " }}}
 " }}}
 
-" Julia {{{
-let g:tagbar_type_julia = {
-    \ 'ctagstype' : 'julia',
-    \ 'kinds' : [
-    \ 'f:functions',
-    \ 't:types',
-    \ 'c:constants'
-    \]}
-" }}}
-
 " MATHEMATICA STUFF {{{
 let g:mma_candy=2
 " let g:filetype_m = 'mma'
@@ -79,13 +69,6 @@ augroup mathematicaauto
     autocmd!
     autocmd! BufNewFile,BufRead *.mma set filetype=mma
 augroup END
-
-let g:tagbar_type_mma = {
-    \ 'ctagstype' : 'Mathematica',
-    \ 'kinds' : [
-    \ 'f:functions',
-    \ 'v:variables'
-    \]}
 " }}}
 
 " HASKELL STUFF {{{
@@ -94,39 +77,6 @@ augroup haskellauto
     autocmd!
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 augroup END
-
-" Build a tag file for tagbar {{{
-let g:tagbar_type_haskell = {
-    \ 'ctagsbin'  : 'hasktags',
-    \ 'ctagsargs' : '-x -c -o-',
-    \ 'kinds'     : [
-        \  'm:modules:0:1',
-        \  'd:data: 0:1',
-        \  'd_gadt: data gadt:0:1',
-        \  't:type names:0:1',
-        \  'nt:new types:0:1',
-        \  'c:classes:0:1',
-        \  'cons:constructors:1:1',
-        \  'c_gadt:constructor gadt:1:1',
-        \  'c_a:constructor accessors:1:1',
-        \  'ft:function types:1:1',
-        \  'fi:function implementations:0:1',
-        \  'o:others:0:1'
-    \ ],
-    \ 'sro'        : '.',
-    \ 'kind2scope' : {
-        \ 'm' : 'module',
-        \ 'c' : 'class',
-        \ 'd' : 'data',
-        \ 't' : 'type'
-    \ },
-    \ 'scope2kind' : {
-        \ 'module' : 'm',
-        \ 'class'  : 'c',
-        \ 'data'   : 'd',
-        \ 'type'   : 't'
-    \ }
-    \ }
 " }}}
 
 " }}}
