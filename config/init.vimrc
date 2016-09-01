@@ -35,7 +35,7 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -72,6 +72,7 @@ Plug 'lifepillar/vim-solarized8'
 "Utilities
 Plug 'mtth/scratch.vim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'tpope/vim-speeddating'
 Plug 'kassio/neoterm'
 if has('macunix')
     Plug 'rizzatti/dash.vim'
@@ -80,20 +81,20 @@ elseif has('unix')
 end
 Plug 'tpope/vim-repeat'
 
-"Org
-Plug 'jceb/vim-orgmode'
-
 
 "Language Specific {{{
 "-----------------------
 
+"Org
+Plug 'jceb/vim-orgmode', { 'for':  'org' }
+
 "Latex
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', { 'for': 'latex' }
 
 "Python
 Plug 'tshirtman/vim-cython', { 'for': 'cython' }
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'davidhalter/jedi-vim'
+Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
 "Haskell
 Plug 'Twinside/vim-haskellConceal', { 'for': 'haskell'}
