@@ -83,6 +83,14 @@ command! SSHConfig call RemoteConfiguration()
 let g:startify_custom_header = readfile(expand('<sfile>:p:h').'/banner.txt')
 
 highlight link StartifyHeader IncSearch
+
+let g:startify_bookmarks = [
+            \ {'vi': '~/.config/nvim/config/init.vimrc'},
+            \ {'vg': '~/.config/nvim/config/general.vimrc'},
+            \ {'vk': '~/.config/nvim/config/keys.vimrc'},
+            \ {'vl': '~/.config/nvim/config/lang.vimrc'}
+            \ ]
+
 " }}}
 
 " Search Settings {{{
