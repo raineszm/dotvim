@@ -89,7 +89,7 @@ Plug 'tpope/vim-repeat'
 Plug 'jceb/vim-orgmode', { 'for':  'org' }
 
 "Latex
-Plug 'lervag/vimtex', { 'for': 'latex' }
+Plug 'lervag/vimtex', { 'for': 'tex' }
 
 "Python
 Plug 'tshirtman/vim-cython', { 'for': 'cython' }
