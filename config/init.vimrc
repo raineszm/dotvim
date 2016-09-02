@@ -23,6 +23,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
 Plug 'kshenoy/vim-signature'
+Plug 'tweekmonster/braceless.vim'
 
 " Undo
 Plug 'mbbill/undotree'
