@@ -1,6 +1,5 @@
 " vim: foldmethod=marker
 "
-" Language Specific Settings {{{
 
 " Fortran {{{
 let fortran_free_source=1
@@ -79,8 +78,6 @@ augroup haskellauto
 augroup END
 " }}}
 
-" }}}
-
 " Cython {{{
 let g:filetype_pyx = 'cython'
 " }}}
@@ -88,9 +85,10 @@ let g:filetype_pyx = 'cython'
 " Python {{{
 nnoremap <Plug>(yapfify-buffer) :0,$!yapf<CR>
 augroup pythonauto
- autocmd!
- autocmd! FileType python nmap <buffer> <LocalLeader>= <Plug>(yapfify-buffer)
- autocmd! BufWritePost,BufEnter *.py Neomake
+    autocmd!
+    autocmd! FileType python nmap <buffer> <LocalLeader>= <Plug>(yapfify-buffer)
+    autocmd! BufWritePost,BufEnter *.py Neomake
+    autocmd! FileType python BracelessEnable +indent
 augroup END
 
 let g:jedi#goto_command = "<localleader>d"
@@ -103,7 +101,7 @@ let g:jedi#rename_command = "<localleader>r"
 
 let g:jedi#completions_enabled = 0
 
-" }}
+" }}}
 
 
 " TaskPaper {{{
