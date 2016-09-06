@@ -121,7 +121,7 @@ Plug 'guns/vim-slamhound', { 'for': 'clojure'}
 Plug 'ngmy/vim-rubocop', { 'for': 'ruby'}
 
 "R
-Plug 'vim-scripts/Vim-R-plugin', { 'for': 'r' }
+Plug 'jalvesaq/Nvim-R', { 'for': ['r', 'rnoweb', 'rmd'] }
 
 "Rust
 Plug 'rust-lang/rust.vim'
