@@ -62,6 +62,9 @@ if executable('ag')
     set grepprg=ag\ --nocolor\ --nogroup
 endif
 
+" Workaround to avoid vim-fugitive dying
+set shell=/bin/bash
+
 " Dash/Zeavim {{{
 let g:zv_disable_mapping = 1
 " }}}
