@@ -77,6 +77,13 @@ augroup latexauto
     autocmd FileType tex setlocal conceallevel=2
 augroup END
 " }}}
+" Neomake linters {{{
+let g:neomake_tex_proselint_maker = {
+            \ 'errorformat': '%f:%l:%c: %m'
+            \ }
+
+let g:neomake_tex_enabled_makers = ['chktex', 'lacheck', 'proselint']
+" }}}
 " }}}
 
 " MATHEMATICA STUFF {{{
