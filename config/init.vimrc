@@ -50,7 +50,7 @@ Plug 'neomake/neomake'
 "Source formatting
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'calebsmith/vim-lambdify'
+" Plug 'calebsmith/vim-lambdify'
 
 "Git stuff
 Plug 'airblade/vim-gitgutter'
@@ -109,6 +109,9 @@ Plug 'rsmenon/vim-mathematica'
 
 "Julia
 Plug 'JuliaLang/julia-vim'
+
+"JS
+Plug 'pangloss/vim-javascript'
 
 " Clojure
 Plug 'guns/vim-clojure-static', { 'for': 'clojure'}
