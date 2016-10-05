@@ -107,6 +107,12 @@ Plug 'eagletmt/neco-ghc', { 'for': 'haskell'}
 "Mathematica
 Plug 'rsmenon/vim-mathematica'
 
+"HTML
+Plug 'mattn/emmet-vim'
+
+"Markdown
+Plug 'plasticboy/vim-markdown'
+
 "Julia
 Plug 'JuliaLang/julia-vim'
 

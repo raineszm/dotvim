@@ -125,6 +125,17 @@ let g:jedi#completions_command = ""
 let g:jedi#rename_command = "<localleader>r"
 " }}}
 
+" HTML {{{
+let g:user_emmet_install_global = 0
+augroup htmlauto
+    autocmd!
+    autocmd! FileType html,css EmmetInstall
+augroup END
+" }}}
+
+" Markdown{{{
+let g:vim_markdown_math = 1
+" }}}
 
 " TaskPaper {{{
 let s:urgent_style = 'term=reverse ctermfg=White ctermbg=DarkRed guifg=White guibg=DarkRed'
