@@ -115,6 +115,7 @@ Plug 'plasticboy/vim-markdown'
 
 "Julia
 Plug 'JuliaLang/julia-vim'
+Plug 'JuliaEditorSupport/deoplete-julia'
 
 "JS
 Plug 'pangloss/vim-javascript'
