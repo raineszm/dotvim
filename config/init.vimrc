@@ -51,6 +51,7 @@ Plug 'neomake/neomake'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 " Plug 'calebsmith/vim-lambdify'
+Plug 'editorconfig/editorconfig-vim'
 
 "Git stuff
 Plug 'airblade/vim-gitgutter'
