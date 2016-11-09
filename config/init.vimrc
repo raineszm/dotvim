@@ -110,6 +110,8 @@ Plug 'rsmenon/vim-mathematica'
 
 "HTML
 Plug 'mattn/emmet-vim'
+"Stylus
+Plug 'wavded/vim-stylus'
 
 "Markdown
 Plug 'plasticboy/vim-markdown'
@@ -140,6 +142,9 @@ Plug 'rust-lang/rust.vim'
 
 "Fish
 Plug 'dag/vim-fish'
+
+"Asymptote
+Plug 'hura/vim-asymptote'
 
 " }}}
 
