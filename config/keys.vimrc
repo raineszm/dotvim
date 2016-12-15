@@ -63,9 +63,9 @@ nnoremap <SPACE>eN :lprevious<cr>
 
 " Navigation {{{
 " Easymotion {{{
-nnoremap <Leader>jj <Plug>(easymotion-s)
-nnoremap <Leader>jw <Plug>(easymotion-bd-w)
-nnoremap <Leader>jl <Plug>(easymotion-bd-jk)
+nmap <Leader>jj <Plug>(easymotion-s)
+nmap <Leader>jw <Plug>(easymotion-bd-w)
+nmap <Leader>jl <Plug>(easymotion-bd-jk)
 " }}}
 
 " }}}
