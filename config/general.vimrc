@@ -114,6 +114,14 @@ let g:EasyMotion_do_mapping = 0
  set inccommand=split
 " }}}
 
+" Hacks and Fixes {{{
+
+" Make sure leaderguide uses the prefixes from spacevim
+let g:lmap = {}
+call leaderGuide#register_prefix_descriptions(' ', 'g:lmap')
+
+" }}
+
 " }}}
 
 " Trim trailing whitespace on save because it sucks
