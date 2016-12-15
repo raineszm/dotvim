@@ -12,24 +12,19 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'hecal3/vim-leader-guide'
 Plug 'ctjhoa/spacevim'
 Plug 'tpope/vim-sensible'
-Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'mhinz/vim-startify'
 
 "Search and movement plugins
 Plug 'justinmk/vim-dirvish'
 Plug 'matchit.zip'
-Plug 'osyo-manga/vim-over'
 Plug 'haya14busa/incsearch.vim'
+Plug 'pelodelfuego/vim-swoop'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
-Plug 'kshenoy/vim-signature'
 Plug 'tweekmonster/braceless.vim'
 
 " Undo
 Plug 'mbbill/undotree'
-
-"Doc
-Plug 'jez/vim-superman'
 
 "Completion Tools
 function! DoRemote(arg)
@@ -50,7 +45,6 @@ Plug 'neomake/neomake'
 "Source formatting
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-" Plug 'calebsmith/vim-lambdify'
 Plug 'editorconfig/editorconfig-vim'
 
 "Git stuff
@@ -72,7 +66,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'lifepillar/vim-solarized8'
 
 "Utilities
-Plug 'mtth/scratch.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-speeddating'
 Plug 'kassio/neoterm'

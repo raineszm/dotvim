@@ -24,7 +24,6 @@ set modeline
 
 " Setup the wildmenu {{{
 set wildmode=longest:full
-" set wildmenu
 " }}}
 " }}}
 
@@ -35,7 +34,7 @@ let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-"Color schemes
+" color schemes
 if empty($SSH_TTY) && empty($SSH_SHELL)
     if exists('&termguicolors')
         set termguicolors
@@ -100,9 +99,6 @@ let g:startify_bookmarks = [
 " }}}
 
 " Search Settings {{{
-" Over.vim {{{
-    let g:over#command_line#search#enable_move_cursor = 1
-" }}}
 "
 " incsearch {{{
 
@@ -114,8 +110,11 @@ let g:incsearch#auto_nohlsearch = 1
 let g:EasyMotion_do_mapping = 0
 " }}}
 
+" Preview substitue {{
+ set inccommand=split
+" }}}
+
 " }}}
 
 " Trim trailing whitespace on save because it sucks
 autocmd BufWritePre * keepjumps %s/\v\s+$//e
-
