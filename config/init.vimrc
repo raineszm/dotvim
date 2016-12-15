@@ -36,8 +36,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'"
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'"
 
 "Error Checking
 Plug 'neomake/neomake'
