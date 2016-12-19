@@ -137,20 +137,6 @@ augroup END
 let g:vim_markdown_math = 1
 " }}}
 
-" TaskPaper {{{
-let s:urgent_style = 'term=reverse ctermfg=White ctermbg=DarkRed guifg=White guibg=DarkRed'
-let g:task_paper_styles = {
-            \ 'FAIL': 'guibg=Red guifg=White',
-            \ 'figures': 'guifg=Magenta ctermfg=Magenta',
-            \ 'rewrite': 'term=reverse ctermfg=Black ctermbg=Red guifg=Black guibg=Red',
-            \ 'urgent': s:urgent_style,
-            \ 'important': s:urgent_style,
-            \ 'flagged': s:urgent_style,
-            \ 'due': 'ctermbg=Yellow guibg=Yellow ctermfg=Brown guifg=Brown',
-            \ 'today': 'ctermbg=Blue guibg=Blue ctermfg=Brown guifg=Brown'
-            \ }
-" }}}
-
 " Ruby {{{
 augroup rubyauto
     autocmd!

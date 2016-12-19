@@ -17,7 +17,6 @@ Plug 'mhinz/vim-startify'
 "Search and movement plugins
 Plug 'justinmk/vim-dirvish'
 Plug 'matchit.zip'
-Plug 'haya14busa/incsearch.vim'
 Plug 'pelodelfuego/vim-swoop'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
@@ -66,8 +65,6 @@ Plug 'lifepillar/vim-solarized8'
 
 "Utilities
 Plug 'junegunn/vim-peekaboo'
-Plug 'tpope/vim-speeddating'
-Plug 'kassio/neoterm'
 if has('macunix')
     Plug 'rizzatti/dash.vim'
 elseif has('unix')
