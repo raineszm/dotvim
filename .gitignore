@@ -7,3 +7,4 @@ plugged/
 *.spl
 *.sug
 *.vim-rplugin~
+spell/*
