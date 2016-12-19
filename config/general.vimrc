@@ -16,9 +16,6 @@ set expandtab
 " set showcmd
 set mouse=a
 
-"Set buffers to be hidden instead of closed when switched
-set hidden
-
 "Turn on modeline
 set modeline
 
@@ -99,18 +96,14 @@ let g:startify_bookmarks = [
 " }}}
 
 " Search Settings {{{
-"
-" incsearch {{{
-
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
+set nohlsearch
 " }}}
 
 " Easymotion {{{
 let g:EasyMotion_do_mapping = 0
 " }}}
 
-" Preview substitue {{
+" Preview substitute {{
  set inccommand=split
 " }}}
 
