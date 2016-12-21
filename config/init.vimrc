@@ -11,7 +11,9 @@ call plug#begin('~/.config/nvim/plugged')
 "General dependencies
 Plug 'hecal3/vim-leader-guide'
 Plug 'ctjhoa/spacevim'
-Plug 'tpope/vim-sensible'
+if !has('nvim')
+    Plug 'tpope/vim-sensible'
+end
 Plug 'mhinz/vim-startify'
 
 "Search and movement plugins
