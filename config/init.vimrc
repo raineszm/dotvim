@@ -18,7 +18,7 @@ Plug 'mhinz/vim-startify'
 
 "Search and movement plugins
 Plug 'justinmk/vim-dirvish'
-Plug 'matchit.zip'
+Plug 'justinmk/vim-sneak'
 Plug 'pelodelfuego/vim-swoop'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
@@ -109,7 +109,7 @@ Plug 'plasticboy/vim-markdown'
 
 "Julia
 Plug 'JuliaLang/julia-vim'
-Plug 'JuliaEditorSupport/deoplete-julia'
+Plug 'JuliaEditorSupport/deoplete-julia', {'for': 'julia'}
 
 "JS
 Plug 'pangloss/vim-javascript'
