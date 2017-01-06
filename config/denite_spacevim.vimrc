@@ -6,7 +6,7 @@ let g:loaded_unite = 1
 function! UniteCompat(command, args, line1, line2)
     let l:source = split(a:args)[1]
     if l:source ==# 'file_rec/async'
-        let l:source = 'file_rec
+        let l:source = 'file_rec'
     elseif l:source ==# 'file'
         let l:source = 'file_rec'
     endif
