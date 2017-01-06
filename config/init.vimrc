@@ -1,5 +1,4 @@
 " vim: foldmethod=marker
-let mapleader = "\<Space>"
 
 " Plug Config {{{
 
