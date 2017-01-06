@@ -4,6 +4,7 @@ bundle/
 *.swp
 autoload/
 plugged/
+dein/
 *.spl
 *.sug
 *.vim-rplugin~

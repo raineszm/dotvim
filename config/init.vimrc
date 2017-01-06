@@ -3,143 +3,156 @@
 " Plug Config {{{
 
 " Required:
-call plug#begin('~/.config/nvim/plugged')
+set runtimepath+=$HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state(expand('~/.config/nvim/dein'))
+call dein#begin(expand('~/.config/nvim/dein'))
+
+" Let dein manage dein
+" Required:
+call dein#add(expand('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim'))
+
 
 " Plugin imports {{{
 
 "General dependencies
-Plug 'hecal3/vim-leader-guide'
-Plug 'ctjhoa/spacevim'
+call dein#add('hecal3/vim-leader-guide')
+call dein#add('ctjhoa/spacevim')
 if !has('nvim')
-    Plug 'tpope/vim-sensible'
+    call dein#add('tpope/vim-sensible')
 end
-Plug 'mhinz/vim-startify'
+call dein#add('mhinz/vim-startify')
 
 "Search and movement plugins
-Plug 'justinmk/vim-dirvish'
-Plug 'justinmk/vim-sneak'
-Plug 'pelodelfuego/vim-swoop'
-Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-unimpaired'
-Plug 'tweekmonster/braceless.vim'
+call dein#add('justinmk/vim-dirvish')
+call dein#add('justinmk/vim-sneak')
+call dein#add('pelodelfuego/vim-swoop')
+call dein#add('easymotion/vim-easymotion')
+call dein#add('tpope/vim-unimpaired')
+call dein#add('tweekmonster/braceless.vim')
 
 " Undo
-Plug 'mbbill/undotree'
+call dein#add('mbbill/undotree')
 
 "Completion Tools
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('zchee/deoplete-jedi', { 'on_ft': 'python' })
 
 "Unite
-Plug 'Shougo/denite.nvim', { 'do': function('DoRemote')}
-Plug 'Shougo/neomru.vim'
+call dein#add('Shougo/denite.nvim')
+call dein#add('Shougo/neomru.vim')
 
 " Snippets
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'"
+call dein#add('SirVer/ultisnips')
+call dein#add('honza/vim-snippets')
 
 "Error Checking
-Plug 'neomake/neomake'
+call dein#add('neomake/neomake')
 
 "Source formatting
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'editorconfig/editorconfig-vim'
+call dein#add('tpope/vim-commentary')
+call dein#add('tpope/vim-surround')
+call dein#add('editorconfig/editorconfig-vim')
 
 "Git stuff
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+call dein#add('airblade/vim-gitgutter')
+call dein#add('tpope/vim-fugitive')
 
 "Project stuff
-Plug 'dbakker/vim-projectroot'
+call dein#add('dbakker/vim-projectroot')
 
 "Build/Run Tools
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-eunuch'
+call dein#add('tpope/vim-dispatch')
+call dein#add('tpope/vim-eunuch')
 
 "Status Line
-Plug 'rafi/vim-tinyline'
+call dein#add('rafi/vim-tinyline')
 
 "Colors
-Plug 'lifepillar/vim-solarized8'
+call dein#add('lifepillar/vim-solarized8')
 
 "Utilities
-Plug 'junegunn/vim-peekaboo'
+call dein#add('junegunn/vim-peekaboo')
 if has('macunix')
-    Plug 'rizzatti/dash.vim'
+    call dein#add('rizzatti/dash.vim')
 elseif has('unix')
-    Plug 'KabbAmine/zeavim.vim'
+    call dein#add('KabbAmine/zeavim.vim')
 end
-Plug 'tpope/vim-repeat'
+call dein#add('tpope/vim-repeat')
 
 
 "Language Specific {{{
 "-----------------------
 
 "Org
-Plug 'jceb/vim-orgmode', { 'for':  'org' }
+call dein#add('jceb/vim-orgmode', { 'on_ft':  'org' })
 
 "Latex
-Plug 'lervag/vimtex', { 'for': 'tex' }
+call dein#add('lervag/vimtex', { 'on_ft': 'tex' })
 
 "Python
-Plug 'tshirtman/vim-cython', { 'for': 'cython' }
-Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+call dein#add('tshirtman/vim-cython', { 'on_ft': 'cython' })
+call dein#add('hynek/vim-python-pep8-indent', { 'on_ft': 'python' })
+call dein#add('davidhalter/jedi-vim', { 'on_ft': 'python' })
 
 "Haskell
-Plug 'Twinside/vim-haskellConceal', { 'for': 'haskell'}
-Plug 'Twinside/vim-hoogle', { 'for': 'haskell'}
-Plug 'travitch/hasksyn', { 'for': 'haskell'}
-Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell'}
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell'}
+call dein#add('Twinside/vim-haskellConceal', { 'on_ft': 'haskell'})
+call dein#add('Twinside/vim-hoogle', { 'on_ft': 'haskell'})
+call dein#add('travitch/hasksyn', { 'on_ft': 'haskell'})
+call dein#add('eagletmt/ghcmod-vim', { 'on_ft': 'haskell'})
+call dein#add('eagletmt/neco-ghc', { 'on_ft': 'haskell'})
 
 "Mathematica
-Plug 'rsmenon/vim-mathematica'
+call dein#add('rsmenon/vim-mathematica')
 
 "HTML
-Plug 'mattn/emmet-vim'
+call dein#add('mattn/emmet-vim')
 "Stylus
-Plug 'wavded/vim-stylus'
+call dein#add('wavded/vim-stylus')
 
 "Markdown
-Plug 'plasticboy/vim-markdown'
+call dein#add('plasticboy/vim-markdown')
 
 "Julia
-Plug 'JuliaLang/julia-vim'
-Plug 'JuliaEditorSupport/deoplete-julia', {'for': 'julia'}
+call dein#add('JuliaLang/julia-vim')
+call dein#add('JuliaEditorSupport/deoplete-julia', {'on_ft': 'julia'})
 
 "JS
-Plug 'pangloss/vim-javascript'
+call dein#add('pangloss/vim-javascript')
 
 " Clojure
-Plug 'guns/vim-clojure-static', { 'for': 'clojure'}
-Plug 'tpope/vim-fireplace', { 'for': 'clojure'}
-Plug 'tpope/vim-leiningen', { 'for': 'clojure'}
-Plug 'guns/vim-clojure-highlight', { 'for': 'clojure'}
-Plug 'guns/vim-slamhound', { 'for': 'clojure'}
+call dein#add('guns/vim-clojure-static', { 'on_ft': 'clojure'})
+call dein#add('tpope/vim-fireplace', { 'on_ft': 'clojure'})
+call dein#add('tpope/vim-leiningen', { 'on_ft': 'clojure'})
+call dein#add('guns/vim-clojure-highlight', { 'on_ft': 'clojure'})
+call dein#add('guns/vim-slamhound', { 'on_ft': 'clojure'})
 
 "Ruby
-Plug 'ngmy/vim-rubocop', { 'for': 'ruby'}
+call dein#add('ngmy/vim-rubocop', { 'on_ft': 'ruby'})
 
 "R
-Plug 'jalvesaq/Nvim-R', { 'for': ['r', 'rnoweb', 'rmd'] }
+call dein#add('jalvesaq/Nvim-R', { 'on_ft': ['r', 'rnoweb', 'rmd'] })
 
 "Rust
-Plug 'rust-lang/rust.vim'
-"Plug 'phildawes/racer', { 'do': 'cargo build --release', 'for': 'rust' }
+call dein#add('rust-lang/rust.vim')
 
 "Fish
-Plug 'dag/vim-fish'
+call dein#add('dag/vim-fish')
 
 "Asymptote
-Plug 'hura/vim-asymptote'
+call dein#add('hura/vim-asymptote')
 
 " }}}
 
 " }}}
+" Required:
+call dein#end()
+call dein#save_state()
+endif
 
-call plug#end()
+
+if dein#check_install()
+  call dein#install()
+endif
 " }}}
