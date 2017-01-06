@@ -33,8 +33,6 @@ function! DoRemote(arg)
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
 
 "Unite
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} | Plug 'Shougo/unite.vim' | Plug 'Shougo/neomru.vim'
@@ -62,8 +60,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 
 "Status Line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'rafi/vim-tinyline'
 
 "Colors
 Plug 'lifepillar/vim-solarized8'
