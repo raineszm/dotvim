@@ -18,9 +18,9 @@ nnoremap <Plug>(delete-window) :q<cr>
 nmap <Leader>wd <Plug>(delete-window)
 " }}}
 
-" {{{ FZF
-nnoremap <Plug>(fzf-tags) :BTags<CR>
-nmap <Leader>sj <Plug>(fzf-tags)
+" {{{ Unite
+nnoremap <Plug>(unite-tags) :Unite -start-insert tag/include<CR>
+nmap <Leader>sj <Plug>(unite-tags)
 " }}}
 
 " Startify {{{

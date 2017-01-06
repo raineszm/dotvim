@@ -26,11 +26,6 @@ set wildmode=longest:full
 
 " Visual Settings {{{
 
-"Airline
-let g:airline_theme='solarized'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
 " color schemes
 if empty($SSH_TTY) && empty($SSH_SHELL)
     if exists('&termguicolors')

@@ -36,6 +36,8 @@ Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
 "Unite
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} | Plug 'Shougo/unite.vim' | Plug 'Shougo/neomru.vim'
+Plug 'tsukkee/unite-tag'
+Plug 'Shougo/neoinclude.vim'
 
 " Snippets
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'"
