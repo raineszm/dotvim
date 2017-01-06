@@ -33,8 +33,11 @@ function! DoRemote(arg)
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
+
+"Unite
+Plug 'Shougo/vimproc.vim', {'do' : 'make'} | Plug 'Shougo/unite.vim' | Plug 'Shougo/neomru.vim'
 
 " Snippets
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'"
