@@ -37,8 +37,6 @@ Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 "Unite
 Plug 'Shougo/denite.nvim', { 'do': function('DoRemote')}
 Plug 'Shougo/neomru.vim'
-Plug 'tsukkee/unite-tag'
-Plug 'Shougo/neoinclude.vim'
 
 " Snippets
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'"

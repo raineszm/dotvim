@@ -19,8 +19,8 @@ nmap <Leader>wd <Plug>(delete-window)
 " }}}
 
 " {{{ Unite
-nnoremap <Plug>(unite-tags) :Unite -start-insert tag/include<CR>
-nmap <Leader>sj <Plug>(unite-tags)
+nnoremap <Plug>(search-tags) :Denite outline<CR>
+nmap <Leader>sj <Plug>(search-tags)
 " }}}
 
 " Startify {{{
