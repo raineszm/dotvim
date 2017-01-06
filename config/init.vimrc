@@ -35,7 +35,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
 "Unite
-Plug 'Shougo/vimproc.vim', {'do' : 'make'} | Plug 'Shougo/unite.vim' | Plug 'Shougo/neomru.vim'
+Plug 'Shougo/denite.nvim', { 'do': function('DoRemote')}
+Plug 'Shougo/neomru.vim'
 Plug 'tsukkee/unite-tag'
 Plug 'Shougo/neoinclude.vim'
 

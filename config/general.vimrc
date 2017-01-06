@@ -115,4 +115,4 @@ call leaderGuide#register_prefix_descriptions(' ', 'g:lmap')
 " Trim trailing whitespace on save because it sucks
 autocmd BufWritePre * keepjumps %s/\v\s+$//e
 
-source $HOME/.config/nvim/config/unite.vimrc
+source $HOME/.config/nvim/config/denite.vimrc
