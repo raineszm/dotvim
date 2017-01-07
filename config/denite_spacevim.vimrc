@@ -21,3 +21,12 @@ command! -nargs=* -range
       \ UniteWithProjectDir
       \ call <SID>UniteCompat('DeniteProjectDir', <q-args>, <line1>, <line2>)
 
+function! s:AgCompat(...)
+    if len(a:000) > 0
+        execute 'DeniteBufferDir' 'grep:::' . a:000[0]
+    else
+        :DeniteBufferDir grep
+    end
+endfunction
+
+command! -nargs=? Ag call <SID>AgCompat(<f-args>)
