@@ -7,12 +7,11 @@ set runtimepath+=$HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state(expand('~/.config/nvim/dein'))
-call dein#begin(expand('~/.config/nvim/dein'))
+call dein#begin(expand('~/.config/nvim/dein'), [expand('<sfile>')] )
 
 " Let dein manage dein
 " Required:
 call dein#add(expand('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim'))
-
 
 " Plugin imports {{{
 
@@ -98,9 +97,7 @@ call dein#add('davidhalter/jedi-vim', { 'on_ft': 'python' })
 
 "Haskell
 call dein#add('Twinside/vim-haskellConceal', { 'on_ft': 'haskell'})
-call dein#add('Twinside/vim-hoogle', { 'on_ft': 'haskell'})
 call dein#add('travitch/hasksyn', { 'on_ft': 'haskell'})
-call dein#add('eagletmt/ghcmod-vim', { 'on_ft': 'haskell'})
 call dein#add('eagletmt/neco-ghc', { 'on_ft': 'haskell'})
 
 "Mathematica
@@ -108,6 +105,7 @@ call dein#add('rsmenon/vim-mathematica')
 
 "HTML
 call dein#add('mattn/emmet-vim')
+"
 "Stylus
 call dein#add('wavded/vim-stylus')
 
@@ -150,6 +148,8 @@ call dein#add('hura/vim-asymptote')
 call dein#end()
 call dein#save_state()
 endif
+
+let g:dein#install_progress_type="tabline"
 
 
 if dein#check_install()
