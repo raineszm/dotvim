@@ -25,12 +25,12 @@ end
 call dein#add('mhinz/vim-startify')
 
 "Search and movement plugins
+call dein#add('justinmk/vim-dirvish')
 call dein#add('justinmk/vim-sneak')
 call dein#add('pelodelfuego/vim-swoop')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-unimpaired')
 call dein#add('tweekmonster/braceless.vim')
-call dein#add('justinmk/vim-dirvish', { 'merge': 0 })
 
 " Undo
 call dein#add('mbbill/undotree')
