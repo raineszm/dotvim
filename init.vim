@@ -3,8 +3,22 @@
 let mapleader="\<Space>"
 let maplocalleader=','
 
-source $HOME/.config/nvim/config/init.vimrc
-source $HOME/.config/nvim/config/general.vimrc
-source $HOME/.config/nvim/config/keys.vimrc
-source $HOME/.config/nvim/config/lang.vimrc
+let g:config_dir = fnamemodify(expand('<sfile>'), ':p:h')
+
+function! LoadRC(name)
+    let l:name = '/config/' . a:name . '.vimrc'
+    execute 'source' g:config_dir . l:name
+endfunction
+
+let g:rcs = [
+            \ 'init',
+            \ 'general',
+            \ 'keys',
+            \ 'lang'
+            \ ]
+
+for rc in g:rcs
+    call LoadRC(rc)
+endfor
+
 

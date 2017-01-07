@@ -10,4 +10,4 @@ if executable('rg')
                 \ ['rg', '--files', '--glob', '!.git'])
 endif
 
-source $HOME/.config/nvim/config/denite_spacevim.vimrc
+call LoadRC('denite_spacevim')
