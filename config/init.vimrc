@@ -80,6 +80,10 @@ elseif has('unix')
 end
 call dein#add('tpope/vim-repeat')
 
+"Subregion
+"
+call dein#add('chrisbra/NrrwRgn')
+
 
 "Language Specific {{{
 "-----------------------
@@ -154,6 +158,7 @@ let g:dein#install_progress_type="tabline"
 
 if dein#check_install()
   call dein#install()
+  call dein#remote_plugins()
 endif
 
 filetype plugin indent on
