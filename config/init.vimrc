@@ -52,7 +52,6 @@ call dein#add('neomake/neomake')
 "Source formatting
 call dein#add('tpope/vim-commentary')
 call dein#add('tpope/vim-surround')
-call dein#add('editorconfig/editorconfig-vim')
 
 "Git stuff
 call dein#add('airblade/vim-gitgutter')
