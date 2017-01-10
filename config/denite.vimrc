@@ -10,4 +10,7 @@ if executable('rg')
                 \ ['rg', '--files', '--glob', '!.git'])
 endif
 
+call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>')
+call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>')
+
 call LoadRC('denite_spacevim')
