@@ -1,0 +1,208 @@
+[[plugins]]
+repo = '~/.config/nvim/dein/repos/github.com/Shougo/dein.vim'
+local = 1
+
+[[plugins]]
+repo = 'JuliaEditorSupport/deoplete-julia'
+lazy = 1
+on_ft = 'julia'
+
+[[plugins]]
+repo = 'JuliaLang/julia-vim'
+
+[[plugins]]
+repo = 'KabbAmine/zeavim.vim'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+
+[[plugins]]
+repo = 'Twinside/vim-haskellConceal'
+lazy = 1
+on_ft = 'haskell'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'chrisbra/NrrwRgn'
+
+[[plugins]]
+repo = 'ctjhoa/spacevim'
+
+[[plugins]]
+repo = 'dag/vim-fish'
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+lazy = 1
+on_ft = 'python'
+
+[[plugins]]
+repo = 'dbakker/vim-projectroot'
+
+[[plugins]]
+repo = 'eagletmt/neco-ghc'
+lazy = 1
+on_ft = 'haskell'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'guns/vim-clojure-highlight'
+lazy = 1
+on_ft = 'clojure'
+
+[[plugins]]
+repo = 'guns/vim-clojure-static'
+lazy = 1
+on_ft = 'clojure'
+
+[[plugins]]
+repo = 'guns/vim-slamhound'
+lazy = 1
+on_ft = 'clojure'
+
+[[plugins]]
+repo = 'hecal3/vim-leader-guide'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+[[plugins]]
+repo = 'hura/vim-asymptote'
+
+[[plugins]]
+repo = 'hynek/vim-python-pep8-indent'
+lazy = 1
+on_ft = 'python'
+
+[[plugins]]
+repo = 'jalvesaq/Nvim-R'
+lazy = 1
+on_ft = ['r', 'rnoweb', 'rmd']
+
+[[plugins]]
+repo = 'jceb/vim-orgmode'
+lazy = 1
+on_ft = 'org'
+
+[[plugins]]
+repo = 'junegunn/vim-peekaboo'
+
+[[plugins]]
+repo = 'justinmk/vim-dirvish'
+
+[[plugins]]
+repo = 'justinmk/vim-sneak'
+
+[[plugins]]
+repo = 'lervag/vimtex'
+lazy = 1
+on_ft = 'tex'
+
+[[plugins]]
+repo = 'lifepillar/vim-solarized8'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'mbbill/undotree'
+
+[[plugins]]
+repo = 'mhinz/vim-startify'
+
+[[plugins]]
+repo = 'neomake/neomake'
+
+[[plugins]]
+repo = 'ngmy/vim-rubocop'
+lazy = 1
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+[[plugins]]
+repo = 'pelodelfuego/vim-swoop'
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+
+[[plugins]]
+repo = 'rafi/vim-tinyline'
+
+[[plugins]]
+repo = 'rsmenon/vim-mathematica'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+
+[[plugins]]
+repo = 'thinca/vim-prettyprint'
+lazy = 1
+on_cmd = ['PrettyPrint', 'PrettyPrint!', 'PP', 'PP!']
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+[[plugins]]
+repo = 'tpope/vim-eunuch'
+
+[[plugins]]
+repo = 'tpope/vim-fireplace'
+lazy = 1
+on_ft = 'clojure'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'tpope/vim-leiningen'
+lazy = 1
+on_ft = 'clojure'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tpope/vim-unimpaired'
+
+[[plugins]]
+repo = 'travitch/hasksyn'
+lazy = 1
+on_ft = 'haskell'
+
+[[plugins]]
+repo = 'tshirtman/vim-cython'
+lazy = 1
+on_ft = 'cython'
+
+[[plugins]]
+repo = 'tweekmonster/braceless.vim'
+
+[[plugins]]
+repo = 'wavded/vim-stylus'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+lazy = 1
+on_ft = 'python'
+
