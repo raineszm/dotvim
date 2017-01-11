@@ -206,3 +206,6 @@ repo = 'zchee/deoplete-jedi'
 lazy = 1
 on_ft = 'python'
 
+[[plugins]]
+repo = 'cespare/vim-toml'
+
