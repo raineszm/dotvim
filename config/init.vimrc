@@ -144,6 +144,9 @@ call dein#add('dag/vim-fish')
 "Asymptote
 call dein#add('hura/vim-asymptote')
 
+"Vimscript
+call dein#add('thinca/vim-prettyprint', { 'on_cmd': ['PrettyPrint', 'PrettyPrint!', 'PP', 'PP!'] })
+
 " }}}
 
 " }}}
