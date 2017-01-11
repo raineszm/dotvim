@@ -116,7 +116,7 @@ call dein#add('wavded/vim-stylus')
 call dein#add('plasticboy/vim-markdown')
 
 "Julia
-call dein#add('JuliaLang/julia-vim', {'on_ft': 'julia'})
+call dein#add('JuliaLang/julia-vim')
 call dein#add('JuliaEditorSupport/deoplete-julia', {'on_ft': 'julia'})
 
 "JS
