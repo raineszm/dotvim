@@ -85,7 +85,8 @@ let g:startify_bookmarks = [
             \ {'vi': '~/.config/nvim/config/init.vimrc'},
             \ {'vg': '~/.config/nvim/config/general.vimrc'},
             \ {'vk': '~/.config/nvim/config/keys.vimrc'},
-            \ {'vl': '~/.config/nvim/config/lang.vimrc'}
+            \ {'vl': '~/.config/nvim/config/lang.vimrc'},
+            \ {'vd': '~/.config/nvim/config/dein.toml'}
             \ ]
 
 " }}}
