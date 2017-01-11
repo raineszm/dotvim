@@ -113,7 +113,7 @@ repo = 'lifepillar/vim-solarized8'
 ##---------
 [[plugins]]
 repo = 'KabbAmine/zeavim.vim'
-if = "has('unix')"
+if = "!has('macunix')"
 
 [[plugins]]
 repo = 'rizzatti/dash.vim'
