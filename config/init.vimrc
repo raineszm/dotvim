@@ -10,7 +10,7 @@ if dein#load_state('~/.config/nvim/dein')
 call dein#begin('~/.config/nvim/dein', [expand('<sfile>')] )
 
 " Load plugins from TOML file
-call dein#load_toml('~/.config/nvim/dein.toml', {})
+call dein#load_toml('~/.config/nvim/config/dein.toml', {})
 
 " Required:
 call dein#end()
