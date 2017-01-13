@@ -19,7 +19,6 @@ endif
 
 let g:dein#install_progress_type="tabline"
 
-
 if dein#check_install()
   call dein#install()
   call dein#remote_plugins()

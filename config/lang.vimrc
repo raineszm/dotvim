@@ -77,6 +77,7 @@ augroup latexauto
     autocmd FileType tex setlocal conceallevel=2
 augroup END
 " }}}
+
 " Neomake linters {{{
 let g:neomake_tex_proselint_maker = {
             \ 'errorformat': '%f:%l:%c: %m'
@@ -88,7 +89,7 @@ let g:neomake_tex_enabled_makers = ['chktex', 'lacheck', 'proselint']
 
 " MATHEMATICA STUFF {{{
 let g:mma_candy=2
-" let g:filetype_m = 'mma'
+
 augroup mathematicaauto
     autocmd!
     autocmd! BufNewFile,BufRead *.mma set filetype=mma
@@ -154,8 +155,6 @@ if $DISPLAY != ""
     let vimrplugin_openpdf = 1
 endif
 
-" let vimrplugin_latexmk = 0
-" let vimrplugin_latexcmd = 'latexmk -pdf -pdflatex="xelatex %O -synctex=1 %S"'
 let vimrplugin_latexcmd = 'latexmk -pdf'
 
 let vimrplugin_openhtml = 1

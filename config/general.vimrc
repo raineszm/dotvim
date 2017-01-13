@@ -1,9 +1,5 @@
 " vim: foldmethod=marker
 " Basic Settings {{{
-"Get some nice syntax highlighting and language features
-" syntax on
-" filetype plugin indent on
-" Commented stuff already set by sensible
 
 "Set the default indent
 set shiftwidth=4
@@ -11,9 +7,6 @@ set softtabstop=4
 set expandtab
 
 "Basic setting changes
-" set incsearch
-" set ruler
-" set showcmd
 set mouse=a
 
 "Turn on modeline
@@ -43,11 +36,7 @@ set guifont=Source\ Code\ Pro
 " Completion {{{
 let g:deoplete#enable_at_startup = 1
 " }}}
-"
-" Runtime Plugins"{{{
-runtime! ftplugin/man.vim
-"}}}
-"
+
 " External tools {{{
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --no-heading
@@ -95,16 +84,11 @@ let g:startify_bookmarks = [
 set nohlsearch
 " }}}
 
-" Easymotion {{{
-let g:EasyMotion_do_mapping = 0
-" }}}
-
 " Preview substitute {{{
  set inccommand=split
 " }}}
 
 " Disable mappings {{{
-"
 let g:gitgutter_map_keys = 0
 let g:EasyMotion_do_mapping = 0
 " }}}
