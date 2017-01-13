@@ -11,9 +11,6 @@ local = 1
 repo = 'hecal3/vim-leader-guide'
 
 [[plugins]]
-repo = 'ctjhoa/spacevim'
-
-[[plugins]]
 repo = 'mhinz/vim-startify'
 
 ##---------
@@ -24,9 +21,6 @@ repo = 'justinmk/vim-dirvish'
 
 [[plugins]]
 repo = 'justinmk/vim-sneak'
-
-[[plugins]]
-repo = 'pelodelfuego/vim-swoop'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
