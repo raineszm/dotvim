@@ -77,16 +77,10 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
-# [[plugins]]
-# repo = 'tpope/vim-fugitive'
-
 [[plugins]]
 repo = 'lambdalisue/vim-gita'
 lazy = 1
 on_cmd = ['Gita']
-
-[[plugins]]
-repo = 'junegunn/gv.vim'
 ##---------
 ## Project stuff
 ##---------
