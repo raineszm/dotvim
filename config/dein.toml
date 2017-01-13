@@ -79,6 +79,9 @@ repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'junegunn/gv.vim'
 ##---------
 ## Project stuff
 ##---------
