@@ -103,6 +103,12 @@ let g:EasyMotion_do_mapping = 0
  set inccommand=split
 " }}}
 
+" Disable mappings {{{
+"
+let g:gitgutter_map_keys = 0
+let g:EasyMotion_do_mapping = 0
+" }}}
+
 " Trim trailing whitespace on save because it sucks
 autocmd BufWritePre * keepjumps %s/\v\s+$//e
 

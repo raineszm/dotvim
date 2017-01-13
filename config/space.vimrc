@@ -46,7 +46,6 @@ call s:spacevim_bind('map', '<Tab>', 'last-buffer', 'b#', 1)
 call s:spacevim_bind('map', '!', 'shell-cmd', 'call feedkeys(":! ")', 1)
 call s:spacevim_bind('map', '/', 'smart-search', 'DeniteBufferDir grep', 1)
 call s:spacevim_bind('nmap', '*', 'smart-search-with-input', 'DeniteBufferDir grep:`expand("<cword>")`', 1)
-" call s:spacevim_bind('vmap', '*', 'smart-search-with-input', 'call SpacevimSmartSearchWithInput(1)', 1)
 
 call s:spacevim_bind('map', '1', 'window-1', '1wincmd w', 1)
 call s:spacevim_bind('map', '2', 'window-2', '2wincmd w', 1)
@@ -70,6 +69,7 @@ call s:spacevim_bind('map', 'au', 'undo-tree-visualize', 'UndotreeToggle', 1)
 let g:lmap.b = { 'name': '+buffers' }
 call s:spacevim_bind('map', 'bb', 'buffers', 'Denite buffer', 1)
 call s:spacevim_bind('map', 'bd', 'kill-this-buffer', 'bdelete', 1)
+call s:spacevim_bind('map', 'bh', 'startify', 'Startify', '1')
 call s:spacevim_bind('map', 'bn', 'next-useful-buffer', 'bnext', 1)
 call s:spacevim_bind('map', 'bp', 'previous-useful-buffer', 'bprevious', 1)
 call s:spacevim_bind('map', 'bR', 'safe-revert-buffer', 'e', 1)
@@ -85,7 +85,6 @@ call s:spacevim_bind('map', 'bmR', 'buf-rotate-up-left', 'wincmd R', 1)
 " errors {{{
 let g:lmap.e = { 'name': '+errors' }
 " Error checking {{{
-
 call s:spacevim_bind('map', 'el', 'error-list', 'lopen', 1)
 call s:spacevim_bind('map', 'en', 'next-error', 'lnext', 1)
 call s:spacevim_bind('map', 'eN', 'previous-error', 'lprevious', 1)
@@ -96,7 +95,6 @@ call s:spacevim_bind('map', 'ep', 'previous-error', 'lprevious', 1)
 " files {{{
 let g:lmap.f = { 'name': '+files' }
 call s:spacevim_bind('map', 'fc', 'copy-file', 'saveas', 1)
-
 call s:spacevim_bind('map', 'fD', 'delete-current-buffer-file', 'Remove', 1)
 call s:spacevim_bind('map', 'fE', 'sudo-edit', 'call feedkeys(":SudoEdit ")', 1)
 call s:spacevim_bind('map', 'ff', 'find-files', 'Denite file_rec', 1)
@@ -105,7 +103,6 @@ call s:spacevim_bind('map', 'fr', 'recentf', 'Denite file_mru', 1)
 call s:spacevim_bind('map', 'fR', 'rename-current-buffer-file', 'call feedkeys(":Rename ")', 1)
 call s:spacevim_bind('map', 'fs', 'save-buffer', 'write', 1)
 call s:spacevim_bind('map', 'fS', 'write-all', 'wall', 1)
-call s:spacevim_bind('map', 'ft', 'explorer-toggle', 'Dirvish', 1)
 
 " files/vim {{{
 let g:lmap.f.e = { 'name': '+files/vim' }
@@ -145,23 +142,14 @@ call s:spacevim_bind('nmap', 'g.p', 'previous', 'GitGutterPrevHunk', 1)
 call s:spacevim_bind('nmap', 'g.t', 'toggle margin', 'GitGutterSignsToggle', 1)
 " }}}
 
-" help/highlight {{{
-let g:lmap.h = { 'name': '+help/highlight' }
-" }}}
-
-" insertion {{{
-let g:lmap.i = { 'name': '+insertion' }
-call s:spacevim_bind('nmap', 'ij', 'vim-insert-line-below', 'mao<Esc>`a', 0)
-call s:spacevim_bind('nmap', 'ik', 'vim-insert-line-above', 'maO<Esc>`a', 0)
-" }}}
-
-" join/split {{{
-let g:lmap.j = { 'name': '+join/split' }
-call s:spacevim_bind('nmap', 'j=', 'indent-region-or-buffer', 'mzgg=G`z', 0)
-call s:spacevim_bind('vmap', 'j=', 'indent-region-or-buffer', '==', 0)
-call s:spacevim_bind('map', 'jj', 'sp-newline', 'i<CR><Esc>', 0)
-call s:spacevim_bind('map', 'jJ', 'split-and-newline', 'i<CR><Esc>', 0) " same as j.j ?
-call s:spacevim_bind('map', 'jo', 'open-line', 'i<CR><Esc>k$', 0)
+" jump {{{
+let g:lmap.j = { 'name': '+jump' }
+call s:spacevim_bind_plug('nmap', 'jj', 'jump-to-char', '(easymotion-s)')
+call s:spacevim_bind_plug('vmap', 'jj', 'jump-to-char', '(easymotion-s)')
+call s:spacevim_bind_plug('nmap', 'jl', 'jump-to-line', '(easymotion-bd-jk)')
+call s:spacevim_bind_plug('vmap', 'jl', 'jump-to-line', '(easymotion-bd-jk)')
+call s:spacevim_bind_plug('nmap', 'jw', 'jump-to-word', '(easymotion-w)')
+call s:spacevim_bind_plug('vmap', 'jw', 'jump-to-word', '(easymotion-w)')
 " }}}
 
 
@@ -182,6 +170,7 @@ call s:spacevim_bind('map', 'qs', 'save-buffers-kill-vim', 'xall', 1)
 " search/symbol {{{
 let g:lmap.s = { 'name': '+search/symbol' }
 call s:spacevim_bind('map', 'sc', 'highlight-persist-remove-all', 'noh', 1)
+call s:spacevim_bind('nmap', 'sj', 'search-tags', 'Denite outline', 1)
 call s:spacevim_bind('map', 'sp', 'smart-search', 'Ag', 1)
 call s:spacevim_bind('nmap', 'ss', 'vim-swoop', 'Denite line', 1)
 " call s:spacevim_bind('vmap', 'ss', 'vim-swoop', 'call SwoopSelection()', 1)
@@ -215,7 +204,7 @@ let g:lmap.w = { 'name': '+windows' }
 call s:spacevim_bind('map', 'w-', 'split-window-below', 'split', 1)
 call s:spacevim_bind('map', 'w/', 'split-window-right', 'vsplit', 1)
 call s:spacevim_bind('map', 'w=', 'balance-windows', 'wincmd =', 1)
-call s:spacevim_bind('map', 'wc', 'delete-window', 'q', 1)
+call s:spacevim_bind('map', 'wd', 'delete-window', 'q', 1)
 call s:spacevim_bind('map', 'wh', 'window-left', 'wincmd h', 1)
 call s:spacevim_bind('map', 'wH', 'window-move-far-left', 'wincmd H', 1)
 call s:spacevim_bind('map', 'wj', 'window-down', 'wincmd j', 1)
@@ -232,8 +221,6 @@ call s:spacevim_bind('map', 'wV', 'split-window-right-and-focus', 'vsplit\|wincm
 call s:spacevim_bind('map', 'ww', 'other-window', 'wincmd w', 1)
 " }}}
 
-call s:spacevim_bind_plug('nmap', 'y', 'easymotion-line', '(easymotion-bd-jk)')
-call s:spacevim_bind_plug('vmap', 'y', 'easymotion-line', '(easymotion-bd-jk)')
 
 " vim-leader-guide {{{
 function! s:spacevim_displayfunc()
