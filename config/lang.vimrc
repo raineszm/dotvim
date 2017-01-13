@@ -45,9 +45,9 @@ augroup latexSurround
 augroup END
 
 function! s:latexSurround()
- let b:surround_{char2nr("e")}
-   \ = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
- let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
+ let b:surround_{char2nr('e')}
+   \ = '\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}'
+ let b:surround_{char2nr('c')} = '\\\1command: \1{\r}'
 endfunction
 
 
@@ -117,13 +117,13 @@ augroup pythonauto
     autocmd! FileType python BracelessEnable +indent
 augroup END
 
-let g:jedi#goto_command = "<localleader>d"
-let g:jedi#goto_assignments_command = "<localleader>g"
-let g:jedi#goto_definitions_command = ""
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<localleader>n"
-let g:jedi#completions_command = ""
-let g:jedi#rename_command = "<localleader>r"
+let g:jedi#goto_command = '<localleader>d'
+let g:jedi#goto_assignments_command = '<localleader>g'
+let g:jedi#goto_definitions_command = ''
+let g:jedi#documentation_command = 'K'
+let g:jedi#usages_command = '<localleader>n'
+let g:jedi#completions_command = ''
+let g:jedi#rename_command = '<localleader>r'
 " }}}
 
 " HTML {{{
@@ -148,10 +148,10 @@ augroup END
 " R {{{
 
 if !has('macunix')
-    let vimrplugin_pdfviewer = "zathura"
+    let vimrplugin_pdfviewer = 'zathura'
 end
 
-if $DISPLAY != ""
+if $DISPLAY !=? ''
     let vimrplugin_openpdf = 1
 endif
 

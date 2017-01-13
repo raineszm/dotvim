@@ -17,7 +17,7 @@ call dein#end()
 call dein#save_state()
 endif
 
-let g:dein#install_progress_type="tabline"
+let g:dein#install_progress_type='tabline'
 
 if dein#check_install()
   call dein#install()
