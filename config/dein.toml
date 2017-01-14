@@ -284,6 +284,11 @@ repo = 'cespare/vim-toml'
 repo = 'thinca/vim-prettyprint'
 lazy = 1
 on_cmd = ['PrettyPrint', 'PrettyPrint!', 'PP', 'PP!']
+
+[[plugins]]
+repo = 'junegunn/vader.vim'
+lazy = 1
+on_ft = 'vader'
 ##---------
 ## }}}
 ##---------
