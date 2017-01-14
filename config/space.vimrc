@@ -171,7 +171,7 @@ call s:spacevim_bind('map', 'qs', 'save-buffers-kill-vim', 'xall', 1)
 let g:lmap.s = { 'name': '+search/symbol' }
 call s:spacevim_bind('map', 'sc', 'highlight-persist-remove-all', 'noh', 1)
 call s:spacevim_bind('nmap', 'sj', 'search-tags', 'Denite outline', 1)
-call s:spacevim_bind('map', 'sp', 'smart-search', 'Ag', 1)
+call s:spacevim_bind('map', 'sp', 'smart-search', 'DeniteBufferDir grep', 1)
 call s:spacevim_bind('nmap', 'ss', 'vim-swoop', 'Denite line', 1)
 " call s:spacevim_bind('vmap', 'ss', 'vim-swoop', 'call SwoopSelection()', 1)
 " }}}
