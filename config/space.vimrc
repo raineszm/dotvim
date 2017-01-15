@@ -45,7 +45,7 @@ endfunction
 call s:spacevim_bind('map', '<Tab>', 'last-buffer', 'b#', 1)
 call s:spacevim_bind('map', '!', 'shell-cmd', 'call feedkeys(":! ")', 1)
 call s:spacevim_bind('map', '/', 'smart-search', 'DeniteBufferDir grep', 1)
-call s:spacevim_bind('nmap', '*', 'smart-search-with-input', 'DeniteBufferDir grep:`expand("<cword>")`', 1)
+call s:spacevim_bind('nmap', '*', 'smart-search-with-input', 'DeniteProjectDir grep:`expand("<cword>")`', 1)
 
 call s:spacevim_bind('map', '1', 'window-1', '1wincmd w', 1)
 call s:spacevim_bind('map', '2', 'window-2', '2wincmd w', 1)
