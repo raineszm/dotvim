@@ -8,5 +8,12 @@ nnoremap <localleader> :<c-u>LeaderGuide  ','<CR>
 vnoremap <localleader> :<c-u>LeaderGuideVisual  ','<CR>
 " }}}
 
+" Vimdoc {{{
+augroup vimfiles
+    autocmd!
+    autocmd FileType vim nmap <buffer> K :execute ':help' expand('<cword>')<CR>
+augroup END
+" }}}
+
 " Load space mnemonics
 call LoadRC('space')
