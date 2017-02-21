@@ -63,6 +63,9 @@ repo = 'honza/vim-snippets'
 ##---------
 [[plugins]]
 repo = 'neomake/neomake'
+
+[[plugins]]
+repo = 'rhysd/vim-grammarous'
 ##---------
 ## Source formatting
 ##---------
