@@ -88,6 +88,9 @@ set nohlsearch
  set inccommand=split
 " }}}
 
+" Move backup files to central directory
+set backupdir-=.
+
 " Disable mappings {{{
 let g:gitgutter_map_keys = 0
 let g:EasyMotion_do_mapping = 0
