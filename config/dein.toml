@@ -273,6 +273,13 @@ repo = 'dag/vim-fish'
 [[plugins]]
 repo = 'hura/vim-asymptote'
 ##---------
+## Perl
+##---------
+[[plugins]]
+repo = 'vim-perl/vim-perl'
+lazy = 1
+on_ft = ['perl', 'perl6']
+##---------
 ## TOML
 ##---------
 [[plugins]]
