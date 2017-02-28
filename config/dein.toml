@@ -81,9 +81,9 @@ repo = 'tpope/vim-surround'
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
-repo = 'lambdalisue/vim-gita'
+repo = 'lambdalisue/gina.vim'
 lazy = 1
-on_cmd = ['Gita']
+on_cmd = ['Gina']
 ##---------
 ## Project stuff
 ##---------
@@ -275,6 +275,13 @@ repo = 'dag/vim-fish'
 ##---------
 [[plugins]]
 repo = 'hura/vim-asymptote'
+##---------
+## Perl
+##---------
+[[plugins]]
+repo = 'vim-perl/vim-perl'
+lazy = 1
+on_ft = ['perl', 'perl6']
 ##---------
 ## TOML
 ##---------
