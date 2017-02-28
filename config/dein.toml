@@ -78,9 +78,9 @@ repo = 'tpope/vim-surround'
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
-repo = 'lambdalisue/vim-gita'
+repo = 'lambdalisue/gina.vim'
 lazy = 1
-on_cmd = ['Gita']
+on_cmd = ['Gina']
 ##---------
 ## Project stuff
 ##---------
