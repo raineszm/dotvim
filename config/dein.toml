@@ -84,6 +84,21 @@ repo = 'airblade/vim-gitgutter'
 repo = 'lambdalisue/gina.vim'
 lazy = 1
 on_cmd = ['Gina']
+hook_source='''
+    " Execute :Gina commit with <C-^> on "gina-status" buffer
+    call gina#custom#mapping#nmap(
+          \ 'status', '<C-^>',
+          \ ':<C-u>Gina commit<CR>',
+          \ {'noremap': 1, 'silent': 1},
+          \)
+
+    " Execute :Gina status with <C-^> on "gina-commit" buffer
+    call gina#custom#mapping#nmap(
+          \ 'commit', '<C-^>',
+          \ ':<C-u>Gina status<CR>',
+          \ {'noremap': 1, 'silent': 1},
+          \)
+'''
 ##---------
 ## Project stuff
 ##---------
