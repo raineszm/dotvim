@@ -35,7 +35,7 @@ if has('macunix')
     endfunction
 else
     let g:vimtex_view_method = 'zathura'
-    let g:vimtex_view_use_temp_files = 1
+    " let g:vimtex_view_use_temp_files = 1
 endif
 let g:vimtex_latexmk_background = 1
 
