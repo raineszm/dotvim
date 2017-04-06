@@ -138,6 +138,10 @@ repo = 'junegunn/vim-peekaboo'
 
 [[plugins]]
 repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'jamessan/vim-gnupg'
+
 ##---------
 ## Subregion
 ##---------
