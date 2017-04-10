@@ -48,6 +48,9 @@ endif
 " Workaround to avoid vim-fugitive dying
 set shell=/bin/bash
 
+" communicate with gpg using pipes
+let g:GPGUsePipes=1
+
 " Dash/Zeavim {{{
 let g:zv_disable_mapping = 1
 " }}}
