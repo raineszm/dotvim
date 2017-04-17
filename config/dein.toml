@@ -157,6 +157,12 @@ repo = 'chrisbra/NrrwRgn'
 repo = 'jceb/vim-orgmode'
 lazy = 1
 on_ft = 'org'
+
+[[plugins]]
+repo = 'tpope/vim-speeddating'
+lazy = 1
+on_ft = 'org'
+
 ##---------
 ## Latex
 ##---------
