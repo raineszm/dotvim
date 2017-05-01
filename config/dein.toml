@@ -291,6 +291,11 @@ repo = 'vim-perl/vim-perl'
 merged = 0
 build='make clean carp dancer highlight-all-pragmas moose test-more try-tiny'
 ##---------
+## Swift
+##---------
+[[plugins]]
+repo = 'keith/swift.vim'
+##---------
 ## TOML
 ##---------
 [[plugins]]
