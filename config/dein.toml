@@ -61,8 +61,10 @@ repo = 'honza/vim-snippets'
 ##---------
 ## Error Checking
 ##---------
+# [[plugins]]
+# repo = 'neomake/neomake'
 [[plugins]]
-repo = 'neomake/neomake'
+repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'rhysd/vim-grammarous'

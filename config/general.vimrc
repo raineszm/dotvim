@@ -103,3 +103,4 @@ let g:EasyMotion_do_mapping = 0
 autocmd BufWritePre * keepjumps %s/\v\s+$//e
 
 call LoadRC('denite')
+call LoadRC('hacks')

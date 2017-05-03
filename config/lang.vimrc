@@ -78,13 +78,13 @@ augroup latexauto
 augroup END
 " }}}
 
-" Neomake linters {{{
-let g:neomake_tex_proselint_maker = {
-            \ 'errorformat': '%f:%l:%c: %m'
-            \ }
+" " Neomake linters {{{
+" let g:neomake_tex_proselint_maker = {
+"             \ 'errorformat': '%f:%l:%c: %m'
+"             \ }
 
-let g:neomake_tex_enabled_makers = ['chktex', 'lacheck', 'proselint']
-" }}}
+" let g:neomake_tex_enabled_makers = ['chktex', 'lacheck', 'proselint']
+" " }}}
 " }}}
 
 " MATHEMATICA STUFF {{{
@@ -113,7 +113,7 @@ nnoremap <Plug>(yapfify-buffer) :0,$!yapf<CR>
 augroup pythonauto
     autocmd!
     autocmd! FileType python nmap <buffer> <LocalLeader>= <Plug>(yapfify-buffer)
-    autocmd! BufWritePost,BufEnter *.py Neomake
+    " autocmd! BufWritePost,BufEnter *.py Neomake
     autocmd! FileType python BracelessEnable +indent
 augroup END
 
