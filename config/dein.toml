@@ -152,6 +152,12 @@ repo = 'chrisbra/NrrwRgn'
 ##---------
 ## Language Specific {{{
 ##---------
+##--------
+## Meson
+##--------
+[[plugins]]
+repo = 'mesonbuild/meson'
+rtp = 'syntax-highlighting/vim'
 ##---------
 ## Org
 ##---------
