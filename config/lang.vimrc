@@ -124,6 +124,7 @@ let g:jedi#documentation_command = 'K'
 let g:jedi#usages_command = '<localleader>n'
 let g:jedi#completions_command = ''
 let g:jedi#rename_command = '<localleader>r'
+let g:ale_linters = {'python' : ['pylama', 'mypy']}
 " }}}
 
 " HTML {{{
