@@ -76,6 +76,9 @@ repo = 'tpope/vim-commentary'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'sbdchd/neoformat'
 ##---------
 ## Git stuff
 ##---------

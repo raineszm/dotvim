@@ -165,6 +165,13 @@ let vimrplugin_assign = 0
 let vimrplugin_applescript = 0
 
 " }}}
+"
+" Cpp {{{
+augroup cppauto
+    autocmd!
+    autocmd! FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
+augroup END
+" }}}
 
 " }}}
 
