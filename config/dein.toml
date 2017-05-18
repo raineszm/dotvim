@@ -109,6 +109,9 @@ hook_source='''
 ##---------
 [[plugins]]
 repo = 'dbakker/vim-projectroot'
+
+[[plugins]]
+repo = 'derekwyatt/vim-fswitch'
 ##---------
 ## Build/Run Tools
 ##---------
