@@ -94,6 +94,9 @@ set nohlsearch
 " Move backup files to central directory
 set backupdir-=.
 
+" Persistent undo
+set undofile
+
 " Disable mappings {{{
 let g:gitgutter_map_keys = 0
 let g:EasyMotion_do_mapping = 0
