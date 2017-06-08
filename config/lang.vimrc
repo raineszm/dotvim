@@ -170,6 +170,7 @@ let vimrplugin_applescript = 0
 augroup cppauto
     autocmd!
     autocmd! FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
+    autocmd! FileType cpp  nmap <buffer> <LocalLeader>a :FSHere<cr>
 augroup END
 " }}}
 
