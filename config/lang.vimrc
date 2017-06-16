@@ -167,11 +167,7 @@ let vimrplugin_applescript = 0
 " }}}
 "
 " Cpp {{{
-augroup cppauto
-    autocmd!
-    autocmd! FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
-    autocmd! FileType cpp  nmap <buffer> <LocalLeader>a :FSHere<cr>
-augroup END
+let g:load_doxygen_syntax = 1
 " }}}
 
 " }}}
