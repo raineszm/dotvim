@@ -169,13 +169,18 @@ rtp = 'syntax-highlighting/vim'
 ##---------
 [[plugins]]
 repo = 'jceb/vim-orgmode'
-lazy = 1
 on_ft = 'org'
 
 [[plugins]]
 repo = 'tpope/vim-speeddating'
 lazy = 1
 on_ft = 'org'
+
+##---------
+## TodoTxt
+##---------
+[[plugins]]
+repo = 'freitass/todo.txt-vim'
 
 ##---------
 ## Latex
@@ -241,6 +246,8 @@ repo = 'JuliaLang/julia-vim'
 
 [[plugins]]
 repo = 'JuliaEditorSupport/deoplete-julia'
+lazy = 1
+
 ##---------
 ## JS
 ##---------
