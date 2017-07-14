@@ -8,7 +8,7 @@ let fortran_have_tabs=1
 
 " LaTeX {{{
 " vimtex {{{
-let g:vimtex_latexmk_progname = 'nvr'
+let g:vimtex_compiler_progname = 'nvr'
 if has('macunix')
     let g:vimtex_view_general_viewer
                 \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
