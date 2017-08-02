@@ -19,5 +19,5 @@ call ale#linter#Define('python', {
 \   'name': 'pylama',
 \   'executable_callback': 'ale_linters#python#pylama#GetExecutable',
 \   'command_callback': 'ale_linters#python#pylama#GetCommand',
-\   'callback': 'ale#handlers#python#HandlePEP8Format',
+\   'callback': 'ale_linters#python#flake8#Handle',
 \})
