@@ -13,6 +13,9 @@ repo = 'hecal3/vim-leader-guide'
 [[plugins]]
 repo = 'mhinz/vim-startify'
 
+[[plugins]]
+repo = 'equalsraf/neovim-gui-shim'
+
 ##---------
 ## Search and movement plugins
 ##---------
