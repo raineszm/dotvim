@@ -133,6 +133,8 @@ repo = 'rafi/vim-tinyline'
 ##---------
 [[plugins]]
 repo = 'lifepillar/vim-solarized8'
+[[plugins]]
+repo = 'dracula/vim'
 ##---------
 ## Utilities
 ##---------
