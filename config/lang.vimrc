@@ -109,14 +109,13 @@ let g:filetype_pyx = 'cython'
 " }}}
 
 " Python {{{
-nnoremap <Plug>(yapfify-buffer) :0,$!yapf<CR>
 augroup pythonauto
     autocmd!
-    autocmd! FileType python nmap <buffer> <LocalLeader>= <Plug>(yapfify-buffer)
-    " autocmd! BufWritePost,BufEnter *.py Neomake
-    autocmd! FileType python BracelessEnable +indent
+    autocmd FileType python nmap <buffer> <LocalLeader>= :Neoformat<cr>
+    autocmd FileType python BracelessEnable +indent
 augroup END
 
+" Jedi settings
 let g:jedi#goto_command = '<localleader>d'
 let g:jedi#goto_assignments_command = '<localleader>g'
 let g:jedi#goto_definitions_command = ''
@@ -124,6 +123,10 @@ let g:jedi#documentation_command = 'K'
 let g:jedi#usages_command = '<localleader>n'
 let g:jedi#completions_command = ''
 let g:jedi#rename_command = '<localleader>r'
+
+let g:jedi#force_py_version = 3
+
+
 let g:ale_linters = {'python' : ['pylama', 'mypy']}
 " }}}
 
