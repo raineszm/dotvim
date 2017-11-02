@@ -127,7 +127,7 @@ let g:jedi#rename_command = '<localleader>r'
 let g:jedi#force_py_version = 3
 
 
-let g:ale_linters = {'python' : ['pylama', 'mypy']}
+let g:ale_linters = {'python' : ['pylama']}
 " }}}
 
 " HTML {{{
