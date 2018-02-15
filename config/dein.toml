@@ -64,8 +64,6 @@ repo = 'honza/vim-snippets'
 ##---------
 ## Error Checking
 ##---------
-# [[plugins]]
-# repo = 'neomake/neomake'
 [[plugins]]
 repo = 'w0rp/ale'
 
@@ -154,6 +152,9 @@ repo = 'tpope/vim-repeat'
 
 [[plugins]]
 repo = 'jamessan/vim-gnupg'
+
+[[plugins]]
+repo = 'tpope/vim-abolish'
 
 ##---------
 ## Subregion
