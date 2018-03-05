@@ -29,7 +29,9 @@ if empty($SSH_TTY) && empty($SSH_SHELL)
 endif
 colorscheme dracula
 
-set guifont=Source\ Code\ Pro
+if exists('&guifont')
+    set guifont=Source\ Code\ Pro
+endif
 
 " }}}
 
