@@ -89,8 +89,13 @@ let g:filetype_pyx = 'cython'
 " Python {{{
 augroup pythonauto
     autocmd!
-    autocmd FileType python nmap <buffer> <LocalLeader>= :Neoformat<cr>
+    " autocmd FileType python nmap <buffer> <LocalLeader>= :Neoformat<cr>
     autocmd FileType python BracelessEnable +indent
+augroup END
+
+augroup pythonfmt
+  autocmd!
+  autocmd BufWritePre python undojoin | Neoformat
 augroup END
 
 " Jedi settings

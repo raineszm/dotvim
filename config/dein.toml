@@ -126,11 +126,10 @@ repo = 'tpope/vim-eunuch'
 ##---------
 [[plugins]]
 repo = 'rafi/vim-tinyline'
+if = '!exists("g:gui_oni")'
 ##---------
 ## Colors
 ##---------
-[[plugins]]
-repo = 'lifepillar/vim-solarized8'
 [[plugins]]
 repo = 'dracula/vim'
 ##---------
@@ -211,6 +210,13 @@ repo = 'zchee/deoplete-jedi'
 repo = 'tshirtman/vim-cython'
 lazy = 1
 on_ft = 'cython'
+
+[[plugins]]
+repo = 'ambv/black'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'gu-fan/riv.vim'
 ##---------
 ## Haskell
 ##---------
@@ -229,16 +235,6 @@ repo = 'travitch/hasksyn'
 ##---------
 [[plugins]]
 repo = 'rsmenon/vim-mathematica'
-##---------
-## HTML
-##---------
-[[plugins]]
-repo = 'mattn/emmet-vim'
-##---------
-## Stylus
-##---------
-[[plugins]]
-repo = 'wavded/vim-stylus'
 ##---------
 ## Markdown
 ##---------
@@ -302,28 +298,6 @@ repo = 'jalvesaq/Nvim-R'
 repo = 'rust-lang/rust.vim'
 [[plugins]]
 repo = 'racer-rust/vim-racer'
-##---------
-## Fish
-##---------
-[[plugins]]
-repo = 'dag/vim-fish'
-##---------
-## Asymptote
-##---------
-[[plugins]]
-repo = 'hura/vim-asymptote'
-##---------
-## Perl
-##---------
-[[plugins]]
-repo = 'vim-perl/vim-perl'
-merged = 0
-build='make clean carp dancer highlight-all-pragmas moose test-more try-tiny'
-##---------
-## Swift
-##---------
-[[plugins]]
-repo = 'keith/swift.vim'
 ##---------
 ## TOML
 ##---------
