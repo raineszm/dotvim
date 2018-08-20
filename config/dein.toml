@@ -169,23 +169,12 @@ repo = 'chrisbra/NrrwRgn'
 [[plugins]]
 repo = 'mesonbuild/meson'
 rtp = 'syntax-highlighting/vim'
-##---------
-## Org
-##---------
-[[plugins]]
-repo = 'jceb/vim-orgmode'
-on_ft = 'org'
-
-[[plugins]]
-repo = 'tpope/vim-speeddating'
-lazy = 1
-on_ft = 'org'
 
 ##---------
-## TodoTxt
+## Notes
 ##---------
 [[plugins]]
-repo = 'freitass/todo.txt-vim'
+repo = 'fmoralesc/vim-pad'
 
 ##---------
 ## Latex
