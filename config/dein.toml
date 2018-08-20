@@ -125,8 +125,13 @@ repo = 'tpope/vim-eunuch'
 ## Status Line
 ##---------
 [[plugins]]
-repo = 'rafi/vim-tinyline'
+repo = 'itchyny/lightline.vim'
 if = '!exists("g:gui_oni")'
+
+[[plugins]]
+repo = 'maximbaz/lightline-ale'
+if = '!exists("g:gui_oni")'
+
 ##---------
 ## Colors
 ##---------
