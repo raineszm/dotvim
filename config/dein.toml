@@ -11,12 +11,6 @@ local = 1
 repo = 'hecal3/vim-leader-guide'
 
 [[plugins]]
-repo = 'rafi/vim-sidemenu'
-
-[[plugins]]
-repo = 'mhinz/vim-startify'
-
-[[plugins]]
 repo = 'equalsraf/neovim-gui-shim'
 
 ##---------

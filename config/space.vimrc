@@ -125,15 +125,10 @@ call s:spacevim_bind('map', 'gD', 'git-diff-head', 'Gina diff HEAD', 1)
 call s:spacevim_bind('map', 'gf', 'git-fetch', 'Gina fetch', 1)
 call s:spacevim_bind('map', 'gF', 'git-pull', 'Gina pull', 1)
 call s:spacevim_bind('map', 'gi', 'git-init', 'Gina init', 1)
-" call s:spacevim_bind('map', 'gI', 'git-ignore', 'Gedit .gitignore', 1)
+call s:spacevim_bind('map', 'gI', 'git-ignore', 'ProjectRootExe edit .gitignore', 1)
 call s:spacevim_bind('map', 'gl', 'git-log', 'Gina log', 1)
-" call s:spacevim_bind('map', 'gL', 'git-log-buffer-file', 'GV!', 1)
-" call s:spacevim_bind('map', 'gr', 'git-checkout-current-file', 'Gread', 1)
-" call s:spacevim_bind('map', 'gR', 'git-remove-current-file', 'Gina rm', 1)
 call s:spacevim_bind('map', 'gs', 'git-status', 'Gina status', 1)
 call s:spacevim_bind('map', 'gS', 'git-stage-file', 'call feedkeys(":Gina add -- ")', 1)
-" call s:spacevim_bind('map', 'gw', 'git-stage-current-file', 'Gwrite', 1)
-
 " }}}
 
 call s:spacevim_bind_plug('nmap', 'l', 'sidemenu', '(sidemenu)')
@@ -142,7 +137,7 @@ call s:spacevim_bind_plug('xmap', 'l', 'sidemenu-visual', '(sidemenu-visual)')
 
 " projects {{{
 let g:lmap.p = { 'name': '+projects' }
-call s:spacevim_bind('map', 'pf', 'project-find-file', 'DeniteProjectDir file_rec', 1)
+call s:spacevim_bind('map', 'pf', 'project-find-file', 'Denite file/rec/git', 1)
 call s:spacevim_bind('map', 'pD', 'project-directory', 'ProjectRootExe Dirvish', 1)
 call s:spacevim_bind('map', 'pI', 'project-invalidate-cache', 'call feedkeys(":DeniteProjectDir\<CR>\<C-l>\<Esc>")', 1)
 " }}}
@@ -159,7 +154,7 @@ let g:lmap.s = { 'name': '+search/symbol' }
 call s:spacevim_bind('map', 'sc', 'highlight-persist-remove-all', 'noh', 1)
 call s:spacevim_bind('nmap', 'sj', 'search-tags', 'Denite outline', 1)
 call s:spacevim_bind('map', 'sp', 'smart-search', 'DeniteBufferDir grep', 1)
-call s:spacevim_bind('nmap', 'ss', 'vim-swoop', 'Denite line', 1)
+call s:spacevim_bind('nmap', 'sl', 'search-line', 'Denite line', 1)
 " }}}
 
 " toggles {{{
