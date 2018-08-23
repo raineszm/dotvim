@@ -134,26 +134,8 @@ call s:spacevim_bind('map', 'gs', 'git-status', 'Gina status', 1)
 call s:spacevim_bind('map', 'gS', 'git-stage-file', 'call feedkeys(":Gina add -- ")', 1)
 " call s:spacevim_bind('map', 'gw', 'git-stage-current-file', 'Gwrite', 1)
 
-let g:lmap.g['.'] = { 'name': '+vcs-micro-state' }
-call s:spacevim_bind('nmap', 'g.s', 'stage', 'GitGutterStageHunk', 1)
-call s:spacevim_bind('nmap', 'g.r', 'revert', 'GitGutterRevertHunk', 1)
-call s:spacevim_bind('nmap', 'g.h', 'show-hunk', 'GitGutterPreviewHunk', 1)
-call s:spacevim_bind('nmap', 'g.n', 'next', 'GitGutterNextHunk', 1)
-call s:spacevim_bind('nmap', 'g.N', 'previous', 'GitGutterPrevHunk', 1)
-call s:spacevim_bind('nmap', 'g.p', 'previous', 'GitGutterPrevHunk', 1)
-call s:spacevim_bind('nmap', 'g.t', 'toggle-margin', 'GitGutterSignsToggle', 1)
 " }}}
 
-" jump {{{
-let g:lmap.j = { 'name': '+jump' }
-call s:spacevim_bind_plug('nmap', 'jj', 'jump-to-char', '(easymotion-s)')
-call s:spacevim_bind_plug('vmap', 'jj', 'jump-to-char', '(easymotion-s)')
-call s:spacevim_bind_plug('nmap', 'jl', 'jump-to-line', '(easymotion-bd-jk)')
-call s:spacevim_bind_plug('vmap', 'jl', 'jump-to-line', '(easymotion-bd-jk)')
-call s:spacevim_bind_plug('nmap', 'jw', 'jump-to-word', '(easymotion-w)')
-call s:spacevim_bind_plug('vmap', 'jw', 'jump-to-word', '(easymotion-w)')
-" }}}
-"
 call s:spacevim_bind_plug('nmap', 'l', 'sidemenu', '(sidemenu)')
 call s:spacevim_bind_plug('xmap', 'l', 'sidemenu-visual', '(sidemenu-visual)')
 
@@ -182,9 +164,7 @@ call s:spacevim_bind('nmap', 'ss', 'vim-swoop', 'Denite line', 1)
 
 " toggles {{{
 let g:lmap.t = { 'name': '+toggles' }
-call s:spacevim_bind('map', 'tl', 'truncate-line', 'setlocal invwrap', 1)
 call s:spacevim_bind('map', 'tn', 'line-numbers', 'setlocal invnumber', 1)
-call s:spacevim_bind('map', 'tr', 'linum-relative-toggle', 'setlocal invrelativenumber', 1)
 call s:spacevim_bind('map', 'tS', 'spelling', 'setlocal invspell', 1)
 
 " toggles/highlight {{{
@@ -200,7 +180,7 @@ call s:spacevim_bind('nmap', 'tCp', 'parenthesis-highlight-mode', 'setlocal invs
 
 " UI toggles/themes {{{
 let g:lmap.T = { 'name': '+UI toggles/themes' }
-call s:spacevim_bind('map', 'Td', 'version-control-margin', 'GitGutterToggle', 1)
+call s:spacevim_bind('map', 'Td', 'version-control-margin', 'SignifyToggle', 1)
 " }}}
 
 " windows {{{
