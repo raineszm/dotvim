@@ -131,8 +131,7 @@ call s:spacevim_bind('map', 'gs', 'git-status', 'Gina status', 1)
 call s:spacevim_bind('map', 'gS', 'git-stage-file', 'call feedkeys(":Gina add -- ")', 1)
 " }}}
 
-call s:spacevim_bind_plug('nmap', 'l', 'sidemenu', '(sidemenu)')
-call s:spacevim_bind_plug('xmap', 'l', 'sidemenu-visual', '(sidemenu-visual)')
+let g:lmap.n = { 'name': '+narrow' }
 
 
 " projects {{{
