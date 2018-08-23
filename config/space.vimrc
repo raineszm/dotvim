@@ -45,6 +45,7 @@ endfunction
 call s:spacevim_bind('map', '<Tab>', 'last-buffer', 'b#', 1)
 call s:spacevim_bind('map', '!', 'shell-cmd', 'call feedkeys(":! ")', 1)
 call s:spacevim_bind('map', '/', 'smart-search', 'DeniteProjectDir grep', 1)
+call s:spacevim_bind('map', '?', 'help', 'Denite help', 1)
 call s:spacevim_bind('nmap', '*', 'smart-search-with-input', 'DeniteProjectDir grep:`expand("<cword>")`', 1)
 
 " Windows {{{
@@ -65,6 +66,18 @@ call s:spacevim_bind('map', '<Space>', 'commands', 'Denite command', 1)
 " applications {{{
 let g:lmap.a = { 'name': '+applications' }
 call s:spacevim_bind('map', 'au', 'undo-tree-visualize', 'UndotreeToggle', 1)
+call s:spacevim_bind('map', 'aj', 'junkfile', 'Denite -auto-preview junkfile junkfile:new ', 1)
+
+let g:lmap.a.d = {'name': '+dein'}
+
+function! DeinCleanup()
+    call map(dein#check_clean(), "delete(v:val, 'rf')")
+    call dein#recache_runtimepath()
+endfunction
+
+call s:spacevim_bind('map', 'adC', 'cleanup', 'call DeinCleanup()', 1)
+call s:spacevim_bind('map', 'adu', 'update', 'call dein#update()', 1)
+
 " }}}
 
 " buffers {{{
