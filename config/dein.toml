@@ -97,7 +97,7 @@ repo = 'sbdchd/neoformat'
 ## Git stuff
 ##---------
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
+repo = 'mhinz/vim-signify'
 
 [[plugins]]
 repo = 'lambdalisue/gina.vim'

@@ -105,11 +105,6 @@ set backupdir-=.
 " Persistent undo
 set undofile
 
-" Disable mappings {{{
-let g:gitgutter_map_keys = 0
-let g:EasyMotion_do_mapping = 0
-" }}}
-
 " Status line {{{
 let g:lightline = {
     \ 'colorscheme': 'Dracula'
@@ -136,6 +131,11 @@ let g:lightline#ale#indicator_errors = "\uf05e"
 let g:lightline#ale#indicator_ok = "\uf00c"
 
 let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+" }}}
+
+" VCS {{{
+    let g:signify_vcs_list = [ 'git' ]
+    let g:signify_realtime = 1
 " }}}
 
 " Trim trailing whitespace on save because it sucks
