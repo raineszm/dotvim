@@ -32,13 +32,7 @@ repo = 'justinmk/vim-dirvish'
 repo = 'justinmk/vim-sneak'
 
 [[plugins]]
-repo = 'easymotion/vim-easymotion'
-
-[[plugins]]
 repo = 'brooth/far.vim'
-
-[[plugins]]
-repo = 'tpope/vim-unimpaired'
 
 [[plugins]]
 repo = 'tweekmonster/braceless.vim'
@@ -88,8 +82,6 @@ repo = 'honza/vim-snippets'
 [[plugins]]
 repo = 'w0rp/ale'
 
-[[plugins]]
-repo = 'rhysd/vim-grammarous'
 ##---------
 ## Source formatting
 ##---------
@@ -207,6 +199,7 @@ repo = 'neoclide/macnote.vim'
 ##---------
 [[plugins]]
 repo = 'lervag/vimtex'
+
 ##---------
 ## Python
 ##---------
@@ -245,11 +238,6 @@ on_ft = 'haskell'
 
 [[plugins]]
 repo = 'travitch/hasksyn'
-##---------
-## Mathematica
-##---------
-[[plugins]]
-repo = 'rsmenon/vim-mathematica'
 ##---------
 ## Markdown
 ##---------
@@ -304,11 +292,13 @@ on_ft = 'clojure'
 repo = 'ngmy/vim-rubocop'
 lazy = 1
 on_ft = 'ruby'
+
 ##---------
 ## R
 ##---------
 [[plugins]]
 repo = 'jalvesaq/Nvim-R'
+
 ##---------
 ## Rust
 ##---------
