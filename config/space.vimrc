@@ -47,6 +47,7 @@ call s:spacevim_bind('map', '!', 'shell-cmd', 'call feedkeys(":! ")', 1)
 call s:spacevim_bind('map', '/', 'smart-search', 'DeniteProjectDir grep', 1)
 call s:spacevim_bind('nmap', '*', 'smart-search-with-input', 'DeniteProjectDir grep:`expand("<cword>")`', 1)
 
+" Windows {{{
 call s:spacevim_bind('map', '1', 'window-1', '1wincmd w', 1)
 call s:spacevim_bind('map', '2', 'window-2', '2wincmd w', 1)
 call s:spacevim_bind('map', '3', 'window-3', '3wincmd w', 1)
@@ -57,6 +58,7 @@ call s:spacevim_bind('map', '7', 'window-7', '7wincmd w', 1)
 call s:spacevim_bind('map', '8', 'window-8', '8wincmd w', 1)
 call s:spacevim_bind('map', '9', 'window-9', '9wincmd w', 1)
 call s:spacevim_bind('map', '0', 'window-10', '10wincmd w', 1)
+" }}}
 
 call s:spacevim_bind('map', '<Space>', 'commands', 'Denite command', 1)
 
@@ -151,6 +153,9 @@ call s:spacevim_bind_plug('vmap', 'jl', 'jump-to-line', '(easymotion-bd-jk)')
 call s:spacevim_bind_plug('nmap', 'jw', 'jump-to-word', '(easymotion-w)')
 call s:spacevim_bind_plug('vmap', 'jw', 'jump-to-word', '(easymotion-w)')
 " }}}
+"
+call s:spacevim_bind_plug('nmap', 'l', 'sidemenu', '(sidemenu)')
+call s:spacevim_bind_plug('xmap', 'l', 'sidemenu-visual', '(sidemenu-visual)')
 
 
 " projects {{{
@@ -173,7 +178,6 @@ call s:spacevim_bind('map', 'sc', 'highlight-persist-remove-all', 'noh', 1)
 call s:spacevim_bind('nmap', 'sj', 'search-tags', 'Denite outline', 1)
 call s:spacevim_bind('map', 'sp', 'smart-search', 'DeniteBufferDir grep', 1)
 call s:spacevim_bind('nmap', 'ss', 'vim-swoop', 'Denite line', 1)
-" call s:spacevim_bind('vmap', 'ss', 'vim-swoop', 'call SwoopSelection()', 1)
 " }}}
 
 " toggles {{{

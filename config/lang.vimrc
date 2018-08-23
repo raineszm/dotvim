@@ -124,8 +124,7 @@ augroup END
 " Markdown{{{
 let g:vim_markdown_math = 1
 
-let g:pad#dir = '~/Dropbox/sync/vimpad'
-let g:pad#silent_on_mappings_fail = 1
+let g:macnote_note_directory = expand('$HOME/Dropbox/sync/macnote')
 " }}}
 
 " Ruby {{{

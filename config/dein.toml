@@ -11,6 +11,9 @@ local = 1
 repo = 'hecal3/vim-leader-guide'
 
 [[plugins]]
+repo = 'rafi/vim-sidemenu'
+
+[[plugins]]
 repo = 'mhinz/vim-startify'
 
 [[plugins]]
@@ -19,6 +22,9 @@ repo = 'equalsraf/neovim-gui-shim'
 ##---------
 ## Search and movement plugins
 ##---------
+[[pluggins]]
+repo = 'itchyny/vim-cursorword'
+
 [[plugins]]
 repo = 'justinmk/vim-dirvish'
 
@@ -29,10 +35,25 @@ repo = 'justinmk/vim-sneak'
 repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
+repo = 'brooth/far.vim'
+
+[[plugins]]
 repo = 'tpope/vim-unimpaired'
 
 [[plugins]]
 repo = 'tweekmonster/braceless.vim'
+
+##---------
+## Scratch
+##---------
+[[plugins]]
+repo = 'Shougo/junkfile.vim'
+
+##---------
+## Tag
+##---------
+[[plugins]]
+repo = 'ludovicchabant/vim-gutentags'
 
 ##---------
 ## Undo
@@ -179,7 +200,7 @@ rtp = 'syntax-highlighting/vim'
 ## Notes
 ##---------
 [[plugins]]
-repo = 'fmoralesc/vim-pad'
+repo = 'neoclide/macnote.vim'
 
 ##---------
 ## Latex
@@ -234,6 +255,9 @@ repo = 'rsmenon/vim-mathematica'
 ##---------
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
+
+[[plugins]]
+repo = 'itspriddle/vim-marked'
 ##---------
 ## Julia
 ##---------
@@ -300,6 +324,9 @@ repo = 'cespare/vim-toml'
 ##---------
 ## Vimscript
 ##---------
+[[plugins]]
+repo = 'vim-jp/syntax-vim-ex'
+
 [[plugins]]
 repo = 'thinca/vim-prettyprint'
 lazy = 1

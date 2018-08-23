@@ -9,3 +9,4 @@ dein/
 *.sug
 *.vim-rplugin~
 spell/*
+tags*
