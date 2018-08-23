@@ -13,6 +13,9 @@ repo = 'hecal3/vim-leader-guide'
 [[plugins]]
 repo = 'equalsraf/neovim-gui-shim'
 
+[[plugins]]
+repo = 'mhinz/vim-startify'
+
 ##---------
 ## Search and movement plugins
 ##---------
@@ -59,6 +62,10 @@ repo = 'Shougo/deoplete.nvim'
 ##---------
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'nixprime/cpsm'
+build = 'sh -c "PY3=ON ./install.sh"'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
