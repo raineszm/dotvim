@@ -109,6 +109,7 @@ call s:spacevim_bind('map', 'ep', 'previous-error', 'lprevious', 1)
 
 " files {{{
 let g:lmap.f = { 'name': '+files' }
+call s:spacevim_bind('map', 'fA', 'write-all', 'wall', 1)
 call s:spacevim_bind('map', 'fc', 'copy-file', 'saveas', 1)
 call s:spacevim_bind('map', 'fD', 'delete-current-buffer-file', 'Remove', 1)
 call s:spacevim_bind('map', 'fE', 'sudo-edit', 'call feedkeys(":SudoEdit ")', 1)
@@ -117,7 +118,7 @@ call s:spacevim_bind('map', 'fL', 'locate', 'call feedkeys(":Locate ")', 1)
 call s:spacevim_bind('map', 'fr', 'recentf', 'Denite file_mru', 1)
 call s:spacevim_bind('map', 'fR', 'rename-current-buffer-file', 'call feedkeys(":Rename ")', 1)
 call s:spacevim_bind('map', 'fs', 'save-buffer', 'write', 1)
-call s:spacevim_bind('map', 'fS', 'write-all', 'wall', 1)
+call s:spacevim_bind('map', 'fS', 'sudo-write', 'SudoWrite', 1)
 
 " files/vim {{{
 let g:lmap.f.e = { 'name': '+files/vim' }
@@ -142,6 +143,7 @@ call s:spacevim_bind('map', 'gI', 'git-ignore', 'ProjectRootExe edit .gitignore'
 call s:spacevim_bind('map', 'gl', 'git-log', 'Gina log', 1)
 call s:spacevim_bind('map', 'gs', 'git-status', 'Gina status', 1)
 call s:spacevim_bind('map', 'gS', 'git-stage-file', 'call feedkeys(":Gina add -- ")', 1)
+call s:spacevim_bind('map', 'gP', 'git-push', 'Gina push', 1)
 " }}}
 
 let g:lmap.n = { 'name': '+narrow' }
@@ -164,9 +166,11 @@ call s:spacevim_bind('map', 'qs', 'save-buffers-kill-vim', 'xall', 1)
 " search/symbol {{{
 let g:lmap.s = { 'name': '+search/symbol' }
 call s:spacevim_bind('map', 'sc', 'highlight-persist-remove-all', 'noh', 1)
-call s:spacevim_bind('nmap', 'sj', 'search-tags', 'Denite unite:outline', 1)
+call s:spacevim_bind('nmap', 'so', 'denite-outline', 'Denite unite:outline', 1)
+call s:spacevim_bind('nmap', 'sO', 'Unite outline', 'Unite outline', 1)
 call s:spacevim_bind('map', 'sp', 'smart-search', 'DeniteBufferDir grep', 1)
 call s:spacevim_bind('nmap', 'sl', 'search-line', 'Denite line', 1)
+call s:spacevim_bind('nmap', 'sR', 'replace-with-far', 'Farp', 1)
 " }}}
 
 " toggles {{{

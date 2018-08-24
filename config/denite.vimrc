@@ -34,3 +34,6 @@ endfunction
 
 call denite#custom#action('file', 'delete', function('s:denite_delete'))
 
+
+let g:unite_source_outline_ctags_program = '/usr/local/bin/ctags'
+
