@@ -64,6 +64,15 @@ repo = 'Shougo/deoplete.nvim'
 repo = 'Shougo/denite.nvim'
 
 [[plugins]]
+repo = 'neoclide/denite-extra'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/unite-outline'
+
+[[plugins]]
 repo = 'nixprime/cpsm'
 build = 'sh -c "PY3=ON ./install.sh"'
 
