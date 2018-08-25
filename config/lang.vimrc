@@ -56,24 +56,6 @@ augroup latexauto
 augroup END
 " }}}
 
-" " Neomake linters {{{
-" let g:neomake_tex_proselint_maker = {
-"             \ 'errorformat': '%f:%l:%c: %m'
-"             \ }
-
-" let g:neomake_tex_enabled_makers = ['chktex', 'lacheck', 'proselint']
-" " }}}
-" }}}
-
-" MATHEMATICA STUFF {{{
-let g:mma_candy=2
-
-augroup mathematicaauto
-    autocmd!
-    autocmd! BufNewFile,BufRead *.mma set filetype=mma
-augroup END
-" }}}
-
 " HASKELL STUFF {{{
 
 augroup haskellauto
@@ -89,7 +71,6 @@ let g:filetype_pyx = 'cython'
 " Python {{{
 augroup pythonauto
     autocmd!
-    " autocmd FileType python nmap <buffer> <LocalLeader>= :Neoformat<cr>
     autocmd FileType python BracelessEnable +indent
 augroup END
 
@@ -109,16 +90,6 @@ let g:jedi#rename_command = '<localleader>r'
 
 let g:jedi#force_py_version = 3
 
-
-let g:ale_linters = {'python' : ['pylama']}
-" }}}
-
-" HTML {{{
-let g:user_emmet_install_global = 0
-augroup htmlauto
-    autocmd!
-    autocmd! FileType html,css EmmetInstall
-augroup END
 " }}}
 
 " Markdown{{{
