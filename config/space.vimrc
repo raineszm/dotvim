@@ -77,6 +77,7 @@ endfunction
 
 call s:spacevim_bind('map', 'adC', 'cleanup', 'call DeinCleanup()', 1)
 call s:spacevim_bind('map', 'adu', 'update', 'call dein#update()', 1)
+call s:spacevim_bind('nmap', 'adR', 'recache-rtp', 'call dein#recache_runtimepath', 1)
 
 " }}}
 
@@ -130,7 +131,7 @@ call s:spacevim_bind('map', 'fev', 'display-vim-version', 'version', 1)
 " }}}
 
 " git/versions-control {{{
-let g:lmap.g = { 'name': '+git/versions-control' }
+let g:lmap.g = { 'name': '+git/version-control' }
 call s:spacevim_bind('map', 'gb', 'git-blame', 'Gina blame', 1)
 call s:spacevim_bind('map', 'gc', 'git-commit', 'Gina commit', 1)
 call s:spacevim_bind('map', 'gC', 'git-checkout', 'Gina checkout', 1)
@@ -147,6 +148,10 @@ call s:spacevim_bind('map', 'gP', 'git-push', 'Gina push', 1)
 " }}}
 
 let g:lmap.n = { 'name': '+narrow' }
+call s:spacevim_bind('map', 'nr', '+narrow/region', 'NR', 1)
+call s:spacevim_bind('map', 'nR', '+narrow/region-here', 'NR!', 1)
+call s:spacevim_bind('map', 'nv', '+narrow/visual', 'NRV', 1)
+call s:spacevim_bind('map', 'nV', '+narrow/visual-here', 'NRV!', 1)
 
 
 " projects {{{

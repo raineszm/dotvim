@@ -86,9 +86,8 @@ let g:startify_bookmarks = [
 " }}}
 
 " NrrwRegion {{{
-  command! -nargs=* -bang -range -complete=filetype NN
-              \ :<line1>,<line2> call nrrwrgn#NrrwRgn('',<q-bang>)
-              \ | set filetype=<args>
+let g:nrrw_rgn_nomap_nr = 1
+let g:nrrw_rgn_nomap_Nr = 1
 "}}}
 
 " Search Settings {{{
