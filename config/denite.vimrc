@@ -11,11 +11,6 @@ if executable('rg')
                 \ ['rg', '--files', '--glob', '!.git'])
 endif
 
-if has('nvim')
-  call denite#custom#source('file/rec', 'matchers',
-        \ ['matcher/cpsm'])
-endif
-
 call denite#custom#alias('source', 'file/rec/git', 'file/rec')
 call denite#custom#var('file/rec/git', 'command',
 \ ['git', 'ls-files', '-co', '--exclude-standard'])
