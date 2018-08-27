@@ -57,6 +57,15 @@ repo = 'mbbill/undotree'
 ##---------
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'Shougo/deoplete-clangx'
+on_ft = ['c', 'cpp']
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
 ##---------
 ## Unite
 ##---------
@@ -71,10 +80,6 @@ repo = 'Shougo/unite.vim'
 
 [[plugins]]
 repo = 'Shougo/unite-outline'
-
-[[plugins]]
-repo = 'nixprime/cpsm'
-build = 'sh -c "PY3=ON ./install.sh"'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
@@ -196,7 +201,7 @@ repo = 'chrisbra/NrrwRgn'
 ##--------
 [[plugins]]
 repo = 'mesonbuild/meson'
-rtp = 'syntax-highlighting/vim'
+rtp = 'data/syntax-highlighting/vim'
 
 ##---------
 ## Notes
