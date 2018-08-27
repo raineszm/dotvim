@@ -1,9 +1,11 @@
 " vim: foldmethod=marker
 
-" Plug Config {{{
+" Dein Config {{{
 
 " Required:
 set runtimepath+=$HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+
+let g:dein#enable_notification = 1
 
 " Required:
 if dein#load_state('~/.config/nvim/dein')
