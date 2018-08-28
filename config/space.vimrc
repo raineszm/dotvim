@@ -66,20 +66,13 @@ call s:spacevim_bind('map', '<Space>', 'commands', 'Denite command', 1)
 " applications {{{
 let g:lmap.a = { 'name': '+applications' }
 call s:spacevim_bind('map', 'au', 'undo-tree-visualize', 'UndotreeToggle', 1)
-call s:spacevim_bind('map', 'aj', 'junkfile', 'Denite -auto-preview junkfile junkfile:new ', 1)
 
-let g:lmap.a.d = {'name': '+dein'}
+let g:lmap.a.d = { 'name': '+applications/dash' }
 
-function! DeinCleanup()
-    call map(dein#check_clean(), "delete(v:val, 'rf')")
-    call dein#recache_runtimepath()
-endfunction
-
-call s:spacevim_bind('map', 'adC', 'cleanup', 'call DeinCleanup()', 1)
-call s:spacevim_bind('map', 'adu', 'update', 'call dein#update()', 1)
-call s:spacevim_bind('nmap', 'adR', 'recache-rtp', 'call dein#recache_runtimepath()', 1)
-
+call s:spacevim_bind_plug('map', 'adh'', 'dash-here', '<Plug>DashSearch')
 " }}}
+
+
 
 " buffers {{{
 let g:lmap.b = { 'name': '+buffers' }
@@ -115,6 +108,7 @@ call s:spacevim_bind('map', 'fc', 'copy-file', 'saveas', 1)
 call s:spacevim_bind('map', 'fD', 'delete-current-buffer-file', 'Remove', 1)
 call s:spacevim_bind('map', 'fE', 'sudo-edit', 'call feedkeys(":SudoEdit ")', 1)
 call s:spacevim_bind('map', 'ff', 'find-files', 'Denite file_rec', 1)
+call s:spacevim_bind('map', 'fj', 'junkfile', 'Denite -auto-preview junkfile junkfile:new ', 1)
 call s:spacevim_bind('map', 'fL', 'locate', 'call feedkeys(":Locate ")', 1)
 call s:spacevim_bind('map', 'fr', 'recentf', 'Denite file_mru', 1)
 call s:spacevim_bind('map', 'fR', 'rename-current-buffer-file', 'call feedkeys(":Rename ")', 1)
@@ -160,6 +154,19 @@ call s:spacevim_bind('map', 'pf', 'project-find-file', 'Denite file/rec/git', 1)
 call s:spacevim_bind('map', 'pD', 'project-directory', 'ProjectRootExe Dirvish', 1)
 call s:spacevim_bind('map', 'pI', 'project-invalidate-cache', 'call feedkeys(":DeniteProjectDir\<CR>\<C-l>\<Esc>")', 1)
 " }}}
+"
+" Plugins {{{
+let g:lmap.P = {'name': '+Plugins'}
+
+function! DeinCleanup()
+    call map(dein#check_clean(), "delete(v:val, 'rf')")
+    call dein#recache_runtimepath()
+endfunction
+
+call s:spacevim_bind('map', 'PC', 'cleanup', 'call DeinCleanup()', 1)
+call s:spacevim_bind('map', 'Pu', 'update', 'call dein#update()', 1)
+call s:spacevim_bind('nmap', 'PR', 'recache-rtp', 'call dein#recache_runtimepath()', 1)
+" }}}
 
 " quit {{{
 let g:lmap.q = { 'name': '+quit' }
@@ -172,7 +179,7 @@ call s:spacevim_bind('map', 'qs', 'save-buffers-kill-vim', 'xall', 1)
 let g:lmap.s = { 'name': '+search/symbol' }
 call s:spacevim_bind('map', 'sc', 'highlight-persist-remove-all', 'noh', 1)
 call s:spacevim_bind('nmap', 'so', 'denite-outline', 'Denite unite:outline', 1)
-call s:spacevim_bind('nmap', 'sO', 'Unite outline', 'Unite outline', 1)
+call s:spacevim_bind('map', 'sO', 'unite-outline', 'Unite outline', 1)
 call s:spacevim_bind('map', 'sp', 'smart-search', 'DeniteBufferDir grep', 1)
 call s:spacevim_bind('nmap', 'sl', 'search-line', 'Denite line', 1)
 call s:spacevim_bind('nmap', 'sR', 'replace-with-far', 'Farp', 1)
