@@ -77,7 +77,7 @@ endfunction
 
 call s:spacevim_bind('map', 'adC', 'cleanup', 'call DeinCleanup()', 1)
 call s:spacevim_bind('map', 'adu', 'update', 'call dein#update()', 1)
-call s:spacevim_bind('nmap', 'adR', 'recache-rtp', 'call dein#recache_runtimepath', 1)
+call s:spacevim_bind('nmap', 'adR', 'recache-rtp', 'call dein#recache_runtimepath()', 1)
 
 " }}}
 
