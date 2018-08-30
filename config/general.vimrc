@@ -45,6 +45,14 @@ set completeopt=noinsert,menuone,noselect
 " Cut down on noise from completions
 set shortmess+=c
 " }}}
+"
+" Formatting {{{
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+" }}}
+
 
 " External tools {{{
 if executable('rg')

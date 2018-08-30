@@ -1,6 +1,22 @@
 " vim: foldmethod=marker
 "
 
+" Project Setting
+let g:projectionist_heuristics = {
+            \   "meson.build&include/" : {
+            \   "*/build.ninja" : {  "make": "cd\ {file|dirname}\ &&\ ninja" },
+            \   "include/*.h" : {
+            \       "alternate" : "src/{}.cpp",
+            \       "type" : "header"
+            \       },
+            \   "src/*.cpp" : {
+            \       "alternate" : "src/{}.h",
+            \        "type" : "source"
+            \   }
+            \ }
+            \ }
+
+
 " Fortran {{{
 let fortran_free_source=1
 let fortran_have_tabs=1
@@ -73,10 +89,7 @@ augroup pythonauto
     autocmd FileType python BracelessEnable +indent
 augroup END
 
-augroup pythonfmt
-  autocmd!
-  autocmd BufWritePre python undojoin | Neoformat
-augroup END
+let g:neoformat_enabled_python = ['black']
 
 if executable('pyls')
     au User lsp_setup call lsp#register_server({
@@ -86,31 +99,12 @@ if executable('pyls')
         \ })
 endif
 
-" Jedi settings
-let g:jedi#goto_command = '<localleader>d'
-let g:jedi#goto_assignments_command = '<localleader>g'
-let g:jedi#goto_definitions_command = ''
-let g:jedi#documentation_command = 'K'
-let g:jedi#usages_command = '<localleader>n'
-let g:jedi#completions_command = ''
-let g:jedi#rename_command = '<localleader>r'
-
-let g:jedi#force_py_version = 3
-
-" }}}
-
 " Markdown{{{
 let g:vim_markdown_math = 1
 
 let g:macnote_note_directory = expand('$HOME/Dropbox/sync/macnote')
 " }}}
 
-" Ruby {{{
-augroup rubyauto
-    autocmd!
-    autocmd! FileType ruby setlocal softtabstop=2 shiftwidth=2 expandtab
-augroup END
-" }}}
 
 " R {{{
 

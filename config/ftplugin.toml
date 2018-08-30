@@ -1,7 +1,11 @@
 [ftplugin]
 cpp = '''
 setlocal expandtab shiftwidth=2 softtabstop=2
-nmap <buffer> <LocalLeader>a :FSHere<cr>
+nmap <buffer> <LocalLeader>a :<C-u>A<cr>
+'''
+
+ruby = '''
+setlocal softtabstop=2 shiftwidth=2 expandtab
 '''
 
 tex='''

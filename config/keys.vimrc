@@ -15,5 +15,9 @@ augroup vimfiles
 augroup END
 " }}}
 
+" Language Server {{{
+nnoremap gh :<c-u>LspHover<CR>
+" }}}
+
 " Load space mnemonics
 call LoadRC('space')

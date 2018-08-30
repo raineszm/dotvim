@@ -25,7 +25,7 @@ repo = 'prabirshrestha/async.vim'
 ##---------
 ## Search and movement plugins
 ##---------
-[[pluggins]]
+[[plugins]]
 repo = 'itchyny/vim-cursorword'
 
 [[plugins]]
@@ -156,7 +156,7 @@ hook_source='''
 repo = 'dbakker/vim-projectroot'
 
 [[plugins]]
-repo = 'derekwyatt/vim-fswitch'
+repo = 'tpope/vim-projectionist'
 ##---------
 ## Build/Run Tools
 ##---------
@@ -213,11 +213,24 @@ repo = 'chrisbra/NrrwRgn'
 ## Language Specific {{{
 ##---------
 ##--------
-## Meson
+## C/C++
 ##--------
 [[plugins]]
-repo = 'mesonbuild/meson'
-rtp = 'data/syntax-highlighting/vim'
+repo = 'bfrg/vim-cpp-modern'
+
+[[plugins]]
+repo = 'sakhnik/nvim-gdb''
+on_ft = 'cpp'
+
+##--------
+## Meson
+##--------
+# [[plugins]]
+# repo = 'mesonbuild/meson'
+# rtp = 'data/syntax-highlighting/vim'
+
+[[plugins]]
+repo = 'igankevich/mesonic'
 
 ##---------
 ## Notes
@@ -235,21 +248,9 @@ repo = 'lervag/vimtex'
 ## Python
 ##---------
 [[plugins]]
-repo = 'davidhalter/jedi-vim'
-lazy = 1
-on_ft = 'python'
-
-[[plugins]]
-repo = 'hynek/vim-python-pep8-indent'
-
-[[plugins]]
 repo = 'tshirtman/vim-cython'
 lazy = 1
 on_ft = 'cython'
-
-[[plugins]]
-repo = 'ambv/black'
-on_ft = 'python'
 
 [[plugins]]
 repo = 'gu-fan/riv.vim'

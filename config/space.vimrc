@@ -69,7 +69,7 @@ call s:spacevim_bind('map', 'au', 'undo-tree-visualize', 'UndotreeToggle', 1)
 
 let g:lmap.a.d = { 'name': '+applications/dash' }
 
-call s:spacevim_bind_plug('map', 'adh'', 'dash-here', '<Plug>DashSearch')
+call s:spacevim_bind_plug('map', 'adh', 'dash-here', 'DashSearch')
 " }}}
 
 
@@ -117,6 +117,8 @@ call s:spacevim_bind('map', 'fS', 'sudo-write', 'SudoWrite', 1)
 
 " files/vim {{{
 let g:lmap.f.e = { 'name': '+files/vim' }
+call s:spacevim_bind('map', 'fec', 'find-configs',
+    \ 'Denite -buffer-name="configs" file::' . fnamemodify(expand('$MYVIMRC'), ':p:h') . '/config/', 1)
 call s:spacevim_bind('map', 'fed', 'find-dotfile', 'edit $MYVIMRC', 1)
 call s:spacevim_bind('map', 'feR', 'sync-configuration', 'source $MYVIMRC', 1)
 call s:spacevim_bind('map', 'fev', 'display-vim-version', 'version', 1)
@@ -178,7 +180,8 @@ call s:spacevim_bind('map', 'qs', 'save-buffers-kill-vim', 'xall', 1)
 " search/symbol {{{
 let g:lmap.s = { 'name': '+search/symbol' }
 call s:spacevim_bind('map', 'sc', 'highlight-persist-remove-all', 'noh', 1)
-call s:spacevim_bind('nmap', 'so', 'denite-outline', 'Denite unite:outline', 1)
+call s:spacevim_bind('nmap', 'so', 'denite-outline', 'Denite -source-names="hide" unite:outline', 1)
+call s:spacevim_bind('map', 'sr', 'denite-resume', 'Denite -resume -refresh', 1)
 call s:spacevim_bind('map', 'sO', 'unite-outline', 'Unite outline', 1)
 call s:spacevim_bind('map', 'sp', 'smart-search', 'DeniteBufferDir grep', 1)
 call s:spacevim_bind('nmap', 'sl', 'search-line', 'Denite line', 1)
