@@ -53,6 +53,10 @@ augroup fmt
 augroup END
 " }}}
 
+" Local Settings {{{
+set exrc
+set secure
+" }}}
 
 " External tools {{{
 if executable('rg')

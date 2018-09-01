@@ -44,9 +44,9 @@ endfunction
 
 call s:spacevim_bind('map', '<Tab>', 'last-buffer', 'b#', 1)
 call s:spacevim_bind('map', '!', 'shell-cmd', 'call feedkeys(":! ")', 1)
-call s:spacevim_bind('map', '/', 'smart-search', 'DeniteProjectDir grep', 1)
+call s:spacevim_bind('map', '/', 'smart-search', 'ProjectRootExe DeniteProjectDir grep', 1)
 call s:spacevim_bind('map', '?', 'help', 'Denite help', 1)
-call s:spacevim_bind('nmap', '*', 'smart-search-with-input', 'DeniteProjectDir grep:`expand("<cword>")`', 1)
+call s:spacevim_bind('nmap', '*', 'smart-search-with-input', 'ProjectRootExe DeniteProjectDir grep:`expand("<cword>")`', 1)
 
 " Windows {{{
 call s:spacevim_bind('map', '1', 'window-1', '1wincmd w', 1)
@@ -90,14 +90,15 @@ call s:spacevim_bind('map', 'bmR', 'buf-rotate-up-left', 'wincmd R', 1)
 " }}}
 
 " }}}
+"
 
 " errors {{{
 let g:lmap.e = { 'name': '+errors' }
 " Error checking {{{
-call s:spacevim_bind('map', 'el', 'error-list', 'lopen', 1)
-call s:spacevim_bind('map', 'en', 'next-error', 'lnext', 1)
-call s:spacevim_bind('map', 'eN', 'previous-error', 'lprevious', 1)
-call s:spacevim_bind('map', 'ep', 'previous-error', 'lprevious', 1)
+call s:spacevim_bind('map', 'el', 'error-list', 'Denite location_list', 1)
+call s:spacevim_bind('map', 'en', 'next-error', 'Denite location_list -resume -cursor-pos="+1"', 1)
+call s:spacevim_bind('map', 'eN', 'previous-error', 'Denite location_list -resume -cursor-pos="-1"', 1)
+call s:spacevim_bind('map', 'ep', 'previous-error', 'Denite location_list -resume -cursor-pos="-1"', 1)
 " }}}
 " }}}
 
@@ -142,6 +143,11 @@ call s:spacevim_bind('map', 'gs', 'git-status', 'Gina status', 1)
 call s:spacevim_bind('map', 'gS', 'git-stage-file', 'call feedkeys(":Gina add -- ")', 1)
 call s:spacevim_bind('map', 'gP', 'git-push', 'Gina push', 1)
 " }}}
+"
+let g:lmap.h = { 'name': '+help' }
+" help {{{
+call s:spacevim_bind('map', 'hm', '+help/mappings', 'Denite unite:mapping', 1)
+" }}}
 
 let g:lmap.n = { 'name': '+narrow' }
 call s:spacevim_bind('map', 'nr', '+narrow/region', 'NR', 1)
@@ -153,7 +159,7 @@ call s:spacevim_bind('map', 'nV', '+narrow/visual-here', 'NRV!', 1)
 " projects {{{
 let g:lmap.p = { 'name': '+projects' }
 call s:spacevim_bind('map', 'pf', 'project-find-file', 'Denite file/rec/git', 1)
-call s:spacevim_bind('map', 'pD', 'project-directory', 'ProjectRootExe Dirvish', 1)
+call s:spacevim_bind('map', 'pD', 'project-directory', 'ProjectRootExe VimFiler', 1)
 call s:spacevim_bind('map', 'pI', 'project-invalidate-cache', 'call feedkeys(":DeniteProjectDir\<CR>\<C-l>\<Esc>")', 1)
 " }}}
 "
@@ -223,7 +229,7 @@ call s:spacevim_bind('map', 'wk', 'window-up', 'wincmd k', 1)
 call s:spacevim_bind('map', 'wK', 'window-move-far-up', 'wincmd K', 1)
 call s:spacevim_bind('map', 'wl', 'window-right', 'wincmd l', 1)
 call s:spacevim_bind('map', 'wL', 'window-move-far-right', 'wincmd L', 1)
-call s:spacevim_bind('map', 'wm', 'maximize-buffer', 'call SpacevimMaximizeBuffer()', 1)
+call s:spacevim_bind('map', 'wm', 'maximize-buffer', 'wincmd o', 1)
 call s:spacevim_bind('map', 'ws', 'split-window-below', 'split', 1)
 call s:spacevim_bind('map', 'wS', 'split-window-below-and-focus', 'split\|wincmd w', 1)
 call s:spacevim_bind('map', 'wv', 'split-window-right', 'vsplit', 1)
@@ -247,20 +253,4 @@ endif
 call leaderGuide#register_prefix_descriptions('<Space>', 'g:lmap')
 nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
-
-" Helpers
-function! SpacevimMaximizeBuffer()
-  if exists('s:maximize_session')
-    exec 'source ' . s:maximize_session
-    call delete(s:maximize_session)
-    unlet s:maximize_session
-    let &hidden=s:maximize_hidden_save
-    unlet s:maximize_hidden_save
-  else
-    let s:maximize_hidden_save = &hidden
-    let s:maximize_session = tempname()
-    set hidden
-    exec 'mksession! ' . s:maximize_session
-    only
-  endif
-endfunction
+map <leader>. <Plug>leaderguide-global

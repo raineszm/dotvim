@@ -2,6 +2,26 @@
 cpp = '''
 setlocal expandtab shiftwidth=2 softtabstop=2
 nmap <buffer> <LocalLeader>a :<C-u>A<cr>
+let g:llmap.a = [':<C-u>A<CR>', 'alt']
+
+let g:llmap.l = {'name' :'+lldb' }
+nmap <buffer> <LocalLeader>lb <Plug>LLBreakSwitch
+nnoremap <buffer> <LocalLeader>lB :<C-u>LL breakpoint set
+nnoremap <buffer> <LocalLeader>lc :<C-u>LL continue <CR>
+nnoremap <buffer> <LocalLeader>ls :<C-u>LL step <CR>
+nnoremap <buffer> <LocalLeader>ln :<C-u>LL next <CR>
+nnoremap <buffer> <LocalLeader>ld :<C-u>LLmode debug<CR>
+nnoremap <buffer> <LocalLeader>lD :<C-u>LLmode code<CR>
+nnoremap <buffer> <LocalLeader>lI :<C-u>LL process interrupt<CR>
+nnoremap <buffer> <LocalLeader>lp :<C-u>LL print <C-R>=expand('<cword>')<CR><CR>
+vnoremap <buffer> <LocalLeader>lp :<C-U>LL print <C-R>=lldb#util#get_selection()<CR><CR>
+nnoremap <buffer> <LocalLeader>lr :<C-U>LL process launch <CR>
+nnoremap <buffer> <LocalLeader>lI :<C-u>LLstdin<CR>
+
+let g:llmap.l.S = {'name' :'+lldb/session' }
+nnoremap <buffer> <LocalLeader>lSn :<C-u>LLsession new<CR>
+nnoremap <buffer> <LocalLeader>lSS :<C-u>LLsession show<CR>
+nnoremap <buffer> <LocalLeader>lSl :<C-u>LLsession load<CR>
 '''
 
 ruby = '''

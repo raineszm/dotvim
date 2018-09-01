@@ -6,6 +6,9 @@ cnoremap <C-g> <esc>
 " vim-leader-guide {{{
 nnoremap <localleader> :<c-u>LeaderGuide  ','<CR>
 vnoremap <localleader> :<c-u>LeaderGuideVisual  ','<CR>
+map <localleader>. <Plug>leaderguide-buffer
+let g:llmap = {}
+call leaderGuide#register_prefix_descriptions(",", "g:llmap")
 " }}}
 
 " Vimdoc {{{

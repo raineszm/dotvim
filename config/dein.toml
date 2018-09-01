@@ -22,6 +22,9 @@ repo = 'roxma/nvim-yarp'
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
 
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
 ##---------
 ## Search and movement plugins
 ##---------
@@ -29,7 +32,11 @@ repo = 'prabirshrestha/async.vim'
 repo = 'itchyny/vim-cursorword'
 
 [[plugins]]
-repo = 'justinmk/vim-dirvish'
+repo = 'Shougo/vimfiler.vim'
+hook_add = '''
+let g:vimfiler_as_default_explorer = 1
+nmap <silent> - :<C-u> exe 'VimFiler ' . expand('%:p:h')<CR>
+'''
 
 [[plugins]]
 repo = 'justinmk/vim-sneak'
@@ -204,6 +211,12 @@ repo = 'jamessan/vim-gnupg'
 [[plugins]]
 repo = 'tpope/vim-abolish'
 
+[[plugins]]
+repo = 'metakirby5/codi.vim'
+
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+
 ##---------
 ## Subregion
 ##---------
@@ -218,9 +231,16 @@ repo = 'chrisbra/NrrwRgn'
 [[plugins]]
 repo = 'bfrg/vim-cpp-modern'
 
+# [[plugins]]
+# repo = 'raineszm/nvim-gdb''
+# on_ft = 'cpp'
+# hook_add = '''
+# let g:nvimgdb_disable_start_keymaps = 1
+# '''
 [[plugins]]
-repo = 'sakhnik/nvim-gdb''
-on_ft = 'cpp'
+repo = 'dbgx/lldb.nvim'
+hook_add = '''
+'''
 
 ##--------
 ## Meson
