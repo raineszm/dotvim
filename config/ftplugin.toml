@@ -1,8 +1,8 @@
 [ftplugin]
 cpp = '''
 setlocal expandtab shiftwidth=2 softtabstop=2
-nmap <buffer> <LocalLeader>a :<C-u>A<cr>
-let g:llmap.a = [':<C-u>A<CR>', 'alt']
+nmap <buffer> <LocalLeader>a :<C-u>FSHere<cr>
+let g:llmap.a = [':<C-u>FSHere<CR>', 'alt']
 
 let g:llmap.l = {'name' :'+lldb' }
 nmap <buffer> <LocalLeader>lb <Plug>LLBreakSwitch

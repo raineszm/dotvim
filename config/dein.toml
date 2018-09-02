@@ -47,6 +47,10 @@ repo = 'brooth/far.vim'
 [[plugins]]
 repo = 'tweekmonster/braceless.vim'
 
+[[plugins]]
+repo = 'derekwyatt/vim-fswitch'
+on_ft = ['c', 'cpp']
+
 ##---------
 ## Scratch
 ##---------
@@ -162,13 +166,14 @@ hook_source='''
 [[plugins]]
 repo = 'dbakker/vim-projectroot'
 
-[[plugins]]
-repo = 'tpope/vim-projectionist'
 ##---------
 ## Build/Run Tools
 ##---------
 [[plugins]]
-repo = 'tpope/vim-dispatch'
+repo = 'skywind3000/asyncrun.vim'
+hook_source = '''
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
+'''
 
 [[plugins]]
 repo = 'tpope/vim-eunuch'
@@ -181,6 +186,10 @@ if = '!exists("g:gui_oni")'
 
 [[plugins]]
 repo = 'maximbaz/lightline-ale'
+if = '!exists("g:gui_oni")'
+
+[[plugins]]
+repo = 'albertomontesg/lightline-asyncrun'
 if = '!exists("g:gui_oni")'
 
 ##---------
@@ -231,12 +240,6 @@ repo = 'chrisbra/NrrwRgn'
 [[plugins]]
 repo = 'bfrg/vim-cpp-modern'
 
-# [[plugins]]
-# repo = 'raineszm/nvim-gdb''
-# on_ft = 'cpp'
-# hook_add = '''
-# let g:nvimgdb_disable_start_keymaps = 1
-# '''
 [[plugins]]
 repo = 'dbgx/lldb.nvim'
 hook_add = '''
@@ -352,6 +355,7 @@ repo = 'jalvesaq/Nvim-R'
 ##---------
 [[plugins]]
 repo = 'rust-lang/rust.vim'
+
 [[plugins]]
 repo = 'racer-rust/vim-racer'
 ##---------

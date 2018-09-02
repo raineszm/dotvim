@@ -134,6 +134,7 @@ let g:lightline.component_expand = {
       \  'linter_warnings': 'lightline#ale#warnings',
       \  'linter_errors': 'lightline#ale#errors',
       \  'linter_ok': 'lightline#ale#ok',
+      \  'asyncrun_status': 'lightline#asyncrun#status',
       \ }
 
 let g:lightline.component_type = {
@@ -148,7 +149,7 @@ let g:lightline#ale#indicator_warnings = "\uf071"
 let g:lightline#ale#indicator_errors = "\uf05e"
 let g:lightline#ale#indicator_ok = "\uf00c"
 
-let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+let g:lightline.active = { 'right': [['asyncrun_status'], [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 " }}}
 
 " VCS {{{

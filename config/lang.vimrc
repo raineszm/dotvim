@@ -1,22 +1,6 @@
 " vim: foldmethod=marker
 "
 
-" Project Setting
-let g:projectionist_heuristics = {
-            \   "meson.build&include/" : {
-            \   "*/build.ninja" : {  "make": "cd\ {file|dirname}\ &&\ ninja" },
-            \   "include/*.h" : {
-            \       "alternate" : "src/{}.cpp",
-            \       "type" : "header"
-            \       },
-            \   "src/*.cpp" : {
-            \       "alternate" : "src/{}.h",
-            \        "type" : "source"
-            \   }
-            \ }
-            \ }
-
-
 " Fortran {{{
 let fortran_free_source=1
 let fortran_have_tabs=1
