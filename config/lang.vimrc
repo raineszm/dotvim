@@ -83,11 +83,6 @@ if executable('pyls')
         \ })
 endif
 
-" Markdown{{{
-let g:vim_markdown_math = 1
-
-let g:macnote_note_directory = expand('$HOME/Dropbox/sync/macnote')
-" }}}
 
 
 " R {{{

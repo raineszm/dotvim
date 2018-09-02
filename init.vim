@@ -20,10 +20,12 @@ function! LoadRC(name)
 endfunction
 
 let g:rcs = [
-            \ 'init',
-            \ 'general',
-            \ 'keys',
-            \ 'lang'
+            \ 'dein',
+            \ 'options',
+            \ 'gui',
+            \ 'mappings',
+            \ 'lang',
+            \ 'plugins'
             \ ]
 
 for rc in g:rcs

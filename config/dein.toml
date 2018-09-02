@@ -135,11 +135,22 @@ repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'sbdchd/neoformat'
+hook_add = '''
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+'''
+
 ##---------
 ## Git stuff
 ##---------
 [[plugins]]
 repo = 'mhinz/vim-signify'
+hook_add = '''
+let g:signify_vcs_list = [ 'git' ]
+let g:signify_realtime = 1
+'''
 
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
@@ -203,6 +214,9 @@ repo = 'dracula/vim'
 [[plugins]]
 repo = 'KabbAmine/zeavim.vim'
 if = "!has('macunix')"
+hook_add = '''
+let g:zv_disable_mapping = 1
+'''
 
 [[plugins]]
 repo = 'rizzatti/dash.vim'
@@ -216,6 +230,9 @@ repo = 'tpope/vim-repeat'
 
 [[plugins]]
 repo = 'jamessan/vim-gnupg'
+hook_add = '''
+let g:GPGUsePipes=1
+'''
 
 [[plugins]]
 repo = 'tpope/vim-abolish'
@@ -231,6 +248,10 @@ repo = 'Shougo/deol.nvim'
 ##---------
 [[plugins]]
 repo = 'chrisbra/NrrwRgn'
+hook_add = '''
+let g:nrrw_rgn_nomap_nr = 1
+let g:nrrw_rgn_nomap_Nr = 1
+'''
 ##---------
 ## Language Specific {{{
 ##---------
@@ -260,6 +281,10 @@ repo = 'igankevich/mesonic'
 ##---------
 [[plugins]]
 repo = 'neoclide/macnote.vim'
+hook_add = '''
+let g:vim_markdown_math = 1
+let g:macnote_note_directory = expand('$HOME/Dropbox/sync/macnote')
+'''
 
 ##---------
 ## Latex

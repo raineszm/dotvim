@@ -44,7 +44,7 @@ endfunction
 
 call s:spacevim_bind('map', '<Tab>', 'last-buffer', 'b#', 1)
 call s:spacevim_bind('map', '!', 'shell-cmd', 'call feedkeys(":! ")', 1)
-call s:spacevim_bind('map', '/', 'smart-search', 'ProjectRootExe DeniteProjectDir grep', 1)
+call s:spacevim_bind('map', '/', 'smart-search', 'ProjectRootExe Denite grep', 1)
 call s:spacevim_bind('map', '?', 'help', 'Denite help', 1)
 call s:spacevim_bind('nmap', '*', 'smart-search-with-input', 'ProjectRootExe DeniteProjectDir grep:`expand("<cword>")`', 1)
 
@@ -119,7 +119,7 @@ call s:spacevim_bind('map', 'fS', 'sudo-write', 'SudoWrite', 1)
 " files/vim {{{
 let g:lmap.f.e = { 'name': '+files/vim' }
 call s:spacevim_bind('map', 'fec', 'find-configs',
-    \ 'Denite -buffer-name="configs" file::' . fnamemodify(expand('$MYVIMRC'), ':p:h') . '/config/', 1)
+    \ 'Denite -buffer-name="configs" file/rec:' . fnamemodify(expand('$MYVIMRC'), ':p:h') . '/config/', 1)
 call s:spacevim_bind('map', 'fed', 'find-dotfile', 'edit $MYVIMRC', 1)
 call s:spacevim_bind('map', 'feR', 'sync-configuration', 'source $MYVIMRC', 1)
 call s:spacevim_bind('map', 'fev', 'display-vim-version', 'version', 1)
