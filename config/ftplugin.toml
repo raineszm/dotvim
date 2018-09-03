@@ -24,6 +24,10 @@ nnoremap <buffer> <LocalLeader>lSS :<C-u>LLsession show<CR>
 nnoremap <buffer> <LocalLeader>lSl :<C-u>LLsession load<CR>
 '''
 
+meson = '''
+let b:commentary_format = '# %s'
+'''
+
 ruby = '''
 setlocal softtabstop=2 shiftwidth=2 expandtab
 '''

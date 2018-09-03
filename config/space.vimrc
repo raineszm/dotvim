@@ -95,10 +95,21 @@ call s:spacevim_bind('map', 'bmR', 'buf-rotate-up-left', 'wincmd R', 1)
 " errors {{{
 let g:lmap.e = { 'name': '+errors' }
 " Error checking {{{
-call s:spacevim_bind('map', 'el', 'error-list', 'Denite location_list', 1)
-call s:spacevim_bind('map', 'en', 'next-error', 'Denite location_list -resume -cursor-pos="+1"', 1)
-call s:spacevim_bind('map', 'eN', 'previous-error', 'Denite location_list -resume -cursor-pos="-1"', 1)
-call s:spacevim_bind('map', 'ep', 'previous-error', 'Denite location_list -resume -cursor-pos="-1"', 1)
+let g:lmap.e.l = { 'name': '+errors/location_list' }
+call s:spacevim_bind('map', 'ell', 'error-list', 'Denite location_list', 1)
+call s:spacevim_bind('map', 'eln', 'next-error', 'Denite -resume -cursor-pos="+1" location_list', 1)
+call s:spacevim_bind('map', 'elN', 'previous-error', 'Denite -resume -cursor-pos="-1" location_list ', 1)
+call s:spacevim_bind('map', 'elp', 'previous-error', 'Denite -resume -cursor-pos="-1" location_list', 1)
+call s:spacevim_bind('map', 'elo', 'open-location-list', 'lopen', 1)
+call s:spacevim_bind('map', 'elc', 'close-locationlist', 'lcl', 1)
+
+let g:lmap.e.q = { 'name': '+errors/quickfix' }
+call s:spacevim_bind('map', 'eql', 'error-list', 'Denite quickfix', 1)
+call s:spacevim_bind('map', 'eqn', 'next-error', 'Denite -resume -cursor-pos="+1" quickfix', 1)
+call s:spacevim_bind('map', 'eqN', 'previous-error', 'Denite -resume -cursor-pos="-1" quickfix ', 1)
+call s:spacevim_bind('map', 'eqp', 'previous-error', 'Denite -resume -cursor-pos="-1" quickfix', 1)
+call s:spacevim_bind('map', 'eqo', 'open-quickfix', 'copen', 1)
+call s:spacevim_bind('map', 'eqc', 'close-quickfix', 'ccl', 1)
 " }}}
 " }}}
 
