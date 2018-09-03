@@ -123,6 +123,9 @@ repo = 'honza/vim-snippets'
 ##---------
 [[plugins]]
 repo = 'w0rp/ale'
+hook_add = '''
+let g:ale_linters = { 'cpp': ['ccls'] }
+'''
 
 ##---------
 ## Source formatting
@@ -182,7 +185,7 @@ repo = 'dbakker/vim-projectroot'
 ##---------
 [[plugins]]
 repo = 'skywind3000/asyncrun.vim'
-hook_source = '''
+hook_add = '''
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 '''
 
