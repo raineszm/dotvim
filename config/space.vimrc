@@ -96,7 +96,7 @@ call s:spacevim_bind('map', 'bmR', 'buf-rotate-up-left', 'wincmd R', 1)
 let g:lmap.e = { 'name': '+errors' }
 " Error checking {{{
 let g:lmap.e.l = { 'name': '+errors/location_list' }
-call s:spacevim_bind('map', 'ell', 'error-list', 'Denite location_list', 1)
+call s:spacevim_bind('map', 'ell', 'location-list', 'Denite location_list', 1)
 call s:spacevim_bind('map', 'eln', 'next-error', 'Denite -resume -cursor-pos="+1" location_list', 1)
 call s:spacevim_bind('map', 'elN', 'previous-error', 'Denite -resume -cursor-pos="-1" location_list ', 1)
 call s:spacevim_bind('map', 'elp', 'previous-error', 'Denite -resume -cursor-pos="-1" location_list', 1)
@@ -104,7 +104,7 @@ call s:spacevim_bind('map', 'elo', 'open-location-list', 'lopen', 1)
 call s:spacevim_bind('map', 'elc', 'close-locationlist', 'lcl', 1)
 
 let g:lmap.e.q = { 'name': '+errors/quickfix' }
-call s:spacevim_bind('map', 'eql', 'error-list', 'Denite quickfix', 1)
+call s:spacevim_bind('map', 'eql', 'quickfix', 'Denite quickfix', 1)
 call s:spacevim_bind('map', 'eqn', 'next-error', 'Denite -resume -cursor-pos="+1" quickfix', 1)
 call s:spacevim_bind('map', 'eqN', 'previous-error', 'Denite -resume -cursor-pos="-1" quickfix ', 1)
 call s:spacevim_bind('map', 'eqp', 'previous-error', 'Denite -resume -cursor-pos="-1" quickfix', 1)
@@ -159,6 +159,16 @@ let g:lmap.h = { 'name': '+help' }
 " help {{{
 call s:spacevim_bind('map', 'hm', '+help/mappings', 'Denite unite:mapping', 1)
 " }}}
+"
+let g:lmap.l = {'name': '+lsp' }
+" Language Client {{{
+call s:spacevim_bind('map', 'la', 'code-action', 'call LanguageClient#textDocument_codeAction()', 1)
+call s:spacevim_bind('map', 'lm', 'context-menu', 'Denite contextMenu', 1)
+call s:spacevim_bind('map', 'lr', 'references', 'Denite references', 1)
+call s:spacevim_bind('map', 'lR', 'references', 'call LanguageClient#textDocument_rename()', 1)
+call s:spacevim_bind('map', 'ls', 'symbols', 'Denite workspaceSymbol', 1)
+call s:spacevim_bind('map', 'lS', 'Status', 'call LanguageClient#serverStatusMessage()', 1)
+" }}}
 
 let g:lmap.n = { 'name': '+narrow' }
 call s:spacevim_bind('map', 'nr', '+narrow/region', 'NR', 1)
@@ -206,18 +216,13 @@ call s:spacevim_bind('nmap', 'sR', 'replace-with-far', 'Farp', 1)
 " }}}
 
 " toggles {{{
-let g:lmap.t = { 'name': '+toggles' }
-call s:spacevim_bind('map', 'tn', 'line-numbers', 'setlocal invnumber', 1)
-call s:spacevim_bind('map', 'tS', 'spelling', 'setlocal invspell', 1)
+let g:lmap.t = { 'name': '+test' }
 
-" toggles/highlight {{{
-let g:lmap.t.h = { 'name': '+toggles/highlight' }
-call s:spacevim_bind('nmap', 'thc', 'highlight-indentation-current-column', 'setlocal invcursorcolumn', 1)
-call s:spacevim_bind('nmap', 'thl', 'highlight-current-line-globaly', 'setlocal invcursorline', 1)
-" }}}
-"
-let g:lmap.t.C = { 'name': '+toggles/colors' }
-call s:spacevim_bind('nmap', 'tCp', 'parenthesis-highlight-mode', 'setlocal invshowmatch', 1)
+call s:spacevim_bind('map', 'tf', 'test-file', 'TestFile', 1)
+call s:spacevim_bind('map', 'tl', 'test-last', 'TestLast', 1)
+call s:spacevim_bind('map', 'tn', 'test-nearest', 'TestNearest', 1)
+call s:spacevim_bind('map', 'ts', 'test-suite', 'TestSuite', 1)
+call s:spacevim_bind('map', 'tv', 'test-visit', 'TestVisit', 1)
 
 " }}}
 

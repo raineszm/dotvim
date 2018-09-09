@@ -20,9 +20,6 @@ repo = 'mhinz/vim-startify'
 repo = 'roxma/nvim-yarp'
 
 [[plugins]]
-repo = 'prabirshrestha/async.vim'
-
-[[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
 ##---------
@@ -64,6 +61,14 @@ repo = 'Shougo/junkfile.vim'
 repo = 'ludovicchabant/vim-gutentags'
 
 ##---------
+## Testing
+##---------
+[[plugins]]
+repo = 'janko-m/vim-test'
+lazy = 1
+on_cmd = ['TestFile', 'TestNearest', 'TestLast', 'TestVisit', 'TestSuite']
+
+##---------
 ## Undo
 ##---------
 [[plugins]]
@@ -72,17 +77,19 @@ repo = 'mbbill/undotree'
 ##---------
 ## Completion Tools
 ##---------
+# [[plugins]]
+# repo = 'prabirshrestha/vim-lsp'
+
 [[plugins]]
-repo = 'prabirshrestha/vim-lsp'
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
 
 [[plugins]]
 repo = 'ncm2/ncm2'
 
 [[plugins]]
 repo = 'ncm2/ncm2-ultisnips'
-
-[[plugins]]
-repo = 'ncm2/ncm2-vim-lsp'
 
 [[plugins]]
 repo = 'ncm2/ncm2-path'
@@ -180,12 +187,16 @@ hook_source='''
 [[plugins]]
 repo = 'dbakker/vim-projectroot'
 
+[[plugins]]
+repo = 'tpope/vim-projectionist'
+
 ##---------
 ## Build/Run Tools
 ##---------
 [[plugins]]
 repo = 'skywind3000/asyncrun.vim'
 hook_add = '''
+let g:asyncrun_open = 8
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 '''
 
@@ -266,8 +277,6 @@ repo = 'bfrg/vim-cpp-modern'
 
 [[plugins]]
 repo = 'dbgx/lldb.nvim'
-hook_add = '''
-'''
 
 ##--------
 ## Meson
@@ -302,6 +311,12 @@ repo = 'lervag/vimtex'
 repo = 'tshirtman/vim-cython'
 lazy = 1
 on_ft = 'cython'
+
+[[plugins]]
+repo = 'numirias/semshi'
+
+[[plugins]]
+repo = 'szymonmaszke/vimpyter'
 
 [[plugins]]
 repo = 'gu-fan/riv.vim'

@@ -1,6 +1,8 @@
 " vim: foldmethod=marker
 "
 
+let g:LanguageClient_serverCommands = {}
+
 " Fortran {{{
 let fortran_free_source=1
 let fortran_have_tabs=1
@@ -75,13 +77,10 @@ augroup END
 
 let g:neoformat_enabled_python = ['black']
 
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
+let g:LanguageClient_serverCommands.python = ['pyls']
+let g:LanguageClient_loadSettings = 1
+let g:LanguageClient_settingsPath = g:config_dir . '/config/plugins/settings.json'
+
 
 
 
@@ -108,15 +107,13 @@ let vimrplugin_applescript = 0
 " Cpp {{{
 let g:load_doxygen_syntax = 1
 
+let g:chromatica#libclang_path='/usr/local/opt/llvm/lib/libclang.dylib'
+let g:chromatica#enable_at_startup=1
+
 " Register ccls C++ lanuage server.
 if executable('ccls')
-   au User lsp_setup call lsp#register_server({
-      \ 'name': 'ccls',
-      \ 'cmd': {server_info->['ccls']},
-      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-      \ 'initialization_options': { 'cacheDirectory': '/tmp/ccls/cache' },
-      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-      \ })
+    let g:LanguageClient_serverCommands.c = ['ccls', '--log-file=/tmp/cq.log']
+    let g:LanguageClient_serverCommands.cpp = ['ccls', '--log-file=/tmp/cq.log']
 endif
 " }}}
 

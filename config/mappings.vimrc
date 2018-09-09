@@ -19,7 +19,8 @@ augroup END
 " }}}
 
 " Language Server {{{
-nnoremap gh :<c-u>LspHover<CR>
+nnoremap gh :call LanguageClient#textDocument_hover()<CR>
+nnoremap gd :call LanguageClient#textDocument_definition()<CR>
 " }}}
 
 " Load space mnemonics
