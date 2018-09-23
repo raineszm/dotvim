@@ -75,9 +75,7 @@ augroup pythonauto
     autocmd FileType python BracelessEnable +indent
 augroup END
 
-let g:neoformat_enabled_python = ['black']
-
-let g:LanguageClient_serverCommands.python = ['pyls']
+let g:LanguageClient_serverCommands.python = ['python', '-m', 'pyls']
 let g:LanguageClient_loadSettings = 1
 let g:LanguageClient_settingsPath = g:config_dir . '/config/plugins/settings.json'
 
