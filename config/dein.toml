@@ -371,6 +371,12 @@ on_ft = 'clojure'
 repo = 'tpope/vim-leiningen'
 lazy = 1
 on_ft = 'clojure'
+
+##---------
+## Nix
+##---------
+[[plugins]]
+repo = 'LnL7/vim-nix'
 ##---------
 ## Ruby
 ##---------
