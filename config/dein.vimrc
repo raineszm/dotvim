@@ -1,9 +1,16 @@
 " vim: foldmethod=marker
 
 " Dein Config {{{
+"
+" Make sure dein is instaled
+let s:dein_dir = $HOME . '/.config/nvim/dein/repos/github.com/Shougo/dein.vim'
+if !isdirectory(s:dein_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
+endif
 
 " Required:
-set runtimepath+=$HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+execute 'set runtimepath^=' . substitute(
+    \ fnamemodify(s:dein_dir, ':p') , '/$', '', '')
 
 let g:dein#enable_notification = 1
 
