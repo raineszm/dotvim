@@ -109,9 +109,9 @@ let g:chromatica#libclang_path='/usr/local/opt/llvm/lib/libclang.dylib'
 let g:chromatica#enable_at_startup=1
 
 " Register ccls C++ lanuage server.
-if executable('ccls')
-    let g:LanguageClient_serverCommands.c = ['ccls', '--log-file=/tmp/cq.log']
-    let g:LanguageClient_serverCommands.cpp = ['ccls', '--log-file=/tmp/cq.log']
+if executable('cquery')
+    let g:LanguageClient_serverCommands.c = ['cquery', '--log-file=/tmp/cq.log']
+    let g:LanguageClient_serverCommands.cpp = ['cquery', '--log-file=/tmp/cq.log']
 endif
 " }}}
 
